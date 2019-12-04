@@ -6,18 +6,20 @@ import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ChoixEnfantComponent } from './choix-enfant/choix-enfant.component';
+import { ErrorRoutingComponent } from './error-routing/error-routing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloWorldComponent,
     UserLoginComponent,
-    ChoixEnfantComponent
+    ChoixEnfantComponent,
+    ErrorRoutingComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

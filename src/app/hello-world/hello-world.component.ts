@@ -4,7 +4,7 @@ import * as io from 'socket.io-client';
 const HELLO_WORLD_ROUTE = 'http://localhost:8080/';
 
 @Component({
-  selector: 'app-hello-world',
+
   templateUrl: './hello-world.component.html',
   styleUrls: ['./hello-world.component.css']
 })
