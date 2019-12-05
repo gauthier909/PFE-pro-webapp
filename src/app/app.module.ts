@@ -7,6 +7,7 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ChoixEnfantComponent } from './choix-enfant/choix-enfant.component';
 import { ChannelComponent } from './channel/channel.component';
+import { ErrorRoutingComponent } from './error-routing/error-routing.component';
 
 @NgModule({
   declarations: [
@@ -14,12 +15,13 @@ import { ChannelComponent } from './channel/channel.component';
     HelloWorldComponent,
     UserLoginComponent,
     ChoixEnfantComponent,
-    ChannelComponent
+    ChannelComponent,
+    ErrorRoutingComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
