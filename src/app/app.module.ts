@@ -7,6 +7,9 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ChoixEnfantComponent } from './choix-enfant/choix-enfant.component';
 import { ErrorRoutingComponent } from './error-routing/error-routing.component';
+import { EnfantsComponent } from './enfants/enfants.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -14,12 +17,15 @@ import { ErrorRoutingComponent } from './error-routing/error-routing.component';
     HelloWorldComponent,
     UserLoginComponent,
     ChoixEnfantComponent,
-    ErrorRoutingComponent
+    ErrorRoutingComponent,
+    EnfantsComponent
+  
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

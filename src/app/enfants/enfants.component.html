@@ -1,0 +1,22 @@
+<h2>Les Enfants</h2>
+<h3>Ces enfants sont des mocks !</h3>
+<h4>Cliquer sur un enfant pour en voir les détails</h4>
+<ul class="enfants">
+  <li *ngFor="let enfant of enfants" 
+      [class.selected]="enfant === selectedEnfant"
+      (click)="onSelect(enfant)">
+    <span class="badge">{{enfant.nom}} </span> {{enfant.prenom}}
+  </li>
+</ul>
+<div *ngIf="selectedEnfant">
+
+    <h2>{{selectedEnfant.name | uppercase}} Details</h2>
+    <div><span>prenom: </span>{{selectedEnfant.prenom}}</div>
+    <div>
+      <label>nom:
+        <input [(ngModel)]="selectedEnfant.nom" placeholder="nom"/>
+      </label>
+    </div>
+  
+  </div>
+  
