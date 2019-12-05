@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import * as io from 'socket.io-client'
+import * as io from 'socket.io-client';
 
-const HELLO_WORLD_ROUTE = 'http://localhost:8080/'
+const HELLO_WORLD_ROUTE = 'http://localhost:8080/';
 
 @Component({
-  selector: 'app-hello-world',
+
   templateUrl: './hello-world.component.html',
   styleUrls: ['./hello-world.component.css']
 })
 export class HelloWorldComponent implements OnInit {
 
-  private data
-  private colors = ["red", "green", "blue", "cyan"]
-  private colors2 = ["yellow", "orange", "purple"]
-  private i = 0
-  private socket
-  constructor() { 
-    this.socket = io.connect("http://localhost:8081")  
+  private data;
+  private colors = ['red', 'green', 'blue', 'cyan'];
+  private colors2 = ['yellow', 'orange', 'purple'];
+  private i = 0;
+  private socket;
+  constructor() {
+    this.socket = io.connect( 'http://localhost:8081')  ;
     this.socket.on('chat', (data) => {
       console.log("Sur le channel chat on a recu :", data)
     })
@@ -29,7 +29,7 @@ export class HelloWorldComponent implements OnInit {
     //   this.i++
     // }, 50)
 
-    setInterval(() => {  
+    setInterval(() => {
       this.data = null
    }, 3000)
   }
