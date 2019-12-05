@@ -8,15 +8,4 @@
     <span class="badge">{{enfant.nom}} </span> {{enfant.prenom}}
   </li>
 </ul>
-<div *ngIf="selectedEnfant">
-
-    <h2>{{selectedEnfant.name | uppercase}} Details</h2>
-    <div><span>prenom: </span>{{selectedEnfant.prenom}}</div>
-    <div>
-      <label>nom:
-        <input [(ngModel)]="selectedEnfant.nom" placeholder="nom"/>
-      </label>
-    </div>
-  
-  </div>
-  
+<app-enfant-detail [enfant]="selectedEnfant"></app-enfant-detail>
