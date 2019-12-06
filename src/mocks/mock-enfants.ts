@@ -1,4 +1,4 @@
-import {Enfant} from './enfants/enfant'
+import {Enfant} from '../app/enfants/enfant'
 
 export const ENFANTS: Enfant[] = [
     {_id:'1', nom: 'Paul1', prenom:'Jean1', age : 8},

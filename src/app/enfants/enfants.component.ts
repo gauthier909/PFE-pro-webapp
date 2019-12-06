@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Enfant } from './enfant'
-import {ENFANTS} from '../mock-enfants'
+//import {ENFANTS} from '../../mocks/mock-enfants'
 import {EnfantService} from '../services/enfant.service'
 
 @Component({
