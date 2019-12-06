@@ -1,0 +1,14 @@
+<h2>Les Enfants</h2>
+<h3>Ces enfants sont des mocks !</h3>
+<h4>Cliquer sur un enfant pour en voir les détails</h4>
+<ul class="enfants">
+  <li *ngFor="let enfant of enfants" >
+    <a routerLink="/detail/{{enfant.id}}">
+      <span class="badge">{{enfant.nom}} </span> {{enfant.prenom}}
+    </a>
+  </li>
+</ul>
+
+
+<button pButton label="ajouter" (click)="isOn=!isOn">Inscrire un enfant</button>
+<app-enfant-ajout *ngIf="isOn"></app-enfant-ajout>

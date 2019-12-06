@@ -1,0 +1,23 @@
+<div *ngIf="enfant">
+
+    <h2>{{enfant.nom | uppercase}} </h2>
+    <div>
+            <label>Nom
+                <input [(ngModel)]="enfant.nom" placeholder="nom"/>
+            </label>
+        </div>
+    <div>
+        <label>Prénom
+            <input [(ngModel)]="enfant.prenom" placeholder="prenom"/>
+        </label>
+    </div>
+    <div>
+        <label>Age
+            <input [(ngModel)]="enfant.age" placeholder="age"/>
+        </label>
+    </div>
+    <button (click)="modifStudent()">Modifier</button>
+    <button (click)="deleteStudent()">Supprimer</button>
+
+    <p><button (click)="goBack()">go back</button></p>
+  </div>

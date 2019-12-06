@@ -8,7 +8,7 @@ export const allchoix = [
     },
   { nom: 'julien',
     prenom: 'gullum',
-    nomImage: 'l anneau unique',
+    nomImage: 'l anneau unique pouet',
     aime: true,
     content: false,
     commentaire: 'pas content dus vol d \' anneau gulum gulum'

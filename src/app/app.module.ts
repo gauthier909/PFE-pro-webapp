@@ -9,6 +9,11 @@ import { ChoixEnfantComponent } from './choix-enfant/choix-enfant.component';
 import { ErrorRoutingComponent } from './error-routing/error-routing.component';
 import {ProfessionelleModule} from './professionelle/professionelle.module';
 import {AuthRoutingModule} from './auth/auth-routing.module';
+import { EnfantsComponent } from './enfants/enfants.component';
+import { FormsModule } from '@angular/forms';
+import { EnfantDetailComponent } from './enfant-detail/enfant-detail.component';
+import { EnfantAjoutComponent } from './enfant-ajout/enfant-ajout.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +21,11 @@ import {AuthRoutingModule} from './auth/auth-routing.module';
     HelloWorldComponent,
     UserLoginComponent,
     ChoixEnfantComponent,
-    ErrorRoutingComponent
+    ErrorRoutingComponent,
+    EnfantsComponent,
+    EnfantDetailComponent,
+    EnfantAjoutComponent
+
   ],
   imports: [
     BrowserModule,
@@ -24,6 +33,7 @@ import {AuthRoutingModule} from './auth/auth-routing.module';
     ProfessionelleModule,
     AuthRoutingModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
