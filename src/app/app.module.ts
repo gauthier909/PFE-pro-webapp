@@ -14,15 +14,10 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ChoixEnfantComponent } from './choix-enfant/choix-enfant.component';
 import { ErrorRoutingComponent } from './error-routing/error-routing.component';
-<<<<<<< HEAD
-import { EnfantsComponent } from './enfants/enfants.component';
-import { FormsModule } from '@angular/forms';
-import { EnfantDetailComponent } from './enfant-detail/enfant-detail.component';
+
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
-=======
->>>>>>> 2e3ee99741fe3b98773038d93e011991e3cf1b8a
 
 @NgModule({
   declarations: [
