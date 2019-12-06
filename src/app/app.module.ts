@@ -10,6 +10,7 @@ import { ErrorRoutingComponent } from './error-routing/error-routing.component';
 import { EnfantsComponent } from './enfants/enfants.component';
 import { FormsModule } from '@angular/forms';
 import { EnfantDetailComponent } from './enfant-detail/enfant-detail.component';
+import { EnfantAjoutComponent } from './enfant-ajout/enfant-ajout.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { EnfantDetailComponent } from './enfant-detail/enfant-detail.component';
     ChoixEnfantComponent,
     ErrorRoutingComponent,
     EnfantsComponent,
-    EnfantDetailComponent
+    EnfantDetailComponent,
+    EnfantAjoutComponent
   
   ],
   imports: [

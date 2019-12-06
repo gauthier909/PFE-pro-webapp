@@ -338,7 +338,7 @@ if (content.locals) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Niklas\Documents\Bloc3\PFE\pfe-webapp-pro\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\BAC3\PFE\front-end\front-pro\src\styles.css */"./src/styles.css");
 
 
 /***/ })

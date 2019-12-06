@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-default\">\r\n  <ul class=\"nav navbar-nav\">\r\n    <a routerLink=\"login\" >Login</a>\r\n    <a routerLink=\"hello\">Hello</a>\r\n    <a routerLink=\"choix\">Choix</a>\r\n    <a routerLink=\"enfants\">Gérer les enfants</a>\r\n  </ul>\r\n</nav>\r\n<router-outlet></router-outlet>");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-default\">\r\n  <ul class=\"nav navbar-nav\">\r\n    <a routerLink=\"login\" >Login</a>\r\n    <a routerLink=\"hello\">Hello</a>\r\n    <a routerLink=\"choix\">Choix</a>\r\n    <a routerLink=\"enfants\">Gérer les enfants</a>\r\n  </ul>\r\n</nav>\r\n\r\n<router-outlet></router-outlet>");
 
 /***/ }),
 
@@ -49,6 +49,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/enfant-ajout/enfant-ajout.component.html":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/enfant-ajout/enfant-ajout.component.html ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>enfant-ajout works!</p>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/enfant-detail/enfant-detail.component.html":
 /*!**************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/enfant-detail/enfant-detail.component.html ***!
@@ -58,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"enfant\">\r\n\r\n    <h2>{{enfant.nom | uppercase}} :</h2>\r\n    <div>\r\n        <label>Prénom :\r\n            <input [(ngModel)]=\"enfant.prenom\" placeholder=\"prenom\"/>\r\n        </label>\r\n    </div>\r\n    <div>\r\n        <label>Nom : \r\n            <input [(ngModel)]=\"enfant.nom\" placeholder=\"nom\"/>\r\n        </label>\r\n    </div>\r\n    <div>\r\n        <label>Age : \r\n            <input [(ngModel)]=\"enfant.age\" placeholder=\"age\"/>\r\n        </label>\r\n    </div>\r\n  </div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"enfant\">\r\n\r\n    <h2>{{enfant.nom | uppercase}} :</h2>\r\n    <div>\r\n        <label>Prénom :\r\n            <input [(ngModel)]=\"enfant.prenom\" placeholder=\"prenom\"/>\r\n        </label>\r\n    </div>\r\n    <div>\r\n        <label>Nom : \r\n            <input [(ngModel)]=\"enfant.nom\" placeholder=\"nom\"/>\r\n        </label>\r\n    </div>\r\n    <div>\r\n        <label>Age : \r\n            <input [(ngModel)]=\"enfant.age\" placeholder=\"age\"/>\r\n        </label>\r\n    </div>\r\n    <button (click)=\"modifStudent()\">Modifier</button>\r\n    <button (click)=\"deleteStudent()\">Supprimer</button>\r\n  </div>");
 
 /***/ }),
 
@@ -71,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Les Enfants</h2>\r\n<h3>Ces enfants sont des mocks !</h3>\r\n<h4>Cliquer sur un enfant pour en voir les détails</h4>\r\n<ul class=\"enfants\">\r\n  <li *ngFor=\"let enfant of enfants\" \r\n      [class.selected]=\"enfant === selectedEnfant\"\r\n      (click)=\"onSelect(enfant)\">\r\n    <span class=\"badge\">{{enfant.nom}} </span> {{enfant.prenom}}\r\n  </li>\r\n</ul>\r\n<app-enfant-detail [enfant]=\"selectedEnfant\"></app-enfant-detail>");
+/* harmony default export */ __webpack_exports__["default"] = ("<h2>Les Enfants</h2>\r\n<h3>Ces enfants sont des mocks !</h3>\r\n<h4>Cliquer sur un enfant pour en voir les détails</h4>\r\n<ul class=\"enfants\">\r\n  <li *ngFor=\"let enfant of enfants\" \r\n      [class.selected]=\"enfant === selectedEnfant\"\r\n      (click)=\"onSelect(enfant)\">\r\n    <span class=\"badge\">{{enfant.nom}} </span> {{enfant.prenom}}\r\n  </li>\r\n</ul>\r\n<button click=\"ajouterUnEnfant()\"></button>\r\n<app-enfant-detail [enfant]=\"selectedEnfant\"></app-enfant-detail>");
 
 /***/ }),
 
@@ -476,6 +489,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _enfants_enfants_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./enfants/enfants.component */ "./src/app/enfants/enfants.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _enfant_detail_enfant_detail_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./enfant-detail/enfant-detail.component */ "./src/app/enfant-detail/enfant-detail.component.ts");
+/* harmony import */ var _enfant_ajout_enfant_ajout_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./enfant-ajout/enfant-ajout.component */ "./src/app/enfant-ajout/enfant-ajout.component.ts");
+
 
 
 
@@ -500,7 +515,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _choix_enfant_choix_enfant_component__WEBPACK_IMPORTED_MODULE_8__["ChoixEnfantComponent"],
             _error_routing_error_routing_component__WEBPACK_IMPORTED_MODULE_9__["ErrorRoutingComponent"],
             _enfants_enfants_component__WEBPACK_IMPORTED_MODULE_10__["EnfantsComponent"],
-            _enfant_detail_enfant_detail_component__WEBPACK_IMPORTED_MODULE_12__["EnfantDetailComponent"]
+            _enfant_detail_enfant_detail_component__WEBPACK_IMPORTED_MODULE_12__["EnfantDetailComponent"],
+            _enfant_ajout_enfant_ajout_component__WEBPACK_IMPORTED_MODULE_13__["EnfantAjoutComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -592,6 +608,50 @@ const allchoix = [
         commentaire: 'pas content dus vol d \' anneau gulum gulum'
     }
 ];
+
+
+/***/ }),
+
+/***/ "./src/app/enfant-ajout/enfant-ajout.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/enfant-ajout/enfant-ajout.component.css ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2VuZmFudC1ham91dC9lbmZhbnQtYWpvdXQuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/enfant-ajout/enfant-ajout.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/enfant-ajout/enfant-ajout.component.ts ***!
+  \********************************************************/
+/*! exports provided: EnfantAjoutComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EnfantAjoutComponent", function() { return EnfantAjoutComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let EnfantAjoutComponent = class EnfantAjoutComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+EnfantAjoutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-enfant-ajout',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./enfant-ajout.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/enfant-ajout/enfant-ajout.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./enfant-ajout.component.css */ "./src/app/enfant-ajout/enfant-ajout.component.css")).default]
+    })
+], EnfantAjoutComponent);
+
 
 
 /***/ }),
@@ -973,7 +1033,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Niklas\Documents\Bloc3\PFE\pfe-webapp-pro\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\BAC3\PFE\front-end\front-pro\src\main.ts */"./src/main.ts");
 
 
 /***/ }),
