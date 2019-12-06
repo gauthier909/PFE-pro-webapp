@@ -7,6 +7,8 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ChoixEnfantComponent } from './choix-enfant/choix-enfant.component';
 import { ErrorRoutingComponent } from './error-routing/error-routing.component';
+import {ProfessionelleModule} from './professionelle/professionelle.module';
+import {AuthRoutingModule} from './auth/auth-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ErrorRoutingComponent } from './error-routing/error-routing.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    ProfessionelleModule,
+    AuthRoutingModule,
     AppRoutingModule,
   ],
   providers: [],
