@@ -1,4 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'
+import { Location } from '@angular/common';
+
+import { EnfantService } from '../services/enfant.service'
 import { Enfant } from '../enfants/enfant'
 
 @Component({
@@ -7,10 +11,23 @@ import { Enfant } from '../enfants/enfant'
   styleUrls: ['./enfant-detail.component.css']
 })
 export class EnfantDetailComponent implements OnInit {
-   @Input() enfant: Enfant;
-  constructor() { }
+  enfant: Enfant;
+  constructor(
+    private route: ActivatedRoute,
+    private enfantService: EnfantService,
+    private location: Location
+    ) { }
 
   ngOnInit() {
+    this.getEnfant();
   }
 
+  getEnfant(): void{
+    let id = this.route.snapshot.paramMap.get('id');
+    this.enfantService.getEnfant(id).subscribe(enfant => this.enfant = enfant);
+  }
+
+  goBack(): void{
+    this.location.back();
+  }
 }

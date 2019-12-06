@@ -1,4 +1,4 @@
-<div class="container"  >
+<div class="container" *ngIf="authservice.isLoggedIn==false" >
   <h1>Entrez login</h1>
 
   <div class="form-group" ngS>
@@ -7,6 +7,9 @@
   <div>
      <input type="password"   (keyup)="onSetPassword()"   class="form-control" id="password" required="name">
   </div>
-  <button (click)="onSubmit()"   class="button">GG WP</button>
+  <button (click)="onSubmit()"   class="button">login</button>
 
+</div>
+<div class="container" *ngIf="authservice.isLoggedIn">
+  <button (click)="logout()" >logout</button>
 </div>

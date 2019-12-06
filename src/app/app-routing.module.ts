@@ -4,18 +4,21 @@ import {UserLoginComponent} from "./user-login/user-login.component";
 import {ChoixEnfantComponent} from "./choix-enfant/choix-enfant.component";
 import {HelloWorldComponent} from './hello-world/hello-world.component';
 import {ErrorRoutingComponent} from './error-routing/error-routing.component';
+import {AuthGuard} from './auth/auth.guard';
 import {EnfantsComponent} from './enfants/enfants.component';
+import {EnfantDetailComponent} from './enfant-detail/enfant-detail.component'
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/auth/login',
     pathMatch: 'full'
   },
   {
-    path: 'login',
-    component: UserLoginComponent
+    path: 'professionel',
+    loadChildren: () => import('./professionelle/professionelle.module').then(mod => mod.ProfessionelleModule),
+    canLoad: [AuthGuard]
   },
   {
     path: 'choix',
@@ -28,6 +31,10 @@ const routes: Routes = [
   {
     path: 'enfants',
     component: EnfantsComponent
+  },
+  {
+    path: 'detail/:id',
+    component: EnfantDetailComponent
   },
   {
     path: '**',

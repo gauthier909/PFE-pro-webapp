@@ -2,7 +2,8 @@
   "name": "front-pro",
   "version": "0.0.0",
   "scripts": {
-    "start": "ng build && http-server dist/front-pro",
+    "build": "ng build && http-server dist/front-pro",
+    "start" : "ng serve --proxy-config proxy.conf.json",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
@@ -27,6 +28,7 @@
     "@angular/router": "~8.2.14",
     "@angular/service-worker": "~8.2.14",
     "@auth0/angular-jwt": "^3.0.1",
+    "moment": "^2.24.0",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
