@@ -10,6 +10,8 @@ import { ErrorRoutingComponent } from './error-routing/error-routing.component';
 import { EnfantsComponent } from './enfants/enfants.component';
 import { FormsModule } from '@angular/forms';
 import { EnfantDetailComponent } from './enfant-detail/enfant-detail.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { EnfantDetailComponent } from './enfant-detail/enfant-detail.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

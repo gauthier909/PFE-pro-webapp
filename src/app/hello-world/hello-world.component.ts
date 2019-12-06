@@ -10,7 +10,7 @@ const HELLO_WORLD_ROUTE = 'http://localhost:8080/';
 })
 export class HelloWorldComponent implements OnInit {
 
-  private data;
+  public data;
   private colors = ['red', 'green', 'blue', 'cyan'];
   private colors2 = ['yellow', 'orange', 'purple'];
   private i = 0;
