@@ -26,7 +26,9 @@ export class EnfantDetailComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id');
     this.enfantService.getEnfant(id).subscribe(enfant => this.enfant = enfant);
   }
-
+  modifEnfant(): void{
+    this.enfantService.updateEnfant(this.enfant).subscribe(()=> this.goBack())
+  }
   goBack(): void{
     this.location.back();
   }

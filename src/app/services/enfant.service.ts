@@ -16,6 +16,12 @@ export class EnfantService {
   private enfants :  Observable<Enfant[]>;
   constructor(private http: HttpClient ) { }
 
+ 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
+  // Get all children 
   getEnfants(): Observable<Enfant[]> {
     //return of(ENFANTS);
     this.enfants = this.http.get<Enfant[]>(this.enfantsUrl)
@@ -26,6 +32,7 @@ export class EnfantService {
     return this.enfants;
   }
 
+  // Get children with ID
   getEnfant(id: string): Observable<Enfant>{
     //return of(ENFANTS.find(enfant => enfant._id === id));
     const url = `${this.enfantsUrl}/${id}`;
@@ -36,7 +43,17 @@ export class EnfantService {
     );
   }
   
- 
+  // Update children with ID
+  updateEnfant(enfant : Enfant): Observable<any>{
+    const url = `${this.enfantsUrl}/${enfant._id}`;
+    console.log("On veut update",enfant._id)
+
+    return this.http.put(url,enfant, this.httpOptions).pipe(
+      tap(_ => console.log(`updated enfant with id id=${enfant._id}`)),
+      catchError(this.handleError<any>('updateEnfant'))
+    );
+  }
+
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -51,4 +68,6 @@ export class EnfantService {
       return of(result as T);
     };
   }
+
+
 }
