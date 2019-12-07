@@ -27,6 +27,14 @@ export class GestionProfessionnelService {
     return this.personnes
   }
 
+  /** POST: add a new infant to the server */
+  addPersonne (personne: Personne): Observable<Personne> {
+    return this.http.post<Personne>(this.personnesUrl, personne, this.httpOptions).pipe(
+      tap((newPersonne: Personne) => console.log(`added personne w/ id=${newPersonne._id}`)),
+      catchError(this.handleError<Personne>('addPersonne'))
+    );
+  }
+
 
 
 

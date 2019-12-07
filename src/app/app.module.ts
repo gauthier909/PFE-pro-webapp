@@ -18,6 +18,7 @@ import { ErrorRoutingComponent } from './error-routing/error-routing.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { GestionProfessionnelComponent } from './gestion-professionnel/gestion-professionnel.component';
+import { PersonneAjoutComponent } from './personne-ajout/personne-ajout.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { GestionProfessionnelComponent } from './gestion-professionnel/gestion-p
     EnfantsComponent,
     EnfantDetailComponent,
     EnfantAjoutComponent,
-    GestionProfessionnelComponent
+    GestionProfessionnelComponent,
+    PersonneAjoutComponent
 
   ],
   imports: [
