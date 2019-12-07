@@ -2,22 +2,66 @@
 
     <h2>{{enfant.nom | uppercase}} </h2>
     <div>
-            <label>Nom
-                <input [(ngModel)]="enfant.nom" placeholder="nom"/>
-            </label>
-        </div>
+        <label>Nom
+            <input [(ngModel)]="enfant.nom" placeholder="nom" />
+        </label>
+    </div>
     <div>
         <label>Prénom
-            <input [(ngModel)]="enfant.prenom" placeholder="prenom"/>
+            <input [(ngModel)]="enfant.prenom" placeholder="prenom" />
         </label>
     </div>
     <div>
         <label>Age
-            <input [(ngModel)]="enfant.age" placeholder="age"/>
+            <input [(ngModel)]="enfant.age" placeholder="age" />
+        </label>
+    </div>
+    <div>
+        <label>Date de naissance
+            <input [(ngModel)]="enfant.date_naissance" placeholder="Date de naissance" />
+        </label>
+    </div>
+    <div>
+        <label>Langue usuelle
+            <input [(ngModel)]="enfant.langue_usuelle" placeholder="Langue usuelle" />
+        </label>
+    </div>
+    <div>
+        <label>Dominance
+            <input [(ngModel)]="enfant.dominance" placeholder="Dominance" />
+        </label>
+    </div>
+    <div>
+        <label>Scolarite
+            Type: <input [(ngModel)]="enfant.scolarite.type" placeholder="Type" />
+            Niveau: <input [(ngModel)]="enfant.scolarite.niveau" placeholder="Niveau"/>
+        </label>
+    </div>
+    <div>
+        <label>Contacts
+            <ul *ngFor="let contact of enfant.contacts">
+                <input [(ngModel)]="contact.prenom" placeholder="Contacts" /> 
+                <input [(ngModel)]="contact.nom" placeholder="Contacts" />    
+            </ul>
+            <button (click)="ajouterContact()">Ajouter contact</button>
+        </label>
+    </div>
+    <div>
+        <label>Besoins
+            <ul *ngFor="let besoin of enfant.besoins">
+                <input [(ngModel)]="besoin" placeholder="Besoins" />
+            </ul>
+            <button (click)="ajouterBesoin()">Ajouter besoin</button>
+        </label>
+    </div>
+
+    <div>
+        <label>Professionnel en charge
+            <input [ngModel]="enfant.professionnel" placeholder="Professionnel en charge" />
         </label>
     </div>
     <p><button (click)="modifEnfant()">Sauvegarder les modifications</button>
-    <button (click)="deleteEnfant()">Supprimer l'enfant</button></p>
+           <button (click)="deleteEnfant()">Supprimer l'enfant</button></p>
 
     <p><button (click)="goBack()">Revenir en arrière</button></p>
-  </div>
+</div>

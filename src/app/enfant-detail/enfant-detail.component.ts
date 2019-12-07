@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { Location } from '@angular/common';
+import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 import { EnfantService } from '../services/enfant.service'
 import { Enfant } from '../enfants/enfant'
@@ -34,5 +35,11 @@ export class EnfantDetailComponent implements OnInit {
   }
   goBack(): void{
     this.location.back();
+  }
+  ajouterBesoin(): void{
+    
+  }
+  ajouterContact():void{
+
   }
 }
