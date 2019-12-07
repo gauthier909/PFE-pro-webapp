@@ -63,7 +63,15 @@ export class EnfantService {
       catchError(this.handleError<Enfant>('deleteEnfant'))
     );
   }
-
+  /** POST: add a new infant to the server */
+  addEnfant (enfant: Enfant): Observable<Enfant> {
+    console.log(enfant.nom);
+    console.log(enfant.prenom);
+    return this.http.post<Enfant>(this.enfantsUrl, enfant, this.httpOptions).pipe(
+      tap((newEnfant: Enfant) => console.log(`added enfant w/ id=${newEnfant._id}`)),
+      catchError(this.handleError<Enfant>('addEnfant'))
+    );
+  }
 
 
   private handleError<T> (operation = 'operation', result?: T) {
