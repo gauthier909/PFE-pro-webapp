@@ -20,14 +20,14 @@ export class EnfantAjoutComponent implements OnInit {
   ngOnInit() {
   }
 
-  add(nom: string, prenom: string, dateNaissance: Date): void {
+  add(nom: string, prenom: string, date_naissance: Date): void {
     // trim() => remove whitespace
     nom = nom.trim();
     prenom = prenom.trim();
     if (!nom){
       return;
     }
-    this.enfantService.addEnfant({nom, prenom, dateNaissance} as Enfant)
+    this.enfantService.addEnfant({nom, prenom, date_naissance} as Enfant)
       .subscribe(enfant => {
         this.goBack()
       })

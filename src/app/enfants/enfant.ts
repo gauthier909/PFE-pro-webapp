@@ -3,7 +3,13 @@ export class Enfant {
     nom: string;
     prenom: string;
     age : number;
-    dateNaissance : Date;
+    date_naissance: Date;
+    langue_usuelle: string;
+    dominance: string;
+    scolarite: object;
+    contacts: Array<Object>;
+    besoins: Array<string>;
+    professionnel: string;
   }
   
   
