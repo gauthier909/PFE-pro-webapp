@@ -29,6 +29,9 @@ export class EnfantDetailComponent implements OnInit {
   modifEnfant(): void{
     this.enfantService.updateEnfant(this.enfant).subscribe(()=> this.goBack())
   }
+  deleteEnfant(): void{
+    this.enfantService.deleteEnfant(this.enfant).subscribe(()=> this.goBack())
+  }
   goBack(): void{
     this.location.back();
   }

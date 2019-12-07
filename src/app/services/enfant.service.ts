@@ -12,7 +12,7 @@ import { Enfant } from '../enfants/enfant';
 })
 export class EnfantService {
   private enfantsUrl = 'http://localhost:8080/enfants';  // URL to web api
-  private detailsUrl = 'http://localhost:8080/details';
+  
   private enfants :  Observable<Enfant[]>;
   constructor(private http: HttpClient ) { }
 
@@ -54,6 +54,17 @@ export class EnfantService {
     );
   }
 
+  deleteEnfant(enfant : Enfant): Observable<Enfant>{
+    console.log("On veut delete",enfant._id);
+
+    const url = `${this.enfantsUrl}/${enfant._id}`;
+    return this.http.delete<Enfant>(url, this.httpOptions).pipe(
+      tap(_ => console.log(`deleted hero id=${enfant._id}`)),
+      catchError(this.handleError<Enfant>('deleteEnfant'))
+    );
+  }
+
+
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -68,6 +79,7 @@ export class EnfantService {
       return of(result as T);
     };
   }
+
 
 
 }
