@@ -8,6 +8,7 @@ import {AuthGuard} from './auth/auth.guard';
 import {EnfantsComponent} from './enfants/enfants.component';
 import {EnfantDetailComponent} from './enfant-detail/enfant-detail.component'
 import {EnfantAjoutComponent} from './enfant-ajout/enfant-ajout.component'
+import {GestionProfessionnelComponent} from './gestion-professionnel/gestion-professionnel.component'
 
 
 const routes: Routes = [
@@ -38,9 +39,14 @@ const routes: Routes = [
     component: EnfantAjoutComponent
   },
   {
+    path: 'gestionProfessionnel',
+    component: GestionProfessionnelComponent
+  },
+  {
     path: 'detail/:id',
     component: EnfantDetailComponent
   },
+  
   {
     path: '**',
     component: ErrorRoutingComponent
