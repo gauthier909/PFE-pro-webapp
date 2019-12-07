@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import * as io from 'socket.io-client';
 
-const HELLO_WORLD_ROUTE = 'http://localhost:8080/';
+const HELLO_WORLD_ROUTE = '/api/';
 
 @Component({
-
+  selector: 'app-hello-world',
   templateUrl: './hello-world.component.html',
   styleUrls: ['./hello-world.component.css']
 })
