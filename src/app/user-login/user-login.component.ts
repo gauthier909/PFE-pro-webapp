@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {Router, NavigationExtras} from '@angular/router';
+import {AuthService} from '../auth/auth.service';
 import {Input} from "@angular/core";
 import { User } from '../user';
+import {decode} from 'punycode';
+
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
@@ -8,34 +12,57 @@ import { User } from '../user';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor() { }
-  login;
+  constructor(public authservice: AuthService, public router: Router) { }
+  user;
   password;
-
+  token;
   submitted = false;
   onSubmit() {
-    let jason = {login: this.login,password: this.password}
-    fetch('http://localhost:8080/login',{
-      method: "POST",
+    let jason = {user: this.user, password: this.password}
+    fetch('http://localhost:8080/auth/login',{
+      method: 'POST',
       body: JSON.stringify(jason)
     })
       .then(response => response.clone().json()
       )
-      .then(data => {
-        console.log("Recieved data from Express API :", data)
-        data = data
+      .then(token => {
+        console.log( 'Recieved data from Express API :' , token)
+        this.token = token;
+        console.log(token);
+        localStorage.setItem('token', token);
+        this.login();
       })
       .catch(err => {
         console.error("Error :", err)
-      })
+
+      });
   }
   onSetLogin(){
-    this.login= (event.target as HTMLInputElement).value;
+    this.user= (event.target as HTMLInputElement).value;
 
   }
   onSetPassword(){
     this.password=(event.target as HTMLInputElement).value;
   }
+    login() {
+     this.authservice.login().subscribe(() => {
+        if (this.authservice.isLoggedIn) {
+          //let redirect = this.authservice.redirectUrl ? this.router.parseUrl(this.authservice.redirectUrl) : '/professionel';
+
+          let navigationExras: NavigationExtras = {
+            queryParamsHandling: 'preserve',
+            preserveFragment: true
+          };
+
+          this.router.navigate(['professionel'], navigationExras);
+        }
+      });
+    }
+    logout(){
+       this.authservice.logout();
+       this.submitted=false;
+       localStorage.removeItem('token');
+    }
   ngOnInit() {
   }
 

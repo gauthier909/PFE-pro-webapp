@@ -4,17 +4,24 @@ import {UserLoginComponent} from "./user-login/user-login.component";
 import {ChoixEnfantComponent} from "./choix-enfant/choix-enfant.component";
 import {HelloWorldComponent} from './hello-world/hello-world.component';
 import {ErrorRoutingComponent} from './error-routing/error-routing.component';
+import {AuthGuard} from './auth/auth.guard';
+import {EnfantsComponent} from './enfants/enfants.component';
+import {EnfantDetailComponent} from './enfant-detail/enfant-detail.component'
+import {EnfantAjoutComponent} from './enfant-ajout/enfant-ajout.component'
+import {GestionProfessionnelComponent} from './gestion-professionnel/gestion-professionnel.component'
+import {PersonneAjoutComponent} from './personne-ajout/personne-ajout.component'
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/auth/login',
     pathMatch: 'full'
   },
   {
-    path: 'login',
-    component: UserLoginComponent
+    path: 'professionel',
+    loadChildren: () => import('./professionelle/professionelle.module').then(mod => mod.ProfessionelleModule),
+    canLoad: [AuthGuard]
   },
   {
     path: 'choix',
@@ -25,9 +32,31 @@ const routes: Routes = [
     component: HelloWorldComponent
   },
   {
+    path: 'enfants',
+    component: EnfantsComponent
+  },
+  {
+    path: 'inscription',
+    component: EnfantAjoutComponent
+  },
+  {
+    path: 'gestionProfessionnel',
+    component: GestionProfessionnelComponent
+  },
+  {
+    path: 'inscriptionPersonne',
+    component: PersonneAjoutComponent
+  },
+  {
+    path: 'detail/:id',
+    component: EnfantDetailComponent
+  },
+  
+  {
     path: '**',
     component: ErrorRoutingComponent
   }
+
 ];
 
 @NgModule({
