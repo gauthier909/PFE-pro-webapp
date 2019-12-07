@@ -8,7 +8,7 @@ export class Enfant {
     dominance: string;
     scolarite: object;
     contacts: Array<Object>;
-    besoins: Array<String>;
+    besoins: Array<string>;
     professionnel: string;
   }
   

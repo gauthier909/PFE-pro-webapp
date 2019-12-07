@@ -7,6 +7,7 @@ import {ErrorRoutingComponent} from './error-routing/error-routing.component';
 import {AuthGuard} from './auth/auth.guard';
 import {EnfantsComponent} from './enfants/enfants.component';
 import {EnfantDetailComponent} from './enfant-detail/enfant-detail.component'
+import {EnfantAjoutComponent} from './enfant-ajout/enfant-ajout.component'
 
 
 const routes: Routes = [
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'enfants',
     component: EnfantsComponent
+  },
+  {
+    path: 'inscription',
+    component: EnfantAjoutComponent
   },
   {
     path: 'detail/:id',

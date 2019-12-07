@@ -11,11 +11,11 @@
             <input [(ngModel)]="enfant.prenom" placeholder="prenom" />
         </label>
     </div>
-    <div>
+    <!--<div>
         <label>Age
             <input [(ngModel)]="enfant.age" placeholder="age" />
         </label>
-    </div>
+    </div>-->
     <div>
         <label>Date de naissance
             <input [(ngModel)]="enfant.date_naissance" placeholder="Date de naissance" />
@@ -34,34 +34,40 @@
     <div>
         <label>Scolarite
             Type: <input [(ngModel)]="enfant.scolarite.type" placeholder="Type" />
-            Niveau: <input [(ngModel)]="enfant.scolarite.niveau" placeholder="Niveau"/>
+            Niveau: <input [(ngModel)]="enfant.scolarite.niveau" placeholder="Niveau" />
         </label>
     </div>
     <div>
         <label>Contacts
             <ul *ngFor="let contact of enfant.contacts">
-                <input [(ngModel)]="contact.prenom" placeholder="Contacts" /> 
-                <input [(ngModel)]="contact.nom" placeholder="Contacts" />    
+                <input [(ngModel)]="contact.prenom" placeholder="Contacts" />
+                <input [(ngModel)]="contact.nom" placeholder="Contacts" />
             </ul>
             <button (click)="ajouterContact()">Ajouter contact</button>
         </label>
     </div>
-    <div>
+    <div><!-- avoir de base les checkbox a true pour ceux qu'ils a deja -->
+        <!-- ajouter dans l'enfant les trucs qui sont à true -->
         <label>Besoins
-            <ul *ngFor="let besoin of enfant.besoins">
-                <input [(ngModel)]="besoin" placeholder="Besoins" />
+            
+            <ul *ngFor="let besoin of besoins">
+                <div *ngIf="enfant.besoins.indexOf(besoin)!==-1">
+                    <input type='checkBox' checked>{{besoin}}
+                </div>
+                <div *ngIf="enfant.besoins.indexOf(besoin)===-1">
+                    <input type='checkBox'>{{besoin}}
+                </div>
             </ul>
             <button (click)="ajouterBesoin()">Ajouter besoin</button>
         </label>
     </div>
-
     <div>
         <label>Professionnel en charge
-            <input [ngModel]="enfant.professionnel" placeholder="Professionnel en charge" />
+            <input [(ngModel)]="enfant.professionnel" placeholder="Professionnel en charge" />
         </label>
     </div>
     <p><button (click)="modifEnfant()">Sauvegarder les modifications</button>
-           <button (click)="deleteEnfant()">Supprimer l'enfant</button></p>
+        <button (click)="deleteEnfant()">Supprimer l'enfant</button></p>
 
     <p><button (click)="goBack()">Revenir en arrière</button></p>
 </div>
