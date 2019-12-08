@@ -18,9 +18,4 @@ export class EnfantsComponent implements OnInit {
   getEnfants() : void {
    this.enfantService.getEnfants().subscribe(enfants => this.enfants = enfants)
   }
- 
-  delete(enfant : Enfant):void{
-    this.enfants = this.enfants; // todo
-  }
-
 }
