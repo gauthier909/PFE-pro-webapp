@@ -3,16 +3,24 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import {ProfessionelleModule} from './professionelle/professionelle.module';
+import {AuthRoutingModule} from './auth/auth-routing.module';
+
+import { EnfantsComponent } from './enfants/enfants.component';
+import { EnfantDetailComponent } from './enfant-detail/enfant-detail.component';
+import { EnfantAjoutComponent } from './enfant-ajout/enfant-ajout.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ChoixEnfantComponent } from './choix-enfant/choix-enfant.component';
+import { ChannelComponent } from './channel/channel.component';
 import { ErrorRoutingComponent } from './error-routing/error-routing.component';
-import {ProfessionelleModule} from './professionelle/professionelle.module';
-import {AuthRoutingModule} from './auth/auth-routing.module';
-import { EnfantsComponent } from './enfants/enfants.component';
-import { FormsModule } from '@angular/forms';
-import { EnfantDetailComponent } from './enfant-detail/enfant-detail.component';
-import { EnfantAjoutComponent } from './enfant-ajout/enfant-ajout.component';
+
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { GestionProfessionnelComponent } from './gestion-professionnel/gestion-professionnel.component';
+import { PersonneAjoutComponent } from './personne-ajout/personne-ajout.component';
+import { PersonneDetailComponent } from './personne-detail/personne-detail.component';
 
 
 @NgModule({
@@ -21,10 +29,14 @@ import { EnfantAjoutComponent } from './enfant-ajout/enfant-ajout.component';
     HelloWorldComponent,
     UserLoginComponent,
     ChoixEnfantComponent,
+    ChannelComponent,
     ErrorRoutingComponent,
     EnfantsComponent,
     EnfantDetailComponent,
-    EnfantAjoutComponent
+    EnfantAjoutComponent,
+    GestionProfessionnelComponent,
+    PersonneAjoutComponent,
+    PersonneDetailComponent
 
   ],
   imports: [
@@ -33,7 +45,8 @@ import { EnfantAjoutComponent } from './enfant-ajout/enfant-ajout.component';
     ProfessionelleModule,
     AuthRoutingModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

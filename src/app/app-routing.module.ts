@@ -7,6 +7,10 @@ import {ErrorRoutingComponent} from './error-routing/error-routing.component';
 import {AuthGuard} from './auth/auth.guard';
 import {EnfantsComponent} from './enfants/enfants.component';
 import {EnfantDetailComponent} from './enfant-detail/enfant-detail.component'
+import {EnfantAjoutComponent} from './enfant-ajout/enfant-ajout.component'
+import {GestionProfessionnelComponent} from './gestion-professionnel/gestion-professionnel.component'
+import {PersonneAjoutComponent} from './personne-ajout/personne-ajout.component'
+import {PersonneDetailComponent} from './personne-detail/personne-detail.component'
 
 
 const routes: Routes = [
@@ -33,9 +37,26 @@ const routes: Routes = [
     component: EnfantsComponent
   },
   {
+    path: 'inscription',
+    component: EnfantAjoutComponent
+  },
+  {
+    path: 'gestionProfessionnel',
+    component: GestionProfessionnelComponent
+  },
+  {
+    path: 'inscriptionPersonne',
+    component: PersonneAjoutComponent
+  },
+  {
     path: 'detail/:id',
     component: EnfantDetailComponent
   },
+  {
+    path: 'detailPersonne/:id',
+    component: PersonneDetailComponent
+  },
+  
   {
     path: '**',
     component: ErrorRoutingComponent

@@ -1,14 +1,18 @@
 
-<div *ngIf="!isOn">
+<div>
     <form>
         <div>Nom de famille</div>
-        <input type="text" id ="familyName">
+        <input type="text" #childNom >
         <div>Prénom</div>
-        <input type="text" id ="prenom">
+        <input type="text" #childPrenom>
         <div>Date de naissance</div>
-        <input type="date" id ="naissance">
-        <div>Langue</div>
-        <input type="texte" id ="langue">
-        <p><input type="submit" value="valider"></p>
-    </form>
+        <input type="date"  #childBirth>
+        
+        <p><button (click)="add(childNom.value, childPrenom.value, childBirth.value);
+            childNom.value='';
+            childPrenom.value='';
+            childBirth.value=''
+            ">
+            valider</button></p>
+    </form>   
 </div>
