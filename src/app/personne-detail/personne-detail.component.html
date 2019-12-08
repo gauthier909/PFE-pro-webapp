@@ -1,0 +1,43 @@
+<div>
+    <h2>{{personne.nom | uppercase}}</h2>
+    <div>
+        <label>Nom
+            <input [(ngModel)]="personne.nom" placeholder="nom" />
+        </label>
+    </div>
+    <div>
+        <label>Prénom
+            <input [(ngModel)]="personne.prenom" placeholder="prenom" />
+        </label>
+    </div>
+    <div>
+        <label>Mot de passe
+            <input [(ngModel)]="personne.password" placeholder="mot de passe" />
+        </label>
+    </div>
+    <div>
+        <label>Profession
+            <input [(ngModel)]="personne.profession" placeholder="profession" />
+        </label>
+    </div>
+    <div>
+        <label>Telephone
+            <input [(ngModel)]="personne.telephone" placeholder="telephone" />
+        </label>
+    </div>
+    <div>
+        <label>E-mail
+            <input [(ngModel)]="personne.email" placeholder="email" />
+        </label>
+    </div>
+    <div>
+        <label>Rôle
+            <input [(ngModel)]="personne.role" placeholder="role" />
+        </label>
+    </div>
+
+    <p><button (click)="updatePersonne()">Sauvegarder les modifications</button>
+        <button (click)="deletePersonne()">Supprimer la personne</button></p>
+
+    <p><button (click)="goBack()">Revenir en arrière</button></p>
+</div>

@@ -13,11 +13,14 @@ import { EnfantAjoutComponent } from './enfant-ajout/enfant-ajout.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ChoixEnfantComponent } from './choix-enfant/choix-enfant.component';
+import { ChannelComponent } from './channel/channel.component';
 import { ErrorRoutingComponent } from './error-routing/error-routing.component';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { GestionProfessionnelComponent } from './gestion-professionnel/gestion-professionnel.component';
+import { PersonneAjoutComponent } from './personne-ajout/personne-ajout.component';
+import { PersonneDetailComponent } from './personne-detail/personne-detail.component';
 
 
 @NgModule({
@@ -26,11 +29,14 @@ import { GestionProfessionnelComponent } from './gestion-professionnel/gestion-p
     HelloWorldComponent,
     UserLoginComponent,
     ChoixEnfantComponent,
+    ChannelComponent,
     ErrorRoutingComponent,
     EnfantsComponent,
     EnfantDetailComponent,
     EnfantAjoutComponent,
-    GestionProfessionnelComponent
+    GestionProfessionnelComponent,
+    PersonneAjoutComponent,
+    PersonneDetailComponent
 
   ],
   imports: [

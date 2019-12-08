@@ -1,0 +1,29 @@
+<div>
+    <form>
+        <div>Nom de famille</div>
+        <input type="text" #nom >
+        <div>Prénom</div>
+        <input type="text" #prenom>
+        <div>Mot de passe</div>
+        <input type="text" #pswd >
+        <div>Profession</div>
+        <input type="text" #prof >
+        <div>Telephone</div>
+        <input type="text" #tel >
+        <div>E-mail</div>
+        <input type="text" #email >
+        <div>Rôle</div>
+        <input type="text" #role >
+        
+        <p><button (click)="add(nom.value, prenom.value, pswd.value, prof.value, tel.value, email.value, role.value);
+            nom.value ='';
+            prenom.value='';
+            pswd.value='';
+            prof.value='';
+            tel.value=''; 
+            email.value=''; 
+            role.value='';
+            ">
+            Valider</button></p>
+    </form>   
+</div>

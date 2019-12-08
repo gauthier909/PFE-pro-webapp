@@ -11,11 +11,10 @@ import { Enfant } from '../enfants/enfant';
   styleUrls: ['./enfant-ajout.component.css']
 })
 export class EnfantAjoutComponent implements OnInit {
-  isOn : boolean
+  
   constructor(private route: ActivatedRoute,
     private enfantService: EnfantService,
     private location: Location) {
-    this.isOn = false;
    }
 
   ngOnInit() {

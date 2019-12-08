@@ -6,6 +6,7 @@ import { User } from '../user';
 import {decode} from 'punycode';
 
 @Component({
+  selector: 'app-user-login',
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.css']
 })

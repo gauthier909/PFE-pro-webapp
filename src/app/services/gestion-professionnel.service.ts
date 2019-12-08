@@ -27,6 +27,45 @@ export class GestionProfessionnelService {
     return this.personnes
   }
 
+  // add personne to DB
+  addPersonne (personne: Personne): Observable<Personne> {
+    return this.http.post<Personne>(this.personnesUrl, personne, this.httpOptions).pipe(
+      tap((newPersonne: Personne) => console.log(`added personne w/ id=${newPersonne._id}`)),
+      catchError(this.handleError<Personne>('addPersonne'))
+    );
+  }
+
+  getPersonne(id: string): Observable<Personne>{
+    console.log('test from gestion service')
+    const url = `${this.personnesUrl}/${id}`;
+    return this.http.get<Personne>(url).pipe(
+      tap(_ => console.log(`fetched personne id=${id}`)),
+      catchError(this.handleError<Personne>(`getPersonne id=${id}`))
+    );
+  }
+
+  //update personne in DB
+  updatePersonne(personne : Personne): Observable<any>{
+    const url = `${this.personnesUrl}/${personne._id}`;
+    console.log("On veut update",personne._id)
+
+    return this.http.put(url,personne, this.httpOptions).pipe(
+      tap(_ => console.log(`updated personne with id id=${personne._id}`)),
+      catchError(this.handleError<any>('updatePersonne'))
+    );
+  }
+
+  //delete personne in DB
+  deletePersonne(personne : Personne): Observable<Personne>{
+    console.log("On veut delete",personne._id);
+
+    const url = `${this.personnesUrl}/${personne._id}`;
+    return this.http.delete<Personne>(url, this.httpOptions).pipe(
+      tap(_ => console.log(`deleted personne id=${personne._id}`)),
+      catchError(this.handleError<Personne>('deletePersonne'))
+    );
+  }
+
 
 
 
