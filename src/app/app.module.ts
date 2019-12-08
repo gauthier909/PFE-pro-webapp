@@ -23,6 +23,7 @@ import { PersonneAjoutComponent } from './personne-ajout/personne-ajout.componen
 import { PersonneDetailComponent } from './personne-detail/personne-detail.component';
 import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
 import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
+import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { PersonneRechercheComponent } from './personne-recherche/personne-recher
     PersonneAjoutComponent,
     PersonneDetailComponent,
     EnfantRechercheComponent,
-    PersonneRechercheComponent
+    PersonneRechercheComponent,
+    FiltresGestionComponent
 
   ],
   imports: [
