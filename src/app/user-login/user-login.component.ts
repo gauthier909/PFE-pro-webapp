@@ -17,7 +17,7 @@ export class UserLoginComponent implements OnInit {
   token;
   submitted = false;
   onSubmit() {
-    let jason = {user: this.user, password: this.password}
+    let jason = {email: this.user, password: this.password}
     fetch('http://localhost:8080/auth/login',{
       method: 'POST',
       body: JSON.stringify(jason)
