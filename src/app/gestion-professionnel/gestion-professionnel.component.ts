@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {GestionProfessionnelService} from '../services/gestion-professionnel.service'
 import {Personne} from './personne'
 
+
 @Component({
   selector: 'app-gestion-professionnel',
   templateUrl: './gestion-professionnel.component.html',
@@ -11,7 +12,10 @@ export class GestionProfessionnelComponent implements OnInit {
 
   personnes: Personne[];
 
-  constructor(private gestionProService : GestionProfessionnelService) { }
+  constructor(
+    private gestionProService : GestionProfessionnelService,
+    
+    ) { }
 
   ngOnInit() {
     this.getPersonnes();

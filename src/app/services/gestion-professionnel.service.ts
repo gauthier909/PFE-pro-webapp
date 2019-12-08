@@ -34,7 +34,7 @@ export class GestionProfessionnelService {
       catchError(this.handleError<Personne>('addPersonne'))
     );
   }
-
+ // get personne from ID
   getPersonne(id: string): Observable<Personne>{
     console.log('test from gestion service')
     const url = `${this.personnesUrl}/${id}`;

@@ -12,8 +12,14 @@
         <input type="text" #tel >
         <div>E-mail</div>
         <input type="text" #email >
-        <div>Rôle</div>
-        <input type="text" #role >
+        
+        <div>
+            <label>Rôle
+                <select #role>
+                    <option *ngFor='let rol of roles' [value]="rol"  >{{rol}}</option>
+                </select>
+            </label>
+        </div>
         
         <p><button (click)="add(nom.value, prenom.value, pswd.value, prof.value, tel.value, email.value, role.value);
             nom.value ='';
@@ -22,7 +28,7 @@
             prof.value='';
             tel.value=''; 
             email.value=''; 
-            role.value='';
+            
             ">
             Valider</button></p>
     </form>   

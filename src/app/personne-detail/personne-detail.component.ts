@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router'
 
 import {GestionProfessionnelService} from '../services/gestion-professionnel.service'
 import {Personne} from '../gestion-professionnel/personne'
+import {RoleService} from '../services/role.service'
 
 @Component({
   selector: 'app-personne-detail',
@@ -12,11 +13,22 @@ import {Personne} from '../gestion-professionnel/personne'
 })
 export class PersonneDetailComponent implements OnInit {
   personne: Personne;
-
-  constructor(private route: ActivatedRoute,private gestionProService:GestionProfessionnelService, private location:Location) { }
+  roles: string[];
+  constructor(
+    private route: ActivatedRoute,
+    private gestionProService:GestionProfessionnelService, 
+    private location:Location,
+    private roleService : RoleService
+    ) { }
 
   ngOnInit() {
     this.getPersonne();
+    this.getRoles();
+  }
+
+  getRoles():void{
+    this.roleService.getRoles().subscribe(roles => this.roles = roles)
+    console.log(this.roles);
   }
 
   getPersonne():void{
