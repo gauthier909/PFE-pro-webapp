@@ -14,6 +14,8 @@ import {RoleService} from '../services/role.service'
 export class PersonneDetailComponent implements OnInit {
   personne: Personne;
   roles: string[];
+  
+
   constructor(
     private route: ActivatedRoute,
     private gestionProService:GestionProfessionnelService, 
