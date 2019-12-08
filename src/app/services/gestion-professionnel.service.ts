@@ -44,6 +44,23 @@ export class GestionProfessionnelService {
     );
   }
 
+  
+  /* GET person whose name contains search term */
+  searchPersonne(term: string): Observable<Personne[]> {
+    if (!term.trim()) {
+      // if not search term, return empty enfant array.
+      return of([]);
+    }
+    console.log(term);
+    const url = `${this.personnesUrl}/nom/${term}`;
+    return this.http.get<Personne[]>(url).pipe(
+      tap(_ => console.log(`found Personne matching "${term}"`)),
+      catchError(this.handleError<Personne[]>('searchPersonne from name', []))
+    );
+    
+  }
+
+
   //update personne in DB
   updatePersonne(personne : Personne): Observable<any>{
     const url = `${this.personnesUrl}/${personne._id}`;

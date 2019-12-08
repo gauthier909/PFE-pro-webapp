@@ -22,6 +22,7 @@ import { GestionProfessionnelComponent } from './gestion-professionnel/gestion-p
 import { PersonneAjoutComponent } from './personne-ajout/personne-ajout.component';
 import { PersonneDetailComponent } from './personne-detail/personne-detail.component';
 import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
+import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.co
     GestionProfessionnelComponent,
     PersonneAjoutComponent,
     PersonneDetailComponent,
-    EnfantRechercheComponent
+    EnfantRechercheComponent,
+    PersonneRechercheComponent
 
   ],
   imports: [
