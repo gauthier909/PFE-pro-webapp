@@ -49,16 +49,14 @@
     <div><!-- avoir de base les checkbox a true pour ceux qu'ils a deja -->
         <!-- ajouter dans l'enfant les trucs qui sont à true -->
         <label>Besoins
-            
             <ul *ngFor="let besoin of besoins">
-                <div *ngIf="enfant.besoins.indexOf(besoin)!==-1">
-                    <input type='checkBox' checked>{{besoin}}
-                </div>
-                <div *ngIf="enfant.besoins.indexOf(besoin)===-1">
-                    <input type='checkBox'>{{besoin}}
-                </div>
+                <input type='checkbox' 
+                        name="besoins" 
+                        value="{{besoin}}" 
+                        [checked]="enfant.besoins.indexOf(besoin)>=0" 
+                        >
+                {{besoin}}
             </ul>
-            <button (click)="ajouterBesoin()">Ajouter besoin</button>
         </label>
     </div>
     <div>
