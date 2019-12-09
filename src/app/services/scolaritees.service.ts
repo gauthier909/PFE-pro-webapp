@@ -1,28 +1,25 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { tap, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BesoinsService {
-  private besoinsUrl = 'http://localhost:8080/besoins';
+export class ScolariteesService {
+  private scolariteesUrl = 'http://localhost:8080/scolaritees';
 
-  private besoins : Observable<string[]>;
+  private scolaritees : Observable<string[]>;
  
   constructor(private http: HttpClient ) { }
 
-  getBesoins(): Observable<string[]>{
-    this.besoins = this.http.get<string[]>(this.besoinsUrl)
+  getScolaritees(): Observable<string[]>{
+    this.scolaritees = this.http.get<string[]>(this.scolariteesUrl)
     .pipe(
-      tap(_ => console.log('fetched besoins')),
-      catchError(this.handleError<string[]>('getBesoins', []))
+      tap(_ => console.log('fetched scolaritees')),
+      catchError(this.handleError<string[]>('getScolaritees', []))
     );
-    return this.besoins;
-
-    
+    return this.scolaritees;
   }
 
   private handleError<T> (operation = 'operation', result?: T) {
@@ -38,5 +35,4 @@ export class BesoinsService {
       return of(result as T);
     };
   }
-
 }

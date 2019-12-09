@@ -1,6 +1,11 @@
 <h2>Les Enfants</h2>
-<h3>Ces enfants ne sont pas des mocks, ils viennent de notre DB !</h3>
-<h4>Cliquer sur un enfant pour en voir les détails</h4>
+
+
+
+
+<app-enfant-recherche></app-enfant-recherche>
+
+<h4>Cliquez sur un enfant pour en voir les détails</h4>
 <ul class="enfants">
   <li *ngFor="let enfant of enfants" >
     <a routerLink="/detail/{{enfant._id}}">
@@ -9,5 +14,11 @@
   </li>
 </ul>
 
+
+
+
+
 <a routerLink="/inscription">Inscrire un enfant</a>
+
+
 

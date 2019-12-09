@@ -20,7 +20,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { GestionProfessionnelComponent } from './gestion-professionnel/gestion-professionnel.component';
 import { PersonneAjoutComponent } from './personne-ajout/personne-ajout.component';
+<<<<<<< HEAD
 import { JeuSelectEnfantComponent } from './jeu-select-enfant/jeu-select-enfant.component';
+=======
+import { PersonneDetailComponent } from './personne-detail/personne-detail.component';
+import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
+import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
+import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.component';
+>>>>>>> 6ad302cf0de0f2b626abfd1af93da14bf008874b
 
 
 @NgModule({
@@ -36,7 +43,14 @@ import { JeuSelectEnfantComponent } from './jeu-select-enfant/jeu-select-enfant.
     EnfantAjoutComponent,
     GestionProfessionnelComponent,
     PersonneAjoutComponent,
+<<<<<<< HEAD
     JeuSelectEnfantComponent
+=======
+    PersonneDetailComponent,
+    EnfantRechercheComponent,
+    PersonneRechercheComponent,
+    FiltresGestionComponent
+>>>>>>> 6ad302cf0de0f2b626abfd1af93da14bf008874b
 
   ],
   imports: [

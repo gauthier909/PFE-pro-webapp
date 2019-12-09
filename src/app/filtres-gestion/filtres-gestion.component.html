@@ -1,0 +1,16 @@
+<h2>Voici les filtres</h2>
+
+<button (click)="ajouterFiltre()">Ajouter un filtre</button>
+
+<form *ngFor='let filtre of filtres'>
+    <div>
+        <label>Filtre 
+            <select #Filtre>
+                <option *ngFor='let filtre of filtres' [value]="filtre"  >{{filtre.filtrePositif}} - {{filtre.filtreNegatif}}</option>
+            </select>
+        </label>
+    </div>
+    <button (click)="supprimerFiltre()">Supprimer ce filtre</button>
+</form>
+
+<button (click)="sauvegarderFiltre()">Sauvegarder les filtres</button>

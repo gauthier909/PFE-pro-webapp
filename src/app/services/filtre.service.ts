@@ -4,27 +4,30 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
+import { Filtre } from '../filtres-gestion/filtre'
+
 @Injectable({
   providedIn: 'root'
 })
-export class BesoinsService {
-  private besoinsUrl = 'http://localhost:8080/besoins';
+export class FiltreService {
 
-  private besoins : Observable<string[]>;
- 
-  constructor(private http: HttpClient ) { }
+  private filtresUrl = 'http://localhost:8080/filtres';
+  private filtres : Observable<Filtre[]>;
 
-  getBesoins(): Observable<string[]>{
-    this.besoins = this.http.get<string[]>(this.besoinsUrl)
+  constructor(private http: HttpClient) { }
+
+
+  // Return tout les filtres
+  getFiltres(): Observable<Filtre[]>{
+    this.filtres = this.http.get<Filtre[]>(this.filtresUrl)
     .pipe(
       tap(_ => console.log('fetched besoins')),
-      catchError(this.handleError<string[]>('getBesoins', []))
+      catchError(this.handleError<Filtre[]>('getFiltres', []))
     );
-    return this.besoins;
+    return this.filtres;
 
     
   }
-
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
   

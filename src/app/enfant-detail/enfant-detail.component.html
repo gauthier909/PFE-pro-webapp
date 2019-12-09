@@ -11,14 +11,9 @@
             <input [(ngModel)]="enfant.prenom" placeholder="prenom" />
         </label>
     </div>
-    <!--<div>
-        <label>Age
-            <input [(ngModel)]="enfant.age" placeholder="age" />
-        </label>
-    </div>-->
     <div>
         <label>Date de naissance
-            <input [(ngModel)]="enfant.date_naissance" placeholder="Date de naissance" />
+            <input type="date" [(ngModel)]="enfant.date_naissance" placeholder="Date de naissance" />
         </label>
     </div>
     <div>
@@ -28,37 +23,76 @@
     </div>
     <div>
         <label>Dominance
-            <input [(ngModel)]="enfant.dominance" placeholder="Dominance" />
+            <select [(ngModel)]='enfant.dominance'>
+                <option *ngFor='let dom of dominances' [value]="dom">{{dom}}</option>
+            </select>
         </label>
     </div>
     <div>
         <label>Scolarite
-            Type: <input [(ngModel)]="enfant.scolarite.type" placeholder="Type" />
+            <select [(ngModel)]='enfant.scolarite.enseignement' name='enseignement'>
+                <option *ngFor='let scolarite of scolaritees' [value]="scolarite">{{scolarite}}</option>
+            </select>
+
+            <p *ngIf="enfant.scolarite.enseignement == 'integration' || enfant.scolarite.enseignement == 'specialise'">
+                Type: <input [(ngModel)]="enfant.scolarite.type" placeholder="Type" />
+            </p>
             Niveau: <input [(ngModel)]="enfant.scolarite.niveau" placeholder="Niveau" />
         </label>
     </div>
-    <div>
+    <div class="container mt-3">
         <label>Contacts
-            <ul *ngFor="let contact of enfant.contacts">
-                <input [(ngModel)]="contact.prenom" placeholder="Contacts" />
-                <input [(ngModel)]="contact.nom" placeholder="Contacts" />
-            </ul>
-            <button (click)="ajouterContact()">Ajouter contact</button>
+            <div *ngFor="let contact of enfant.contacts; let i=index" name="info_contact">
+                Contact n° : {{i+1}}
+
+                <label>Prenom</label>
+                <input [(ngModel)]="contact.prenom" placeholder="Contacts" name="prenom" />
+
+                <label>Nom</label>
+                <input [(ngModel)]="contact.nom" placeholder="Contacts" name="nom" />
+
+                <label>Telephone</label>
+                <input type="tel" [(ngModel)]="contact.telephone" name="telephone">
+
+                <label>Email</label>
+                <input type="email" [(ngModel)]="contact.email" name="email">
+
+                <label>Role</label>
+                <select [(ngModel)]='contact.relation' name='relation_contact'>
+                    <option *ngFor='let relation of relations' [value]='relation'>{{relation}}</option>
+                </select>
+                <span class="btn btn-danger" (click)="supprimerContact(i)">Supprimer</span>
+            </div>
         </label>
     </div>
-    <div><!-- avoir de base les checkbox a true pour ceux qu'ils a deja -->
-        <!-- ajouter dans l'enfant les trucs qui sont à true -->
+    <div class="container mt-3">
+            <div *ngFor="let obj of dataarray; let i=index"  name="info_contact_plus">
+                <label>Prenom</label>
+                <input [(ngModel)]="obj.prenom" placeholder="Contacts" name="prenom{{i}}" />
+
+                <label>Nom</label>
+                <input [(ngModel)]="obj.nom" placeholder="Contacts" name="nom{{i}}" />
+
+                <label>Telephone</label>
+                <input type="tel" [(ngModel)]="obj.telephone" name="telephone{{i}}">
+
+                <label>Email</label>
+                <input type="email" [(ngModel)]="obj.email" name="email{{i}}">
+
+                <label>Role</label>
+                <select name='relation_contact'>
+                    <option *ngFor='let relation of relations' [value]='relation'>{{relation}}</option>
+                </select>
+                <span class="btn btn-danger" (click)="supprimerChamp(i)">Supprimer</span>
+            </div>
+            <span class="btn btn-primary" (click)="ajouterContact()">Ajouter contact</span>
+    </div>
+    <div>
         <label>Besoins
-            
             <ul *ngFor="let besoin of besoins">
-                <div *ngIf="enfant.besoins.indexOf(besoin)!==-1">
-                    <input type='checkBox' checked>{{besoin}}
-                </div>
-                <div *ngIf="enfant.besoins.indexOf(besoin)===-1">
-                    <input type='checkBox'>{{besoin}}
-                </div>
+                <input type='checkbox' name="besoins" value="{{besoin}}" [checked]="enfant.besoins.indexOf(besoin)>=0">
+                {{besoin}}
             </ul>
-            <button (click)="ajouterBesoin()">Ajouter besoin</button>
         </label>
     </div>
     <div>
