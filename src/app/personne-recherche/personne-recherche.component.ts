@@ -4,8 +4,8 @@ import {
   debounceTime, distinctUntilChanged, switchMap
 } from 'rxjs/operators';
 
-import { Personne } from '../gestion-professionnel/personne'
-import { GestionProfessionnelService } from '../services/gestion-professionnel.service'
+import { Personne } from '../../classes/personne'
+import { GestionProfessionnelService } from '../../services/gestion-professionnel.service'
 
 @Component({
   selector: 'app-personne-recherche',

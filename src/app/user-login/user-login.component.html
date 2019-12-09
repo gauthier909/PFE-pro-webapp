@@ -1,4 +1,4 @@
-<div class="container" *ngIf="authservice.isLoggedIn==false" >
+<div class="container" *ngIf="!authservice.isLoggedIn&&!authservice.isResponssible&&!authservice.isAdmin&&!authservice.isParent" >
   <h1>Entrez login</h1>
 
   <div class="form-group" ngS>
@@ -10,6 +10,6 @@
   <button (click)="onSubmit()"   class="button">login</button>
 
 </div>
-<div class="container" *ngIf="authservice.isLoggedIn">
+<div class="container" *ngIf="authservice.isLoggedIn||authservice.isResponssible||authservice.isParent||authservice.isAdmin">
   <button (click)="logout()" >logout</button>
 </div>

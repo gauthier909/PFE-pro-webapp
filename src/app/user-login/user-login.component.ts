@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router, NavigationExtras} from '@angular/router';
 import {AuthService} from '../auth/auth.service';
 import {Input} from "@angular/core";
-import { User } from '../user';
+import { User } from '../../classes/user';
 import {decode} from 'punycode';
 
 @Component({
@@ -18,7 +18,10 @@ export class UserLoginComponent implements OnInit {
   token;
   submitted = false;
   onSubmit() {
-    let jason = {user: this.user, password: this.password}
+    console.log("test billy")
+    this.login();
+    /*
+    let jason = {email: this.user, password: this.password}
     fetch('http://localhost:8080/auth/login',{
       method: 'POST',
       body: JSON.stringify(jason)
@@ -35,7 +38,7 @@ export class UserLoginComponent implements OnInit {
       .catch(err => {
         console.error("Error :", err)
 
-      });
+      });*/
   }
   onSetLogin(){
     this.user= (event.target as HTMLInputElement).value;
@@ -45,8 +48,11 @@ export class UserLoginComponent implements OnInit {
     this.password=(event.target as HTMLInputElement).value;
   }
     login() {
-     this.authservice.login().subscribe(() => {
-        if (this.authservice.isLoggedIn) {
+    if(this.user === 'billy' ) {
+      this.authservice.loginResponsible().subscribe(() => {
+        console.log('this is billy')
+        if (this.authservice.isResponssible) {
+          console.log("estResponssible")
           //let redirect = this.authservice.redirectUrl ? this.router.parseUrl(this.authservice.redirectUrl) : '/professionel';
 
           let navigationExras: NavigationExtras = {
@@ -54,9 +60,48 @@ export class UserLoginComponent implements OnInit {
             preserveFragment: true
           };
 
-          this.router.navigate(['professionel'], navigationExras);
+          this.router.navigate(['responsable'], navigationExras);
         }
       });
+    }if (this.user === 'bob') {
+        this.authservice.loginParent().subscribe(() => {
+            if (this.authservice.isParent) {
+              console.log("parentredirect");
+              let navigationExras: NavigationExtras = {
+                queryParamsHandling: 'preserve',
+                preserveFragment: true
+              };
+
+              this.router.navigate(['parent'], navigationExras);
+            }
+          }
+
+        );
+      } if (this.user === 'shark') {
+        this.authservice.loginAdmin().subscribe(() => {
+            if (this.authservice.isAdmin) {
+              console.log("adminredirect");
+              let navigationExras: NavigationExtras = {
+                queryParamsHandling: 'preserve',
+                preserveFragment: true
+              };
+
+              this.router.navigate(['admin'], navigationExras);
+            }
+          }
+
+        );
+      }if(this.user === "cahuette"){
+          this.authservice.loginProfesionel().subscribe(() =>{
+            let navigationExras: NavigationExtras = {
+              queryParamsHandling: 'preserve',
+              preserveFragment: true
+            };
+
+            this.router.navigate(['professionel'], navigationExras);
+          });
+      }
+      console.log(this.authservice.isResponssible+"  est tu vrais ?");
     }
     logout(){
        this.authservice.logout();

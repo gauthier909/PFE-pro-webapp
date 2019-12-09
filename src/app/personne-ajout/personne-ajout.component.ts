@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { Location } from '@angular/common';
 
-import {RoleService} from '../services/role.service'
-import {Personne} from '../gestion-professionnel/personne'
-import {GestionProfessionnelService} from '../services/gestion-professionnel.service'
+import {ListeDonneesService} from '../../services/liste-donnees.service'
+import {Personne} from '../../classes/personne'
+import {GestionProfessionnelService} from '../../services/gestion-professionnel.service'
 @Component({
   selector: 'app-personne-ajout',
   templateUrl: './personne-ajout.component.html',
@@ -12,16 +12,18 @@ import {GestionProfessionnelService} from '../services/gestion-professionnel.ser
 })
 export class PersonneAjoutComponent implements OnInit {
   roles: string[];
+  professions: string[];
   
 
   constructor(
     private gestionProService: GestionProfessionnelService,
     private location: Location,
-    private roleService : RoleService
+    private listeDonneesServices : ListeDonneesService
     ) { }
 
   ngOnInit() {
     this.getRoles();
+    this.getProfessions();
   }
 
   add(password:string,nom: string, prenom: string, profession:string,telephone:string,email:string,role:string): void {
@@ -39,9 +41,14 @@ export class PersonneAjoutComponent implements OnInit {
   }
   
   getRoles():void{
-    this.roleService.getRoles().subscribe(roles => this.roles = roles)
+    this.listeDonneesServices.getRoles().subscribe(roles => this.roles = roles)
     console.log(this.roles);
   }
+  getProfessions():void{
+    this.listeDonneesServices.getProfessions().subscribe(professions => this.professions = professions)
+    console.log(this.professions);
+  }
+
 
   goBack(): void{
     this.location.back();

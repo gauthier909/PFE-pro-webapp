@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router'
 
-import {GestionProfessionnelService} from '../services/gestion-professionnel.service'
-import {Personne} from '../gestion-professionnel/personne'
-import {RoleService} from '../services/role.service'
+import {GestionProfessionnelService} from '../../services/gestion-professionnel.service'
+import {Personne} from '../../classes/personne'
+import {ListeDonneesService} from '../../services/liste-donnees.service'
 
 @Component({
   selector: 'app-personne-detail',
@@ -14,22 +14,28 @@ import {RoleService} from '../services/role.service'
 export class PersonneDetailComponent implements OnInit {
   personne: Personne;
   roles: string[];
+  professions: string[];
   
 
   constructor(
     private route: ActivatedRoute,
     private gestionProService:GestionProfessionnelService, 
     private location:Location,
-    private roleService : RoleService
+    private listeDonneesService : ListeDonneesService
     ) { }
 
   ngOnInit() {
     this.getPersonne();
     this.getRoles();
+    this.getProfessions();
   }
 
+  getProfessions():void{
+    this.listeDonneesService.getProfessions().subscribe(professions => this.professions = professions)
+    console.log(this.professions);
+  }
   getRoles():void{
-    this.roleService.getRoles().subscribe(roles => this.roles = roles)
+    this.listeDonneesService.getRoles().subscribe(roles => this.roles = roles)
     console.log(this.roles);
   }
 
