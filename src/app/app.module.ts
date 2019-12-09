@@ -20,6 +20,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { GestionProfessionnelComponent } from './gestion-professionnel/gestion-professionnel.component';
 import { PersonneAjoutComponent } from './personne-ajout/personne-ajout.component';
+import { JeuSelectEnfantComponent } from './jeu-select-enfant/jeu-select-enfant.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { PersonneAjoutComponent } from './personne-ajout/personne-ajout.componen
     EnfantDetailComponent,
     EnfantAjoutComponent,
     GestionProfessionnelComponent,
-    PersonneAjoutComponent
+    PersonneAjoutComponent,
+    JeuSelectEnfantComponent
 
   ],
   imports: [
