@@ -1,56 +1,80 @@
-<div>
+<div class="container-fluid">
     <form>
-        <div>
-            <label>Nom de famille</label>
-            <input type="text" #childNom>
-        </div>
-        <div>
-            <label>Prénom</label>
-            <input type="text" #childPrenom>
-        </div>
-        <div>
-            <label>Date de naissance</label>
-            <input type="date" #childBirth>
-        </div>
-        <div>
-            <label>Langue usuelle</label>
-            <input type="text" #langueUsuelle>
-        </div>
-        <div>
-            <label>Dominance</label>
-            <select name="dominance" #dominance>
-                <option *ngFor="let dom of dominances" [value]="dom">{{dom}}</option>
-            </select>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="nomFamille">Nom de famille : </label>
+                <div class="col-sm-10">
+                    <input type="text" #childNom class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Prénom : </label>
+                <div class="col-sm-10">
+                    <input type="text" #childPrenom class="form-control">
+                </div>
+            </div>
         </div>
 
-        <div>
-            <label>Scolarite
-                <select name='enseignement' [(ngModel)]='selectedEnseignement' #enseignement>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Date de naissance : </label>
+                <div class="col-sm-10">
+                    <input type="date" #childBirth class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Langue usuelle : </label>
+                <div class="col-sm-10">
+                    <input type="text" #langueUsuelle class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Dominance : </label>
+                <div class="col-sm-10">
+                    <select name="dominance" #dominance class="browser-default custom-select">
+                        <option *ngFor="let dom of dominances" [value]="dom">{{dom}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Scolarite :</label>
+                <select name='enseignement' class="browser-default custom-select" [(ngModel)]='selectedEnseignement'
+                    #enseignement>
                     <option *ngFor='let scolarite of scolaritees' [value]="scolarite">{{scolarite}}</option>
                 </select>
-                <div *ngIf="selectedEnseignement == 'integration' || selectedEnseignement == 'specialise'">
-                    Type: <input type="text" #typeEnseignement [(ngModel)]="typeE" name="type" placeholder="Type"/>
+                <div class="form-group col-sm-10">
+                    <div *ngIf="selectedEnseignement == 'integration' || selectedEnseignement == 'specialise'">
+                        Type : <input type="text" #typeEnseignement [(ngModel)]="typeE" name="type" placeholder="Type"
+                            class="form-control" />
+                    </div>
+                    Niveau : <input type="text" #niveauScolaire placeholder="Niveau" class="form-control" />
                 </div>
-                Niveau: <input type="text" #niveauScolaire placeholder="Niveau" />
-            </label>
+            </div>
         </div>
 
-        <div class="container mt-3">
+        <div class="form-row">
             <div *ngFor="let obj of dataarray; let i=index" name="info_contact_plus">
-                <label>Prenom</label>
-                <input [(ngModel)]="obj.prenom" placeholder="Contacts" name="prenom{{i}}" />
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Prenom : </label>
+                        <input [(ngModel)]="obj.prenom" placeholder="Contacts" name="prenom{{i}}" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Nom : </label>
+                        <input [(ngModel)]="obj.nom" placeholder="Contacts" name="nom{{i}}" class="form-control" />
+                    </div>
+                </div>
+                <label>Telephone : </label>
+                <input type="tel" [(ngModel)]="obj.telephone" name="telephone{{i}}" class="form-control">
 
-                <label>Nom</label>
-                <input [(ngModel)]="obj.nom" placeholder="Contacts" name="nom{{i}}" />
+                <label>Email : </label>
+                <input type="email" [(ngModel)]="obj.email" name="email{{i}}" class="form-control">
 
-                <label>Telephone</label>
-                <input type="tel" [(ngModel)]="obj.telephone" name="telephone{{i}}">
-
-                <label>Email</label>
-                <input type="email" [(ngModel)]="obj.email" name="email{{i}}">
-
-                <label>Relation</label>
-                <select name='relation_contact' [(ngModel)]="obj.relation">
+                <label>Relation : </label>
+                <select name='relation_contact' class="browser-default custom-select" [(ngModel)]="obj.relation">
                     <option *ngFor='let relation of relations' [value]='relation'>{{relation}}</option>
                 </select>
                 <div *ngIf="i!=0">
@@ -58,39 +82,45 @@
                     <span class="btn btn-danger" (click)="supprimerChamp(i)">Supprimer</span>
 
                 </div>
+                <span class="btn btn-primary" (click)="ajouterContact()">Ajouter contact</span>
             </div>
-            <span class="btn btn-primary" (click)="ajouterContact()">Ajouter contact</span>
+            
         </div>
 
         <div>
-            <label>Besoins
-                <select name="besoinsChoisis" [(ngModel)]='selectedBesoins' #mult multiple>
-                    <option *ngFor="let besoin of besoins" [value]="besoin" (click)='clicked($event)'>{{besoin}}</option>
+            <label>Besoins :
+                <select name="besoinsChoisis" class="browser-default custom-select" [(ngModel)]='selectedBesoins' #mult
+                    multiple>
+                    <option *ngFor="let besoin of besoins" [value]="besoin" (click)='clicked($event)'>{{besoin}}
+                    </option>
                 </select>
-            
-                <div *ngIf="selectedBesoins.indexOf('Autre')>=0">
-                    Autre : <input type="text" [(ngModel)]="autreBesoin" name="a" #autre>
+
+                <div *ngIf="selectedBesoins.indexOf('Autre')>=0" class="form-group col-sm-10">
+                    Autre : <input type="text" [(ngModel)]="autreBesoin" name="a" #autre class="form-control">
                 </div>
             </label>
         </div>
 
         <div>
-           Professionnel : <input type="text" #professionnel />
-            
+            Professionnel : <input type="text" #professionnel class="form-control" placeholder="Dr. Jean.." />
+
         </div>
+        <br>
+        <!--add(nom: string, prenom: string, date_naissance: Date, langue_usuelle:string,
+                dominance:string,scolarite=Scolarite,contacts:Array<Object>,besoins:Array<string>,professionnel:string)-->
+        <button class="btn btn-primary" (click)="add(childNom.value, childPrenom.value, childBirth.value,langueUsuelle.value,dominance.value,
+                    enseignement.value,niveauScolaire.value,professionnel.value);
+                        childNom.value='';
+                        childPrenom.value='';
+                        childBirth.value='';
+            
+                        ">
+            Inscrire</button>
+        <br>
 
-<!--add(nom: string, prenom: string, date_naissance: Date, langue_usuelle:string,
-    dominance:string,scolarite=Scolarite,contacts:Array<Object>,besoins:Array<string>,professionnel:string)-->
-        <button (click)="add(childNom.value, childPrenom.value, childBirth.value,langueUsuelle.value,dominance.value,
-        enseignement.value,niveauScolaire.value,professionnel.value);
-            childNom.value='';
-            childPrenom.value='';
-            childBirth.value='';
-
-            ">
-                Inscrire</button>
     </form>
     <!--,dominance.value,
             enseignement.value,type.value,niveauScolaire.value,
             mult.value,professionnel.value,autre.value-->
 </div>
+<br>
