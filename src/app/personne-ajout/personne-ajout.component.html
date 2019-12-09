@@ -23,11 +23,17 @@
         
         <div>
             <label>Rôle
-                <select #role>
-                    <option *ngFor='let rol of roles' [value]="rol"  >{{rol}}</option>
+                <select #role (change)="formParent(role.value)">
+                    <option  *ngFor='let rol of roles' [value]="rol"  >{{rol}}</option>
                 </select>
             </label>
         </div>
+
+        <form *ngIf="isParent">
+            <p>Veuillez sélectionner l'enfant</p>
+            <app-enfant-parent-recherche (messageEvent)="recevoirIdEnfant($event)"></app-enfant-parent-recherche>
+            <!--<p>id: {{idEnfantParent}}</p>-->
+        </form>
         
         <p><button (click)="add(nom.value, prenom.value, pswd.value, prof.value, tel.value, email.value, role.value);
             nom.value ='';

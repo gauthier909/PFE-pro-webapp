@@ -9,5 +9,6 @@ export class Personne {
     telephone: string;
     email: string;
     role: string;
+    idEnfant:string;
     filtres: [Filtre];
   }

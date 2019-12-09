@@ -16,7 +16,7 @@
         
     </form>
 -->
-<form>
+<form class="lesFiltres">
         <div id='filtre0'>
             <label>Filtre 
                 <select #filtre0 (change)="changeFiltre0(filtre0.value)">
@@ -47,9 +47,8 @@
                     </label>
                     <button (click)="supprimerFiltre2()">Supprimer ce filtre</button>
             </div>
-        
-    </form>
-<button (click)="ajouterFiltre()">Ajouter un filtre</button>
+</form>
+<!--<button (click)="ajouterFiltre()">Ajouter un filtre</button>-->
 <p>
     <button (click)="lancerPartie()">Lancer la partie</button>
 </p>
