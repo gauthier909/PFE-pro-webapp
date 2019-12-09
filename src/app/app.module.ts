@@ -10,7 +10,6 @@ import {AuthRoutingModule} from './auth/auth-routing.module';
 import { EnfantsComponent } from './enfants/enfants.component';
 import { EnfantDetailComponent } from './enfant-detail/enfant-detail.component';
 import { EnfantAjoutComponent } from './enfant-ajout/enfant-ajout.component';
-import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ChoixEnfantComponent } from './choix-enfant/choix-enfant.component';
 import { ChannelComponent } from './channel/channel.component';
@@ -39,7 +38,6 @@ import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.compo
 @NgModule({
   declarations: [
     AppComponent,
-    HelloWorldComponent,
     UserLoginComponent,
     ChoixEnfantComponent,
     ChannelComponent,
