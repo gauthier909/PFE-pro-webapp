@@ -3,13 +3,13 @@ import { ActivatedRoute } from '@angular/router'
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
-import { EnfantService } from '../services/enfant.service'
-import { BesoinsService } from '../services/besoins.service'
-import { DominanceService } from '../services/dominance.service'
-import { Enfant } from '../enfants/enfant'
+import { EnfantService } from '../../services/enfant.service'
+import { BesoinsService } from '../../services/besoins.service'
+import { DominanceService } from '../../services/dominance.service'
+import { Enfant } from '../../classes/enfant'
 import { Observable } from 'rxjs';
-import { ScolariteesService } from '../services/scolaritees.service';
-import { RelationsService } from '../services/relations.service';
+import { ScolariteesService } from '../../services/scolaritees.service';
+import { RelationsService } from '../../services/relations.service';
 
 @Component({
   selector: 'app-enfant-detail',

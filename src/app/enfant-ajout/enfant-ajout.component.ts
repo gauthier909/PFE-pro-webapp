@@ -2,16 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router'
 
-import {EnfantService} from '../services/enfant.service'
-import { Enfant } from '../enfants/enfant';
-import { DominanceService } from '../services/dominance.service';
-import { ScolariteesService } from '../services/scolaritees.service';
-import { RelationsService } from '../services/relations.service';
-import { BesoinsService } from '../services/besoins.service';
-import { Scolarite } from './scolarite';
-import { Personne } from '../gestion-professionnel/personne';
-import { BOOL_TYPE } from '@angular/compiler/src/output/output_ast';
+
+import { DominanceService } from '../../services/dominance.service';
+import { ScolariteesService } from '../../services/scolaritees.service';
+import { RelationsService } from '../../services/relations.service';
+import { BesoinsService } from '../../services/besoins.service';
+
 import { Contact } from './contact';
+import {EnfantService} from '../../services/enfant.service'
+import { Enfant } from '../../classes/enfant';
 
 @Component({
   selector: 'app-enfant-ajout',
@@ -55,11 +54,6 @@ export class EnfantAjoutComponent implements OnInit {
   
   supprimerChamp(index){
     this.dataarray.splice(index);
-  }
-  clicked(event){
-    console.log(this.selectedBesoins);
-    console.log(event);
-    
   }
 
   ajouterContact(){

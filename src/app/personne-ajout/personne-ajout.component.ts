@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { Location } from '@angular/common';
 
-import {RoleService} from '../services/role.service'
-import {Personne} from '../gestion-professionnel/personne'
-import {GestionProfessionnelService} from '../services/gestion-professionnel.service'
+import {RoleService} from '../../services/role.service'
+import {Personne} from '../../classes/personne'
+import {GestionProfessionnelService} from '../../services/gestion-professionnel.service'
 @Component({
   selector: 'app-personne-ajout',
   templateUrl: './personne-ajout.component.html',

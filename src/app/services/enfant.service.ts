@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 //import { ENFANTS } from '../../mocks/mock-enfants';
-import { Enfant } from '../enfants/enfant';
+import { Enfant } from '../../classes/enfant';
 
 @Injectable({
   providedIn: 'root'

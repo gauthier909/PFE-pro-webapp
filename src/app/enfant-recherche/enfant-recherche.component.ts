@@ -4,8 +4,8 @@ import {
   debounceTime, distinctUntilChanged, switchMap
 } from 'rxjs/operators';
 
-import { Enfant } from '../enfants/enfant'
-import { EnfantService } from '../services/enfant.service'
+import { Enfant } from '../../classes/enfant'
+import { EnfantService } from '../../services/enfant.service'
 
 @Component({
   selector: 'app-enfant-recherche',
