@@ -4,12 +4,11 @@ import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 
 import { EnfantService } from '../../services/enfant.service'
-import { BesoinsService } from '../../services/besoins.service'
-import { DominanceService } from '../../services/dominance.service'
 import { Enfant } from '../../classes/enfant'
 import { Observable } from 'rxjs';
-import { ScolariteesService } from '../../services/scolaritees.service';
-import { RelationsService } from '../../services/relations.service';
+
+
+import {ListeDonneesService} from '../../services/liste-donnees.service'
 
 @Component({
   selector: 'app-enfant-detail',
@@ -29,10 +28,7 @@ export class EnfantDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private enfantService: EnfantService,
     private location: Location,
-    private besoinService: BesoinsService,
-    private dominancesSevice: DominanceService,
-    private scolariteesService: ScolariteesService,
-    private relationsService: RelationsService
+    private listeDonneesService : ListeDonneesService,
   ) { }
 
   ngOnInit() {
@@ -63,14 +59,14 @@ export class EnfantDetailComponent implements OnInit {
   }
 
   getRelations() {
-    this.relationsService.getRelations().subscribe(relations => this.relations = relations);
+    this.listeDonneesService.getRelations().subscribe(relations => this.relations = relations);
   }
   getScolaritees() {
-    this.scolariteesService.getScolaritees().subscribe(scolaritees => this.scolaritees = scolaritees);
+    this.listeDonneesService.getScolaritees().subscribe(scolaritees => this.scolaritees = scolaritees);
   }
 
   getDominances() {
-    this.dominancesSevice.getBesoins().subscribe(dominances => this.dominances = dominances);
+    this.listeDonneesService.getDominances().subscribe(dominances => this.dominances = dominances);
   }
 
   getEnfant(): void {
@@ -98,7 +94,7 @@ export class EnfantDetailComponent implements OnInit {
     this.enfantService.updateEnfant(this.enfant).subscribe(() => this.goBack());
   }
   getBesoins(): void {
-    this.besoinService.getBesoins().subscribe(besoins => this.besoins = besoins)
+    this.listeDonneesService.getBesoins().subscribe(besoins => this.besoins = besoins)
   }
 
   deleteEnfant(): void {

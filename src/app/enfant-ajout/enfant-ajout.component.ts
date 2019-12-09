@@ -2,13 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router'
 
-
-import { DominanceService } from '../../services/dominance.service';
-import { ScolariteesService } from '../../services/scolaritees.service';
-import { RelationsService } from '../../services/relations.service';
-import { BesoinsService } from '../../services/besoins.service';
-
-import { Contact } from './contact';
+import {ListeDonneesService} from '../../services/liste-donnees.service'
+import { Contact } from '../../classes/contact';
 import {EnfantService} from '../../services/enfant.service'
 import { Enfant } from '../../classes/enfant';
 
@@ -34,11 +29,9 @@ export class EnfantAjoutComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private enfantService: EnfantService,
-    private dominancesService:DominanceService,
-    private scolariteesService:ScolariteesService,
-    private relationsService:RelationsService,
-    private besoinService:BesoinsService,
-    private location: Location) {
+    private listeDonneesServices:ListeDonneesService,
+    private location: Location
+    ) {
    }
 
   ngOnInit() {
@@ -66,18 +59,18 @@ export class EnfantAjoutComponent implements OnInit {
   }
 
   getRelations() {
-    this.relationsService.getRelations().subscribe(relations => this.relations = relations);
+    this.listeDonneesServices.getRelations().subscribe(relations => this.relations = relations);
   }
   getScolaritees() {
-    this.scolariteesService.getScolaritees().subscribe(scolaritees => this.scolaritees = scolaritees);
+    this.listeDonneesServices.getScolaritees().subscribe(scolaritees => this.scolaritees = scolaritees);
   }
 
   getBesoins(): void {
-    this.besoinService.getBesoins().subscribe(besoins => this.besoins = besoins)
+    this.listeDonneesServices.getBesoins().subscribe(besoins => this.besoins = besoins)
   }
 
   getDominances(){
-    this.dominancesService.getBesoins().subscribe(dominances=>this.dominances=dominances);
+    this.listeDonneesServices.getDominances().subscribe(dominances=>this.dominances=dominances);
   }
 
 

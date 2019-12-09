@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router'
 
 import {GestionProfessionnelService} from '../../services/gestion-professionnel.service'
 import {Personne} from '../../classes/personne'
-import {RoleService} from '../../services/role.service'
+import {ListeDonneesService} from '../../services/liste-donnees.service'
 
 @Component({
   selector: 'app-personne-detail',
@@ -20,7 +20,7 @@ export class PersonneDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private gestionProService:GestionProfessionnelService, 
     private location:Location,
-    private roleService : RoleService
+    private listeDonneesService : ListeDonneesService
     ) { }
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class PersonneDetailComponent implements OnInit {
   }
 
   getRoles():void{
-    this.roleService.getRoles().subscribe(roles => this.roles = roles)
+    this.listeDonneesService.getRoles().subscribe(roles => this.roles = roles)
     console.log(this.roles);
   }
 

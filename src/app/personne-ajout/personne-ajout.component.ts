@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Location } from '@angular/common';
 
-import {RoleService} from '../../services/role.service'
+import {ListeDonneesService} from '../../services/liste-donnees.service'
 import {Personne} from '../../classes/personne'
 import {GestionProfessionnelService} from '../../services/gestion-professionnel.service'
 @Component({
@@ -12,12 +12,13 @@ import {GestionProfessionnelService} from '../../services/gestion-professionnel.
 })
 export class PersonneAjoutComponent implements OnInit {
   roles: string[];
+  professions: string[];
   
 
   constructor(
     private gestionProService: GestionProfessionnelService,
     private location: Location,
-    private roleService : RoleService
+    private listeDonneesServices : ListeDonneesService
     ) { }
 
   ngOnInit() {
@@ -39,7 +40,7 @@ export class PersonneAjoutComponent implements OnInit {
   }
   
   getRoles():void{
-    this.roleService.getRoles().subscribe(roles => this.roles = roles)
+    this.listeDonneesServices.getRoles().subscribe(roles => this.roles = roles)
     console.log(this.roles);
   }
 
