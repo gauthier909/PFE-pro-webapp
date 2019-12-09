@@ -7,20 +7,20 @@ import { catchError, map, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class BesoinsService {
-  private besoinsUrl = 'http://localhost:8080/besoins';
+export class RoleService {
+  private roleUrl = 'http://localhost:8080/roles';
 
-  private besoins : Observable<string[]>;
- 
+  private roles : Observable<string[]>;
   constructor(private http: HttpClient ) { }
 
-  getBesoins(): Observable<string[]>{
-    this.besoins = this.http.get<string[]>(this.besoinsUrl)
+
+  getRoles(): Observable<string[]>{
+    this.roles = this.http.get<string[]>(this.roleUrl)
     .pipe(
-      tap(_ => console.log('fetched besoins')),
-      catchError(this.handleError<string[]>('getBesoins', []))
+      tap(_ => console.log('fetched roles')),
+      catchError(this.handleError<string[]>('getRoles', []))
     );
-    return this.besoins;
+    return this.roles;
 
     
   }
@@ -38,5 +38,4 @@ export class BesoinsService {
       return of(result as T);
     };
   }
-
 }

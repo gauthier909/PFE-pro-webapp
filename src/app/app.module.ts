@@ -21,6 +21,9 @@ import { environment } from '../environments/environment';
 import { GestionProfessionnelComponent } from './gestion-professionnel/gestion-professionnel.component';
 import { PersonneAjoutComponent } from './personne-ajout/personne-ajout.component';
 import { PersonneDetailComponent } from './personne-detail/personne-detail.component';
+import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
+import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
+import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import { PersonneDetailComponent } from './personne-detail/personne-detail.compo
     EnfantAjoutComponent,
     GestionProfessionnelComponent,
     PersonneAjoutComponent,
-    PersonneDetailComponent
+    PersonneDetailComponent,
+    EnfantRechercheComponent,
+    PersonneRechercheComponent,
+    FiltresGestionComponent
 
   ],
   imports: [

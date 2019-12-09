@@ -32,16 +32,6 @@ export class EnfantService {
     return this.enfants;
   }
 
-  // Get children with ID
-  getEnfant(id: string): Observable<Enfant>{
-    //return of(ENFANTS.find(enfant => enfant._id === id));
-    const url = `${this.enfantsUrl}/${id}`;
-    console.log(id);
-    return this.http.get<Enfant>(url).pipe(
-      tap(_ => console.log(`fetched hero id=${id}`)),
-      catchError(this.handleError<Enfant>(`getEnfant id=${id}`))
-    );
-  }
   
   // Update children with ID
   updateEnfant(enfant : Enfant): Observable<any>{
@@ -71,6 +61,32 @@ export class EnfantService {
       tap((newEnfant: Enfant) => console.log(`added enfant w/ id=${newEnfant._id}`)),
       catchError(this.handleError<Enfant>('addEnfant'))
     );
+  }
+  // Get children with ID
+  getEnfant(id: string): Observable<Enfant>{
+    //return of(ENFANTS.find(enfant => enfant._id === id));
+    const url = `${this.enfantsUrl}/${id}`;
+    console.log(id);
+    return this.http.get<Enfant>(url).pipe(
+      tap(_ => console.log(`fetched hero id=${id}`)),
+      catchError(this.handleError<Enfant>(`getEnfant id=${id}`))
+    );
+  }
+
+
+  /* GET enfant whose name contains search term */
+  searchEnfant(term: string): Observable<Enfant[]> {
+    if (!term.trim()) {
+      // if not search term, return empty enfant array.
+      return of([]);
+    }
+    console.log(term);
+    const url = `${this.enfantsUrl}/nom/${term}`;
+    return this.http.get<Enfant[]>(url).pipe(
+      tap(_ => console.log(`found enfants matching "${term}"`)),
+      catchError(this.handleError<Enfant[]>('searchEnfant', []))
+    );
+    
   }
 
 

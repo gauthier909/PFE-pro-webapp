@@ -1,28 +1,25 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BesoinsService {
-  private besoinsUrl = 'http://localhost:8080/besoins';
+export class RelationsService {
+  private relationsUrl = 'http://localhost:8080/relations';
 
-  private besoins : Observable<string[]>;
+  private relations : Observable<string[]>;
  
   constructor(private http: HttpClient ) { }
 
-  getBesoins(): Observable<string[]>{
-    this.besoins = this.http.get<string[]>(this.besoinsUrl)
+  getRelations(): Observable<string[]>{
+    this.relations = this.http.get<string[]>(this.relationsUrl)
     .pipe(
-      tap(_ => console.log('fetched besoins')),
-      catchError(this.handleError<string[]>('getBesoins', []))
+      tap(_ => console.log('fetch relations')),
+      catchError(this.handleError<string[]>('get relations', []))
     );
-    return this.besoins;
-
-    
+    return this.relations;
   }
 
   private handleError<T> (operation = 'operation', result?: T) {
@@ -38,5 +35,4 @@ export class BesoinsService {
       return of(result as T);
     };
   }
-
 }

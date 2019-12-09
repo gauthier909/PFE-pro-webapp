@@ -32,10 +32,11 @@
     </div>
     <div>
         <label>Rôle
-            <input [(ngModel)]="personne.role" placeholder="role" />
+            <select [(ngModel)]="personne.role" #role>
+                <option *ngFor='let rol of roles' [value]="rol"  >{{rol}}</option>
+            </select>
         </label>
     </div>
-
     <p><button (click)="updatePersonne()">Sauvegarder les modifications</button>
         <button (click)="deletePersonne()">Supprimer la personne</button></p>
 
