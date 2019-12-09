@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router'
 
-import {EnfantService} from '../services/enfant.service'
-import { Enfant } from '../enfants/enfant';
+import {EnfantService} from '../../services/enfant.service'
+import { Enfant } from '../../classes/enfant';
 
 @Component({
   selector: 'app-enfant-ajout',

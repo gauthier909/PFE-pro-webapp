@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FiltreService } from './services/filtre.service';
+import { DominanceService } from '../../services/dominance.service';
 
-describe('FiltreService', () => {
+describe('DominanceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: FiltreService = TestBed.get(FiltreService);
+    const service: DominanceService = TestBed.get(DominanceService);
     expect(service).toBeTruthy();
   });
 });

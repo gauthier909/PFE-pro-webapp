@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router, NavigationExtras} from '@angular/router';
 import {AuthService} from '../auth/auth.service';
 import {Input} from "@angular/core";
-import { User } from '../user';
+import { User } from '../../classes/user';
 import {decode} from 'punycode';
 
 @Component({

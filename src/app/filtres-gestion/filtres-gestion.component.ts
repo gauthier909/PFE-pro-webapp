@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Renderer } from '@angular/core';
-import { Filtre } from './filtre'
-import {FiltreService } from '../services/filtre.service'
+import { Filtre } from '../../classes/filtre'
+import {FiltreService } from '../../services/filtre.service'
 
 @Component({
   selector: 'app-filtres-gestion',

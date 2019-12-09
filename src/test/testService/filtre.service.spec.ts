@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RelationsService } from './services/relations.service';
+import { FiltreService } from '../../services/filtre.service';
 
-describe('RelationsService', () => {
+describe('FiltreService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RelationsService = TestBed.get(RelationsService);
+    const service: FiltreService = TestBed.get(FiltreService);
     expect(service).toBeTruthy();
   });
 });

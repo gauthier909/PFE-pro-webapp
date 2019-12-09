@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EnfantRechercheComponent } from './enfant-recherche.component';
-
+import { EnfantRechercheComponent } from '../../app/enfant-recherche/enfant-recherche.component';
 describe('EnfantRechercheComponent', () => {
   let component: EnfantRechercheComponent;
   let fixture: ComponentFixture<EnfantRechercheComponent>;

@@ -1,4 +1,4 @@
-import { Filtre } from '../filtres-gestion/filtre'
+import { Filtre } from './filtre'
 
 export class Personne {
     _id: string;

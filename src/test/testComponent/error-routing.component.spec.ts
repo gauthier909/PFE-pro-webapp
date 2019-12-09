@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EnfantAjoutComponent } from './enfant-ajout.component';
+import { ErrorRoutingComponent } from '../../app/error-routing/error-routing.component';
 
-describe('EnfantAjoutComponent', () => {
-  let component: EnfantAjoutComponent;
-  let fixture: ComponentFixture<EnfantAjoutComponent>;
+describe('ErrorRoutingComponent', () => {
+  let component: ErrorRoutingComponent;
+  let fixture: ComponentFixture<ErrorRoutingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EnfantAjoutComponent ]
+      declarations: [ ErrorRoutingComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EnfantAjoutComponent);
+    fixture = TestBed.createComponent(ErrorRoutingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

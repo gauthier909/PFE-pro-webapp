@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DominanceService } from './services/dominance.service';
+import { RelationsService } from '../../services/relations.service';
 
-describe('DominanceService', () => {
+describe('RelationsService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: DominanceService = TestBed.get(DominanceService);
+    const service: RelationsService = TestBed.get(RelationsService);
     expect(service).toBeTruthy();
   });
 });

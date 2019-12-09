@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router'
 
-import {GestionProfessionnelService} from '../services/gestion-professionnel.service'
-import {Personne} from '../gestion-professionnel/personne'
-import {RoleService} from '../services/role.service'
+import {GestionProfessionnelService} from '../../services/gestion-professionnel.service'
+import {Personne} from '../../classes/personne'
+import {RoleService} from '../../services/role.service'
 
 @Component({
   selector: 'app-personne-detail',
