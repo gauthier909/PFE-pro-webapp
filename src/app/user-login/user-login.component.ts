@@ -18,6 +18,9 @@ export class UserLoginComponent implements OnInit {
   token;
   submitted = false;
   onSubmit() {
+    console.log("test billy")
+    this.login();
+    /*
     let jason = {email: this.user, password: this.password}
     fetch('http://localhost:8080/auth/login',{
       method: 'POST',
@@ -35,7 +38,7 @@ export class UserLoginComponent implements OnInit {
       .catch(err => {
         console.error("Error :", err)
 
-      });
+      });*/
   }
   onSetLogin(){
     this.user= (event.target as HTMLInputElement).value;
@@ -45,7 +48,52 @@ export class UserLoginComponent implements OnInit {
     this.password=(event.target as HTMLInputElement).value;
   }
     login() {
+    if(this.user === 'billy' ) {
+      this.authservice.loginResponsible().subscribe(() => {
+        console.log('this is billy')
+        if (this.authservice.isResponssible) {
+          console.log("estResponssible")
+          //let redirect = this.authservice.redirectUrl ? this.router.parseUrl(this.authservice.redirectUrl) : '/professionel';
+
+          let navigationExras: NavigationExtras = {
+            queryParamsHandling: 'preserve',
+            preserveFragment: true
+          };
+
+          this.router.navigate(['responsable'], navigationExras);
+        }
+      });
+    }if (this.user === 'bob') {
+        this.authservice.loginParent().subscribe(() => {
+            if (this.authservice.isParent) {
+              console.log("parentredirect");
+              let navigationExras: NavigationExtras = {
+                queryParamsHandling: 'preserve',
+                preserveFragment: true
+              };
+
+              this.router.navigate(['parent'], navigationExras);
+            }
+          }
+
+        );
+      } if (this.user === 'shark') {
+        this.authservice.loginAdmin().subscribe(() => {
+            if (this.authservice.isAdmin) {
+              console.log("adminredirect");
+              let navigationExras: NavigationExtras = {
+                queryParamsHandling: 'preserve',
+                preserveFragment: true
+              };
+
+              this.router.navigate(['admin'], navigationExras);
+            }
+          }
+
+        );
+      }if('boom'){
      this.authservice.login().subscribe(() => {
+       console.log("i go there ?");
         if (this.authservice.isLoggedIn) {
           //let redirect = this.authservice.redirectUrl ? this.router.parseUrl(this.authservice.redirectUrl) : '/professionel';
 
@@ -56,7 +104,7 @@ export class UserLoginComponent implements OnInit {
 
           this.router.navigate(['professionel'], navigationExras);
         }
-      });
+      });}
     }
     logout(){
        this.authservice.logout();
