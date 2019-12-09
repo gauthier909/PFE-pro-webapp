@@ -1,3 +1,5 @@
+import { Filtre } from '../filtres-gestion/filtre'
+
 export class Personne {
     _id: string;
     password: string;
@@ -7,4 +9,5 @@ export class Personne {
     telephone: string;
     email: string;
     role: string;
+    filtres: [Filtre];
   }

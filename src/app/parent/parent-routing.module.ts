@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {ParentComponent} from './parent/parent.component';
 import {AuthGuardP} from '../auth/parentauth.guard';
 import {EnfantDetailComponent} from '../enfant-detail/enfant-detail.component';
+import {HelloWorldComponent} from '../hello-world/hello-world.component';
 
 const parentroutes: Routes =[
   {
@@ -14,7 +15,7 @@ const parentroutes: Routes =[
       canActivateChild: [AuthGuardP],
       children:[
       {
-        path: '', component: EnfantDetailComponent
+        path: 'hello', component: HelloWorldComponent
       }
     ]}
     ]

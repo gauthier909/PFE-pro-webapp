@@ -91,20 +91,17 @@ export class UserLoginComponent implements OnInit {
           }
 
         );
-      }if('boom'){
-     this.authservice.login().subscribe(() => {
-       console.log("i go there ?");
-        if (this.authservice.isLoggedIn) {
-          //let redirect = this.authservice.redirectUrl ? this.router.parseUrl(this.authservice.redirectUrl) : '/professionel';
+      }if(this.user === "cahuette"){
+          this.authservice.loginProfesionel().subscribe(() =>{
+            let navigationExras: NavigationExtras = {
+              queryParamsHandling: 'preserve',
+              preserveFragment: true
+            };
 
-          let navigationExras: NavigationExtras = {
-            queryParamsHandling: 'preserve',
-            preserveFragment: true
-          };
-
-          this.router.navigate(['professionel'], navigationExras);
-        }
-      });}
+            this.router.navigate(['professionel'], navigationExras);
+          });
+      }
+      console.log(this.authservice.isResponssible+"  est tu vrais ?");
     }
     logout(){
        this.authservice.logout();

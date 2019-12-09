@@ -11,7 +11,8 @@ export class AuthService {
   isResponssible = false;
   isParent = false;
   redirectUrl: string;
-  login(): Observable<boolean> {
+  loginProfesionel(): Observable<boolean> {
+    console.log("wuuuuuuuut");
     return of(true).pipe(
       delay(1000),
       tap(val => this.isLoggedIn = true)
@@ -20,7 +21,8 @@ export class AuthService {
   loginAdmin(): Observable<boolean> {
     return of(true).pipe(
       delay(1000),
-      tap( val => this.isAdmin = true)
+      tap( val =>
+        this.isAdmin = true)
     );
   }
   loginResponsible(): Observable<boolean>{

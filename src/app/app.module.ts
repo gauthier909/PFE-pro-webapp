@@ -30,6 +30,9 @@ import {ParentModule} from './parent/parent.module';
 import {ResponsableModule} from './responsable/responsable.module';
 import { AdminComponent } from './admin/admin/admin.component';
 import {AdminModule} from './admin/admin.module';
+import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
+import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
+import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.component';
 
 
 
@@ -47,7 +50,11 @@ import {AdminModule} from './admin/admin.module';
     GestionProfessionnelComponent,
     PersonneAjoutComponent,
     PersonneDetailComponent,
-    ParentComponent
+    ParentComponent,
+    EnfantRechercheComponent,
+    PersonneRechercheComponent,
+    FiltresGestionComponent
+
 
   ],
   imports: [

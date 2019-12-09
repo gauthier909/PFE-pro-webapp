@@ -34,7 +34,7 @@ export class GestionProfessionnelService {
       catchError(this.handleError<Personne>('addPersonne'))
     );
   }
-
+ // get personne from ID
   getPersonne(id: string): Observable<Personne>{
     console.log('test from gestion service')
     const url = `${this.personnesUrl}/${id}`;
@@ -43,6 +43,23 @@ export class GestionProfessionnelService {
       catchError(this.handleError<Personne>(`getPersonne id=${id}`))
     );
   }
+
+  
+  /* GET person whose name contains search term */
+  searchPersonne(term: string): Observable<Personne[]> {
+    if (!term.trim()) {
+      // if not search term, return empty enfant array.
+      return of([]);
+    }
+    console.log(term);
+    const url = `${this.personnesUrl}/nom/${term}`;
+    return this.http.get<Personne[]>(url).pipe(
+      tap(_ => console.log(`found Personne matching "${term}"`)),
+      catchError(this.handleError<Personne[]>('searchPersonne from name', []))
+    );
+    
+  }
+
 
   //update personne in DB
   updatePersonne(personne : Personne): Observable<any>{

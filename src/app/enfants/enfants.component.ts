@@ -3,6 +3,7 @@ import {Enfant } from './enfant'
 //import {ENFANTS} from '../../mocks/mock-enfants'
 import {EnfantService} from '../services/enfant.service'
 
+
 @Component({
   selector: 'app-enfants',
   templateUrl: './enfants.component.html',
@@ -18,9 +19,4 @@ export class EnfantsComponent implements OnInit {
   getEnfants() : void {
    this.enfantService.getEnfants().subscribe(enfants => this.enfants = enfants)
   }
- 
-  delete(enfant : Enfant):void{
-    this.enfants = this.enfants; // todo
-  }
-
 }
