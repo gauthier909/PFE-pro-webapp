@@ -1,8 +1,7 @@
 export class Enfant {
-    _id: string;
+    _id: number;
     nom: string;
     prenom: string;
-    age : number;
     date_naissance: Date;
     langue_usuelle: string;
     dominance: string;
