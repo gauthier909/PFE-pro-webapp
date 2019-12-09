@@ -49,7 +49,7 @@
                 <label>Email</label>
                 <input type="email" [(ngModel)]="obj.email" name="email{{i}}">
 
-                <label>Role</label>
+                <label>Relation</label>
                 <select name='relation_contact' [(ngModel)]="obj.relation">
                     <option *ngFor='let relation of relations' [value]='relation'>{{relation}}</option>
                 </select>

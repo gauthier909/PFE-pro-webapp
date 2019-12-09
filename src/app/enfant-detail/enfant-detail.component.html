@@ -57,7 +57,7 @@
                 <label>Email</label>
                 <input type="email" [(ngModel)]="contact.email" name="email">
 
-                <label>Role</label>
+                <label>Relation</label>
                 <select [(ngModel)]='contact.relation' name='relation_contact'>
                     <option *ngFor='let relation of relations' [value]='relation'>{{relation}}</option>
                 </select>

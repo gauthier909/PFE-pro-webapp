@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Renderer } from '@angular/core';
 import { Filtre } from '../../classes/filtre'
-import {FiltreService } from '../../services/filtre.service'
+import {ListeDonneesService} from '../../services/liste-donnees.service'
 
 @Component({
   selector: 'app-filtres-gestion',
@@ -12,18 +12,21 @@ export class FiltresGestionComponent implements OnInit {
   filtres: Filtre[];
   fitresFinal:Filtre[];
  
-  constructor(private filtreService : FiltreService ,private renderer: Renderer) { }
+  constructor(
+    private listeDonneesService : ListeDonneesService,
+    private renderer: Renderer
+    ) { }
 
   ngOnInit() {
     this.getFiltres();
   }
 
   getFiltres() : void {
-    this.filtreService.getFiltres().subscribe(filtres =>{
+    this.listeDonneesService.getFiltres().subscribe(filtres =>{
       this.filtres = filtres
       //console.log(filtres)
     })
-    this.filtreService.getFiltres().subscribe(filtres =>{
+    this.listeDonneesService.getFiltres().subscribe(filtres =>{
       this.fitresFinal = filtres
       //console.log(filtres)
     })
