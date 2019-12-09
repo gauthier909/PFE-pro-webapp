@@ -13,21 +13,18 @@ import { EnfantAjoutComponent } from './enfant-ajout/enfant-ajout.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ChoixEnfantComponent } from './choix-enfant/choix-enfant.component';
-import { ChannelComponent } from './channel/channel.component';
+import { ChannelComponent } from './jeu-partie/channel.component';
 import { ErrorRoutingComponent } from './error-routing/error-routing.component';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { GestionProfessionnelComponent } from './gestion-professionnel/gestion-professionnel.component';
 import { PersonneAjoutComponent } from './personne-ajout/personne-ajout.component';
-<<<<<<< HEAD
 import { JeuSelectEnfantComponent } from './jeu-select-enfant/jeu-select-enfant.component';
-=======
 import { PersonneDetailComponent } from './personne-detail/personne-detail.component';
 import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
 import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
 import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.component';
->>>>>>> 6ad302cf0de0f2b626abfd1af93da14bf008874b
 
 
 @NgModule({
@@ -43,14 +40,11 @@ import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.compo
     EnfantAjoutComponent,
     GestionProfessionnelComponent,
     PersonneAjoutComponent,
-<<<<<<< HEAD
-    JeuSelectEnfantComponent
-=======
+    JeuSelectEnfantComponent,
     PersonneDetailComponent,
     EnfantRechercheComponent,
     PersonneRechercheComponent,
     FiltresGestionComponent
->>>>>>> 6ad302cf0de0f2b626abfd1af93da14bf008874b
 
   ],
   imports: [
