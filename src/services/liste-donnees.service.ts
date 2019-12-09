@@ -94,6 +94,8 @@ export class ListeDonneesService {
 
     
   }
+
+  // Return toutes les dominances de la db
   getDominances(): Observable<string[]>{
     console.log("On veut demander les dominances")
     const dominancesUrl = `${this.urlBase}/dominances`;
