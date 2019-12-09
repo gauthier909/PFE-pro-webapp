@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Renderer } from '@angular/core';
 import { Filtre } from './filtre'
 import {FiltreService } from '../services/filtre.service'
 
@@ -11,7 +12,7 @@ export class FiltresGestionComponent implements OnInit {
   filtres: Filtre[];
   fitresFinal:Filtre[];
  
-  constructor(private filtreService : FiltreService ) { }
+  constructor(private filtreService : FiltreService ,private renderer: Renderer) { }
 
   ngOnInit() {
     this.getFiltres();
@@ -28,11 +29,24 @@ export class FiltresGestionComponent implements OnInit {
     })
    }
 
-  supprimerFiltre(){
-
-    this.filtres.pop();
-  
-   }
+  supprimerFiltre0(){
+    let element = (document.getElementById('filtre0'))
+    console.log(element)
+    element.remove()
+    this.fitresFinal.splice(0,1)
+  }
+  supprimerFiltre1(){
+    let element = (document.getElementById('filtre1'))
+    console.log(element)
+    element.remove()
+    this.fitresFinal.splice(1,1)
+  }
+  supprimerFiltre2(){
+    let element = (document.getElementById('filtre2'))
+    console.log(element)
+    element.remove()
+    this.fitresFinal.splice(2,1)
+  }
 
    filtreParDefaut(){
      this.getFiltres()
@@ -58,6 +72,7 @@ export class FiltresGestionComponent implements OnInit {
    
    
    changeFiltre1(value){
+     console.log(this.fitresFinal)
     var splitted = value.split("-")
     let filtre:Filtre={
       filtrePositif:splitted[0],
