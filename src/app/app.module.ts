@@ -4,7 +4,6 @@ import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import {ProfessionelleModule} from './professionelle/professionelle.module';
 import {AuthRoutingModule} from './auth/auth-routing.module';
 
 import { EnfantsComponent } from './enfants/enfants.component';
@@ -21,15 +20,9 @@ import { environment } from '../environments/environment';
 import { GestionProfessionnelComponent } from './gestion-professionnel/gestion-professionnel.component';
 import { PersonneAjoutComponent } from './personne-ajout/personne-ajout.component';
 import { PersonneDetailComponent } from './personne-detail/personne-detail.component';
-import { ResponsableComponent } from './responsable/responsable/responsable.component';
 
-import { ParentComponent } from './parent/parent/parent.component';
-import {ParentRoutingModule} from './parent/parent-routing.module';
-import {ResponsableRoutingModule} from './responsable/responsable-routing.module';
-import {ParentModule} from './parent/parent.module';
-import {ResponsableModule} from './responsable/responsable.module';
-import { AdminComponent } from './admin/admin/admin.component';
-import {AdminModule} from './admin/admin.module';
+
+
 import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
 import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
 import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.component';
@@ -51,7 +44,6 @@ import { EnfantParentRechercheComponent } from './enfant-parent-recherche/enfant
     GestionProfessionnelComponent,
     PersonneAjoutComponent,
     PersonneDetailComponent,
-    ParentComponent,
     EnfantRechercheComponent,
     PersonneRechercheComponent,
     FiltresGestionComponent,
@@ -62,10 +54,6 @@ import { EnfantParentRechercheComponent } from './enfant-parent-recherche/enfant
   imports: [
     BrowserModule,
     HttpClientModule,
-    ResponsableModule,
-    ParentRoutingModule,
-    AdminModule,
-    ProfessionelleModule,
     AuthRoutingModule,
     AppRoutingModule,
     FormsModule,
