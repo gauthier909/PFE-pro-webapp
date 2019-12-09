@@ -23,6 +23,7 @@ export class PersonneAjoutComponent implements OnInit {
 
   ngOnInit() {
     this.getRoles();
+    this.getProfessions();
   }
 
   add(password:string,nom: string, prenom: string, profession:string,telephone:string,email:string,role:string): void {
@@ -43,6 +44,11 @@ export class PersonneAjoutComponent implements OnInit {
     this.listeDonneesServices.getRoles().subscribe(roles => this.roles = roles)
     console.log(this.roles);
   }
+  getProfessions():void{
+    this.listeDonneesServices.getProfessions().subscribe(professions => this.professions = professions)
+    console.log(this.professions);
+  }
+
 
   goBack(): void{
     this.location.back();

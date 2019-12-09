@@ -6,8 +6,16 @@
         <input type="text" #prenom>
         <div>Mot de passe</div>
         <input type="text" #pswd >
-        <div>Profession</div>
-        <input type="text" #prof >
+       
+           
+        <div>
+            <label>Profession
+                <select #prof>
+                    <option *ngFor='let prof of professions' [value]="prof"  >{{prof}}</option>
+                </select>
+            </label>
+        </div>
+        
         <div>Telephone</div>
         <input type="text" #tel >
         <div>E-mail</div>
