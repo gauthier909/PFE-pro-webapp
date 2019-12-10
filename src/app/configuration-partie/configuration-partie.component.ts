@@ -1,6 +1,7 @@
 import { Component, OnInit, Renderer } from '@angular/core';
 import { ListeDonneesService } from 'src/services/liste-donnees.service';
 import { Filtre } from 'src/classes/filtre';
+import { Demandeur } from 'src/classes/demandeur';
 
 @Component({
   selector: 'app-configuration-partie',
@@ -12,14 +13,29 @@ export class ConfigurationPartieComponent implements OnInit {
   filtres: Filtre[];
   fitresFinal:Filtre[];
 
+  demandeurs:string[];
+  selectedDemandeur:string;
+
   constructor(
     private listeDonneesService : ListeDonneesService,
     private renderer: Renderer
   ) { }
 
   ngOnInit() {
+    this.selectedDemandeur='professionnel';
     this.getFiltres();
+    this.getDemandeurs();
   }
+  getDemandeurs():void{
+    this.listeDonneesService.getDemandeurs().subscribe(demandeurs => this.demandeurs=demandeurs)
+  }
+
+  lancerPartie(){
+    console.log('Lancement de partie avec le tableau de filtres:')
+    console.log(this.fitresFinal)
+    
+  }
+
   getFiltres() : void {
     this.listeDonneesService.getFiltres().subscribe(filtres =>{
       this.filtres = filtres
@@ -55,10 +71,7 @@ export class ConfigurationPartieComponent implements OnInit {
      this.lancerPartie()
    }
 
-   lancerPartie(){
-     console.log('Lancement de partie avec le tableau de filtres:')
-     console.log(this.fitresFinal)
-   }
+   
 
    changeFiltre0(value){
     //console.log(value)

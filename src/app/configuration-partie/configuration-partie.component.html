@@ -1,20 +1,72 @@
 <h2>Configuration de la partie</h2>
-<h3>Veuillez choisir dans quel ordre les filtres apparaitront</h3>
-<p>
-<button (click)="filtreParDefaut()">Configuration par défaut</button>
-</p>
+
+<div class="container-fluid">
+    <label>Mandat : </label>
+    <div class="form-row">
+        <div class="form-group">
+            <select [(ngModel)]="selectedDemandeur" name="relationDemandeur">
+                <option *ngFor=" let demandeur of demandeurs" [value]="demandeur">{{demandeur}}</option>
+            </select>
+            
+            <div class="form-group" *ngIf="selectedDemandeur==='médecin' || selectedDemandeur==='autre professionnel'">
+                <input type="text" placeholder="nom" class="form-control">
+                <input type="text" placeholder="prenom" class="form-control">
+                <input type="text" placeholder="specialite" class="form-control">
+                <input type="text" placeholder="telephone" class="form-control">
+                <input type="text" placeholder="email" class="form-control">
+            </div>
+            <div class="form-group" *ngIf="selectedDemandeur==='autre'">
+                <input type="text" placeholder="autre demandeur" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Date du mandat : </label>
+            <input type="date">
+        </div>
+        <div class="form-group">
+            <label for="objetDemande">Objet de la demande initiale : </label>
+            <textarea class="form-control rounded-0" rows="3" placeholder="Objet de la demande..."></textarea>
+        </div>
+    </div>
+</div>
 
 <div>
-<label>Mandat : </label>
-<div>
-    <select>
-        <option></option>
-    </select>
-    <label>Date du mandat : </label>
-    <input type="date">
-    <label>Objet de la demande initiale : </label>
-    <input type="textarea">
-</div>
+    <h4>Choix des filtres</h4>
+    <button (click)="filtreParDefaut()">Configuration par défaut</button>
+
+    <div id='filtre0'>
+        <label>Filtre
+            <select #filtre0 (change)="changeFiltre0(filtre0.value)">
+                <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>
+                <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>
+                <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>
+            </select>
+        </label>
+        <button (click)="supprimerFiltre0()">Supprimer ce filtre</button>
+    </div>
+    <div id='filtre1'>
+        <label>Filtre
+            <select #filtre1 (change)="changeFiltre1(filtre1.value)">
+                <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>
+                <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>
+                <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>
+            </select>
+        </label>
+        <button (click)="supprimerFiltre1()">Supprimer ce filtre</button>
+    </div>
+    <div id='filtre2'>
+        <label>Filtre
+            <select #filtre2 (change)="changeFiltre2(filtre2.value)">
+                <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>
+                <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>
+                <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>
+            </select>
+        </label>
+        <button (click)="supprimerFiltre2()">Supprimer ce filtre</button>
+    </div>
+
+    <button>Ajouter un filtre</button> <br>
+    <button (click)="lancerPartie()">Lancer la partie</button>
 
 </div>
 
@@ -30,47 +82,8 @@
         
     </form>
 -->
-<form>
-        <div id='filtre0'>
-            <label>Filtre 
-                <select #filtre0 (change)="changeFiltre0(filtre0.value)">
-                    <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>
-                    <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>
-                    <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>
-                </select>
-            </label>
-            <button (click)="supprimerFiltre0()">Supprimer ce filtre</button>
-        </div>
-        <div id='filtre1'>
-            <label>Filtre 
-                    <select #filtre1 (change)="changeFiltre1(filtre1.value)">
-                        <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>
-                        <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>
-                        <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>
-                    </select>
-                </label>
-                <button (click)="supprimerFiltre1()">Supprimer ce filtre</button>
-        </div>
-        <div id='filtre2'>
-                <label>Filtre 
-                        <select #filtre2 (change)="changeFiltre2(filtre2.value)">
-                            <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>
-                            <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>
-                            <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>
-                        </select>
-                    </label>
-                    <button (click)="supprimerFiltre2()">Supprimer ce filtre</button>
-            </div>
-        
-    </form>
-<button >Ajouter un filtre</button>
 <!--(click)="ajouterFiltre()"-->
-<p>
-    <button (click)="lancerPartie()">Lancer la partie</button>
-</p>
 
 <!--
 <button (click)="sauvegarderFiltre()">Sauvegarder les filtres</button>
 -->
-
-

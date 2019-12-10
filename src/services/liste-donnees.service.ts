@@ -19,6 +19,7 @@ export class ListeDonneesService {
   private professions : Observable<string[]>;
   private besoins : Observable<string[]>;
   private dominances : Observable<string[]>;
+  private demandeurs : Observable<string[]>;
 
   constructor(private http: HttpClient) { }
  
@@ -34,6 +35,8 @@ export class ListeDonneesService {
     );
     return this.professions;
   } 
+
+
 
 
   // Return tout les filtres from DB
@@ -59,6 +62,17 @@ export class ListeDonneesService {
       catchError(this.handleError<string[]>('getScolaritees', []))
     );
     return this.scolaritees;
+  }
+
+  getDemandeurs(): Observable<string[]>{
+    const demandeursUrl = `${this.urlBase}/demandeurs`;
+    console.log("On veut demander les demandeurs")
+    this.demandeurs = this.http.get<string[]>(demandeursUrl)
+    .pipe(
+      tap(_ => console.log('fetched demandeurs')),
+      catchError(this.handleError<string[]>('getDemandeurs', []))
+    );
+    return this.demandeurs;
   }
 
   // Return tout les roles from DB
