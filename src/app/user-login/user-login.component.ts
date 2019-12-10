@@ -25,6 +25,7 @@ export class UserLoginComponent implements OnInit {
     this.logserv.login(this.user,this.password).subscribe(data =>{
         if(data.success){
           console.log(data);
+          console.log(data);
           localStorage.setItem('role', data.user.role);
           localStorage.setItem('user',JSON.stringify(data.user));
           this.login(data.user.role);

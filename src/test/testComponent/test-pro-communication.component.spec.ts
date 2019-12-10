@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TestProCommunicationComponent } from './test-pro-communication.component';
+import { TestProCommunicationComponent } from '../../app/test-pro-communication/test-pro-communication.component';
 
 describe('TestProCommunicationComponent', () => {
   let component: TestProCommunicationComponent;

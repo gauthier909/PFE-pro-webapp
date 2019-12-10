@@ -34,10 +34,20 @@ export class AppComponent implements OnChanges, OnInit{
   }
   getUser(){
     if(localStorage.getItem('user')!=undefined) {
-      console.log(JSON.parse(localStorage.getItem('user')).nom)
       return JSON.parse(localStorage.getItem('user')).nom;
     }
   }
+  getUserID(){
+    if(localStorage.getItem('user')!=undefined) {
+      return JSON.parse(localStorage.getItem('user'))._id;
+    }
+  }
+  getEnfantID(){
+    if(localStorage.getItem('user')!=undefined) {
+      return JSON.parse(localStorage.getItem('user')).idEnfant;
+    }
+  }
+
 
   //update l'appli des qu'il y a un changment (pwa)
   reloadCache(){
