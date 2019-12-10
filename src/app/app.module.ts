@@ -13,7 +13,6 @@ import { EnfantAjoutComponent } from './enfant-ajout/enfant-ajout.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ChoixEnfantComponent } from './choix-enfant/choix-enfant.component';
-import { ChannelComponent } from './jeu-partie/channel.component';
 import { ErrorRoutingComponent } from './error-routing/error-routing.component';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -34,6 +33,7 @@ import {AdminModule} from './admin/admin.module';
 import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
 import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
 import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.component';
+import { TestProCommunicationComponent } from './test-pro-communication/test-pro-communication.component';
 
 
 
@@ -43,7 +43,6 @@ import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.compo
     HelloWorldComponent,
     UserLoginComponent,
     ChoixEnfantComponent,
-    ChannelComponent,
     ErrorRoutingComponent,
     EnfantsComponent,
     EnfantDetailComponent,
@@ -55,9 +54,8 @@ import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.compo
     ParentComponent,
     EnfantRechercheComponent,
     PersonneRechercheComponent,
-    FiltresGestionComponent
-
-
+    FiltresGestionComponent,
+    TestProCommunicationComponent
   ],
   imports: [
     BrowserModule,
