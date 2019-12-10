@@ -34,7 +34,7 @@ export class AppComponent implements OnChanges, OnInit{
   }
   getUser(){
     if(localStorage.getItem('user')!=undefined) {
-      console.log(JSON.parse(localStorage.getItem('user')).nom)
+    //  console.log(JSON.parse(localStorage.getItem('user')).nom)
       return JSON.parse(localStorage.getItem('user')).nom;
     }
   }

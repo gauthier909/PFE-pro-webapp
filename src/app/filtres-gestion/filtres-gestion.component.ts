@@ -76,7 +76,6 @@ export class FiltresGestionComponent implements OnInit {
       filtreNegatif: splitted[1]
     }
     this.filtresFinal[0] = filtre;
-    console.log(this.filtres)
   }
 
 
@@ -88,7 +87,6 @@ export class FiltresGestionComponent implements OnInit {
       filtreNegatif: splitted[1]
     }
     this.filtresFinal[1] = filtre;
-    console.log(this.filtres)
   }
 
 
@@ -99,7 +97,6 @@ export class FiltresGestionComponent implements OnInit {
       filtreNegatif: splitted[1]
     }
     this.filtresFinal[2] = filtre;
-    console.log(this.filtres)
   }
 
 
