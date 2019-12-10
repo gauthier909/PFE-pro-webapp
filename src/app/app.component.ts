@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -8,17 +9,30 @@ import { SwUpdate } from '@angular/service-worker';
 })
 export class AppComponent implements OnChanges, OnInit{
   title = 'ng2auth';
+  checkToken = (localStorage.getItem('user-token')==null);
+  checkRoleAdmin = (localStorage.getItem('role')=='Administrateur');
+  checkRoleProf = (localStorage.getItem('role')=='Professionnel');
+  checkRoleParent = (localStorage.getItem('role')=='Parent');
+  checkRoleResp = (localStorage.getItem('role')=='Responsable');
+
   constructor(
-    private swUpdate:SwUpdate
+    private swUpdate:SwUpdate,
+    public authServ:AuthService
   ){}
 
-    ngOnChanges(){
+  ngOnChanges(){
 
-    }
-
+  }
   ngOnInit(){
+
     this.reloadCache();
 
+  }
+  getUser(){
+    if(localStorage.getItem('user')!=null) {
+      console.log(JSON.parse(localStorage.getItem('user')).nom)
+      return JSON.parse(localStorage.getItem('user')).nom;
+    }
   }
 
   //update l'appli des qu'il y a un changment (pwa)

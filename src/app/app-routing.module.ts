@@ -13,50 +13,67 @@ import {PersonneDetailComponent} from './personne-detail/personne-detail.compone
 import{FiltresGestionComponent} from './filtres-gestion/filtres-gestion.component'
 import {TestProCommunicationComponent} from './test-pro-communication/test-pro-communication.component'
 
+import {AuthGuardR} from "./guard/responssible.guard";
+import {AuthGuardP} from "./guard/parentauth.guard";
+import {AuthGuardA} from "./guard/adminauth.guard";
+import {AuthGuard} from "./guard/auth.guard";
+
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/auth/login',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
     path: 'choix',
-    component: ChoixEnfantComponent
+    component: ChoixEnfantComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'enfants',
-    component: EnfantsComponent
+    component: EnfantsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'TestProCommunicationComponent',
-    component: TestProCommunicationComponent
+    component: TestProCommunicationComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'inscription',
-    component: EnfantAjoutComponent
+    component: EnfantAjoutComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'gestionProfessionnel',
-    component: GestionProfessionnelComponent
+    component: GestionProfessionnelComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'inscriptionPersonne',
-    component: PersonneAjoutComponent
+    component: PersonneAjoutComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'detail/:id',
-    component: EnfantDetailComponent
+    component: EnfantDetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'detailPersonne/:id',
-    component: PersonneDetailComponent
+    component: PersonneDetailComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'filtreGestion',
-    component: FiltresGestionComponent
+    component: FiltresGestionComponent,
+    canActivate: [AuthGuard]
   },
-
+  {
+    path: 'login',
+    component: UserLoginComponent
+  },
   {
     path: '**',
     component: ErrorRoutingComponent
