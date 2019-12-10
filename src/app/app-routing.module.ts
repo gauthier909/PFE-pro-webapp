@@ -27,48 +27,39 @@ const routes: Routes = [
   },
   {
     path: 'choix',
-    component: ChoixEnfantComponent,
-    canActivate: [AuthGuard]
+    component: ChoixEnfantComponent
   },
   {
     path: 'enfants',
-    component: EnfantsComponent,
-    canActivate: [AuthGuard]
+    component: EnfantsComponent
   },
   {
     path: 'TestProCommunicationComponent',
-    component: TestProCommunicationComponent,
-    canActivate: [AuthGuard]
+    component: TestProCommunicationComponent
   },
   {
     path: 'inscription',
-    component: EnfantAjoutComponent,
-    canActivate: [AuthGuard]
+    component: EnfantAjoutComponent
   },
   {
     path: 'gestionProfessionnel',
-    component: GestionProfessionnelComponent,
-    canActivate: [AuthGuard]
+    component: GestionProfessionnelComponent
   },
   {
     path: 'inscriptionPersonne',
-    component: PersonneAjoutComponent,
-    canActivate: [AuthGuard]
+    component: PersonneAjoutComponent
   },
   {
     path: 'detail/:id',
-    component: EnfantDetailComponent,
-    canActivate: [AuthGuard]
+    component: EnfantDetailComponent
   },
   {
     path: 'detailPersonne/:id',
-    component: PersonneDetailComponent,
-    canActivate: [AuthGuard]
+    component: PersonneDetailComponent
   },
   {
     path: 'filtreGestion',
-    component: FiltresGestionComponent,
-    canActivate: [AuthGuard]
+    component: FiltresGestionComponent
   },
   {
     path: 'login',

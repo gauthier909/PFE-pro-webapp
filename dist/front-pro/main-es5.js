@@ -508,7 +508,8 @@
             /* harmony import */ var _personne_detail_personne_detail_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./personne-detail/personne-detail.component */ "./src/app/personne-detail/personne-detail.component.ts");
             /* harmony import */ var _filtres_gestion_filtres_gestion_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./filtres-gestion/filtres-gestion.component */ "./src/app/filtres-gestion/filtres-gestion.component.ts");
             /* harmony import */ var _test_pro_communication_test_pro_communication_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./test-pro-communication/test-pro-communication.component */ "./src/app/test-pro-communication/test-pro-communication.component.ts");
-            /* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./guard/auth.guard */ "./src/app/guard/auth.guard.ts");
+            /* harmony import */ var _guard_adminauth_guard__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./guard/adminauth.guard */ "./src/app/guard/adminauth.guard.ts");
+            /* harmony import */ var _guard_auth_guard__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./guard/auth.guard */ "./src/app/guard/auth.guard.ts");
             var routes = [
                 {
                     path: '',
@@ -518,47 +519,47 @@
                 {
                     path: 'choix',
                     component: _choix_enfant_choix_enfant_component__WEBPACK_IMPORTED_MODULE_4__["ChoixEnfantComponent"],
-                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
+                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_15__["AuthGuard"]]
                 },
                 {
                     path: 'enfants',
                     component: _enfants_enfants_component__WEBPACK_IMPORTED_MODULE_6__["EnfantsComponent"],
-                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
+                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_15__["AuthGuard"]]
                 },
                 {
                     path: 'TestProCommunicationComponent',
                     component: _test_pro_communication_test_pro_communication_component__WEBPACK_IMPORTED_MODULE_13__["TestProCommunicationComponent"],
-                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
+                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_15__["AuthGuard"]]
                 },
                 {
                     path: 'inscription',
                     component: _enfant_ajout_enfant_ajout_component__WEBPACK_IMPORTED_MODULE_8__["EnfantAjoutComponent"],
-                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
+                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_15__["AuthGuard"]]
                 },
                 {
                     path: 'gestionProfessionnel',
                     component: _gestion_professionnel_gestion_professionnel_component__WEBPACK_IMPORTED_MODULE_9__["GestionProfessionnelComponent"],
-                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
+                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_15__["AuthGuard"]]
                 },
                 {
                     path: 'inscriptionPersonne',
                     component: _personne_ajout_personne_ajout_component__WEBPACK_IMPORTED_MODULE_10__["PersonneAjoutComponent"],
-                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
+                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_15__["AuthGuard"]]
                 },
                 {
                     path: 'detail/:id',
                     component: _enfant_detail_enfant_detail_component__WEBPACK_IMPORTED_MODULE_7__["EnfantDetailComponent"],
-                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
+                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_15__["AuthGuard"]]
                 },
                 {
                     path: 'detailPersonne/:id',
                     component: _personne_detail_personne_detail_component__WEBPACK_IMPORTED_MODULE_11__["PersonneDetailComponent"],
-                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
+                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_15__["AuthGuard"]]
                 },
                 {
                     path: 'filtreGestion',
                     component: _filtres_gestion_filtres_gestion_component__WEBPACK_IMPORTED_MODULE_12__["FiltresGestionComponent"],
-                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuard"]]
+                    canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_15__["AuthGuard"], _guard_adminauth_guard__WEBPACK_IMPORTED_MODULE_14__["AuthGuardA"]]
                 },
                 {
                     path: 'login',
@@ -606,10 +607,12 @@
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             /* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm2015/service-worker.js");
             /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/auth.service */ "./src/services/auth.service.ts");
+            /* harmony import */ var src_services_socket_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/services/socket.service */ "./src/services/socket.service.ts");
             var AppComponent = /** @class */ (function () {
-                function AppComponent(swUpdate, authServ) {
+                function AppComponent(swUpdate, authServ, socketService) {
                     this.swUpdate = swUpdate;
                     this.authServ = authServ;
+                    this.socketService = socketService;
                     this.title = 'ng2auth';
                 }
                 AppComponent.prototype.checkToken = function () {
@@ -628,6 +631,7 @@
                 AppComponent.prototype.ngOnChanges = function () {
                 };
                 AppComponent.prototype.ngOnInit = function () {
+                    this.socketService.socketInit();
                     this.reloadCache();
                 };
                 AppComponent.prototype.getUser = function () {
@@ -650,7 +654,8 @@
             }());
             AppComponent.ctorParameters = function () { return [
                 { type: _angular_service_worker__WEBPACK_IMPORTED_MODULE_2__["SwUpdate"] },
-                { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] }
+                { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
+                { type: src_services_socket_service__WEBPACK_IMPORTED_MODULE_4__["SocketService"] }
             ]; };
             AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1256,10 +1261,12 @@
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             /* harmony import */ var _services_liste_donnees_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/liste-donnees.service */ "./src/services/liste-donnees.service.ts");
+            /* harmony import */ var src_services_socket_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/services/socket.service */ "./src/services/socket.service.ts");
             var FiltresGestionComponent = /** @class */ (function () {
-                function FiltresGestionComponent(listeDonneesService, renderer) {
+                function FiltresGestionComponent(listeDonneesService, renderer, socketService) {
                     this.listeDonneesService = listeDonneesService;
                     this.renderer = renderer;
+                    this.socketService = socketService;
                 }
                 FiltresGestionComponent.prototype.ngOnInit = function () {
                     this.getFiltres();
@@ -1271,7 +1278,7 @@
                         //console.log(filtres)
                     });
                     this.listeDonneesService.getFiltres().subscribe(function (filtres) {
-                        _this.fitresFinal = filtres;
+                        _this.filtresFinal = filtres;
                         //console.log(filtres)
                     });
                 };
@@ -1279,19 +1286,19 @@
                     var element = (document.getElementById('filtre0'));
                     console.log(element);
                     element.remove();
-                    this.fitresFinal.splice(0, 1);
+                    this.filtresFinal.splice(0, 1);
                 };
                 FiltresGestionComponent.prototype.supprimerFiltre1 = function () {
                     var element = (document.getElementById('filtre1'));
                     console.log(element);
                     element.remove();
-                    this.fitresFinal.splice(1, 1);
+                    this.filtresFinal.splice(1, 1);
                 };
                 FiltresGestionComponent.prototype.supprimerFiltre2 = function () {
                     var element = (document.getElementById('filtre2'));
                     console.log(element);
                     element.remove();
-                    this.fitresFinal.splice(2, 1);
+                    this.filtresFinal.splice(2, 1);
                 };
                 FiltresGestionComponent.prototype.filtreParDefaut = function () {
                     this.getFiltres();
@@ -1299,7 +1306,8 @@
                 };
                 FiltresGestionComponent.prototype.lancerPartie = function () {
                     console.log('Lancement de partie avec le tableau de filtres:');
-                    console.log(this.fitresFinal);
+                    console.log(this.filtresFinal);
+                    this.socketService.sendMessage(this.filtresFinal);
                 };
                 FiltresGestionComponent.prototype.changeFiltre0 = function (value) {
                     //console.log(value)
@@ -1309,17 +1317,17 @@
                         filtrePositif: splitted[0],
                         filtreNegatif: splitted[1]
                     };
-                    this.fitresFinal[0] = filtre;
+                    this.filtresFinal[0] = filtre;
                     console.log(this.filtres);
                 };
                 FiltresGestionComponent.prototype.changeFiltre1 = function (value) {
-                    console.log(this.fitresFinal);
+                    console.log(this.filtresFinal);
                     var splitted = value.split("-");
                     var filtre = {
                         filtrePositif: splitted[0],
                         filtreNegatif: splitted[1]
                     };
-                    this.fitresFinal[1] = filtre;
+                    this.filtresFinal[1] = filtre;
                     console.log(this.filtres);
                 };
                 FiltresGestionComponent.prototype.changeFiltre2 = function (value) {
@@ -1328,19 +1336,20 @@
                         filtrePositif: splitted[0],
                         filtreNegatif: splitted[1]
                     };
-                    this.fitresFinal[2] = filtre;
+                    this.filtresFinal[2] = filtre;
                     console.log(this.filtres);
                 };
                 FiltresGestionComponent.prototype.ajouterFiltre = function () {
-                    //console.log(this.fitresFinal.length)
-                    var i = this.fitresFinal.length;
+                    //console.log(this.filtresFinal.length)
+                    var i = this.filtresFinal.length;
                     var elementAjouter = '<p>coucou</p>';
                 };
                 return FiltresGestionComponent;
             }());
             FiltresGestionComponent.ctorParameters = function () { return [
                 { type: _services_liste_donnees_service__WEBPACK_IMPORTED_MODULE_2__["ListeDonneesService"] },
-                { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer"] }
+                { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer"] },
+                { type: src_services_socket_service__WEBPACK_IMPORTED_MODULE_3__["SocketService"] }
             ]; };
             FiltresGestionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1398,6 +1407,64 @@
                     styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./gestion-professionnel.component.css */ "./src/app/gestion-professionnel/gestion-professionnel.component.css")).default]
                 })
             ], GestionProfessionnelComponent);
+            /***/ 
+        }),
+        /***/ "./src/app/guard/adminauth.guard.ts": 
+        /*!******************************************!*\
+          !*** ./src/app/guard/adminauth.guard.ts ***!
+          \******************************************/
+        /*! exports provided: AuthGuardA */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuardA", function () { return AuthGuardA; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+            /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/auth.service */ "./src/services/auth.service.ts");
+            var AuthGuardA = /** @class */ (function () {
+                function AuthGuardA(authService, router) {
+                    this.authService = authService;
+                    this.router = router;
+                }
+                AuthGuardA.prototype.canActivate = function (next, state) {
+                    var url = state.url;
+                    return this.checkLogin(url);
+                };
+                AuthGuardA.prototype.canActivateChild = function (routes, state) {
+                    return this.canActivate(routes, state);
+                };
+                AuthGuardA.prototype.canLoad = function (route) {
+                    var url = '/${route.path}';
+                    return this.checkLogin(url);
+                };
+                AuthGuardA.prototype.checkLogin = function (url) {
+                    if (this.authService.isAdmin || (localStorage.getItem('user-token') && localStorage.getItem('role') == 'Administrateur')) {
+                        this.authService.loginAdmin();
+                        return true;
+                    }
+                    // Store the attempted URL for redirecting
+                    this.authService.redirectUrl = url;
+                    var sessionId = 34;
+                    var navigationExtra = {
+                        queryParams: { 'session_id': sessionId },
+                        fragment: 'anchor'
+                    };
+                    // Navigate to the login page with extras
+                    this.router.navigate(['/auth/login'], navigationExtra);
+                    return false;
+                };
+                return AuthGuardA;
+            }());
+            AuthGuardA.ctorParameters = function () { return [
+                { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+            ]; };
+            AuthGuardA = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+                    providedIn: 'root',
+                })
+            ], AuthGuardA);
             /***/ 
         }),
         /***/ "./src/app/guard/auth.guard.ts": 
@@ -2336,6 +2403,43 @@
             LoginService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
             ], LoginService);
+            /***/ 
+        }),
+        /***/ "./src/services/socket.service.ts": 
+        /*!****************************************!*\
+          !*** ./src/services/socket.service.ts ***!
+          \****************************************/
+        /*! exports provided: SocketService */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SocketService", function () { return SocketService; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! socket.io-client */ "./node_modules/socket.io-client/lib/index.js");
+            /* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/ __webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_2__);
+            var IO_ROUTE = "http://localhost:8081";
+            var IO_ROOM = "testRoom";
+            var SocketService = /** @class */ (function () {
+                function SocketService() {
+                }
+                SocketService.prototype.socketInit = function () {
+                    this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_2__(IO_ROUTE);
+                    this.socket.emit("joinRoom", IO_ROOM);
+                    this.socket.on("message", function (message) {
+                        console.log("[SOCKET] Message recu : ", message);
+                    });
+                };
+                SocketService.prototype.sendMessage = function (message) {
+                    this.socket.emit("message", ({ room: IO_ROOM, message: message }));
+                };
+                return SocketService;
+            }());
+            SocketService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+                    providedIn: 'root'
+                })
+            ], SocketService);
             /***/ 
         }),
         /***/ 0: 
