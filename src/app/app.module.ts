@@ -23,6 +23,7 @@ import { PersonneDetailComponent } from './personne-detail/personne-detail.compo
 import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
 import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
 import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.component';
+import {EnfantParentRechercheComponent} from './enfant-parent-recherche/enfant-parent-recherche.component'
 
 
 
@@ -41,7 +42,8 @@ import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.compo
     PersonneDetailComponent,
     EnfantRechercheComponent,
     PersonneRechercheComponent,
-    FiltresGestionComponent
+    FiltresGestionComponent,
+    EnfantParentRechercheComponent
 
 
   ],
