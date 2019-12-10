@@ -1,0 +1,15 @@
+<div class="container" *ngIf="!authservice.isLoggedIn&&!authservice.isResponssible&&!authservice.isAdmin&&!authservice.isParent" >
+  <h1>Entrez login</h1>
+
+  <div class="form-group" ngS>
+    <input type="text" (keyup)="onSetLogin()" >
+  </div>
+  <div>
+     <input type="password"   (keyup)="onSetPassword()"   class="form-control" id="password" required="name">
+  </div>
+  <button (click)="onSubmit()"   class="button">login</button>
+
+</div>
+<div class="container" *ngIf="authservice.isLoggedIn||authservice.isResponssible||authservice.isParent||authservice.isAdmin">
+  <button (click)="logout()" >logout</button>
+</div>
