@@ -53,6 +53,10 @@
     <button (click)="lancerPartie()">Lancer la partie</button>
 </p>
 
+<div class="lance" *ngIf="isLance">
+    <p>Partie lancée ! L'enfant peut commencer à jouer</p>
+</div>
+
 <!--
 <button (click)="sauvegarderFiltre()">Sauvegarder les filtres</button>
 -->

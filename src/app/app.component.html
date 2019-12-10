@@ -1,20 +1,21 @@
 <header class="page-header" style="margin-bottom:20px">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-bottom: 0px; padding-top: 0px;">
         <ul class="navbar-nav"  style="text-align:center">
-          <li class="nav-item"><a class="navbar-brand" routerLink="auth/login"><h1><img src="../assets/images/education_logo.png" style="width:70px;"></h1></a></li>
-          <!--<li class="nav-item"><a routerLink="hello">Hello</a></li>-->
-          <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="choix" >Choix</a></li>
+          <li class="nav-item"><h1><img src="../assets/images/education_logo.png" style="width:70px;"></h1></li>
           <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="enfants">Gérer les enfants</a></li>
           <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="inscription">Inscrire un enfant</a></li>
-          <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="professionel">ressource professionelle</a></li>
-          <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="gestionProfessionnel">Gestion professionnel</a></li>
+          <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="gestionProfessionnel">Gestion professionnelle</a></li>
           <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="filtreGestion">Lancer une partie</a></li>
+          <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="historique">Consulter l'historique d'une partie</a></li>
           <li class="nav-item" *ngIf="!authServ.isLoggedIn&&!authServ.isResponssible&&!authServ.isAdmin&&!authServ.isParent"><a class="btn btn-primary" routerLink="login">Login</a></li>
           <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-danger" routerLink="login" >Déconnexion</a></li>
         </ul>
       </nav>
     <h1>Bonjour : {{getUser()}}</h1>
-    </header>
+    <h1>Votre id : {{getUserID()}} </h1>
+    <h1>L'ID de votre enfant : {{getEnfantID()}} </h1>
+    <h1> Bon évidemment faut supprimer tout ça c'est juste pour l'exemple hein les moches...</h1>
+  </header>
 
 
 <router-outlet></router-outlet>

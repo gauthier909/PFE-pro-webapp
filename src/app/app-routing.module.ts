@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {UserLoginComponent} from "./user-login/user-login.component";
-import {ChoixEnfantComponent} from "./choix-enfant/choix-enfant.component";
-import {ErrorRoutingComponent} from './error-routing/error-routing.component';
+
 
 import {EnfantsComponent} from './enfants/enfants.component';
 import {EnfantDetailComponent} from './enfant-detail/enfant-detail.component'
 import {EnfantAjoutComponent} from './enfant-ajout/enfant-ajout.component'
+
+
+import {UserLoginComponent} from "./user-login/user-login.component";
+import {ErrorRoutingComponent} from './error-routing/error-routing.component';
+
 import {GestionProfessionnelComponent} from './gestion-professionnel/gestion-professionnel.component'
 import {PersonneAjoutComponent} from './personne-ajout/personne-ajout.component'
 import {PersonneDetailComponent} from './personne-detail/personne-detail.component'
+
+import { HistoriquePartieComponent} from './historique-partie/historique-partie.component'
+
 import{FiltresGestionComponent} from './filtres-gestion/filtres-gestion.component'
 import {TestProCommunicationComponent} from './test-pro-communication/test-pro-communication.component'
 
@@ -27,12 +33,12 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'choix',
-    component: ChoixEnfantComponent
-  },
-  {
     path: 'enfants',
     component: EnfantsComponent
+  },
+  {
+    path: 'historique',
+    component: HistoriquePartieComponent
   },
   {
     path: 'TestProCommunicationComponent',
