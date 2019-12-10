@@ -11,6 +11,7 @@ import {GestionProfessionnelComponent} from './gestion-professionnel/gestion-pro
 import {PersonneAjoutComponent} from './personne-ajout/personne-ajout.component'
 import {PersonneDetailComponent} from './personne-detail/personne-detail.component'
 import{FiltresGestionComponent} from './filtres-gestion/filtres-gestion.component'
+import {TestProCommunicationComponent} from './test-pro-communication/test-pro-communication.component'
 
 
 const routes: Routes = [
@@ -19,7 +20,6 @@ const routes: Routes = [
     redirectTo: '/auth/login',
     pathMatch: 'full'
   },
-
   {
     path: 'choix',
     component: ChoixEnfantComponent
@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path: 'enfants',
     component: EnfantsComponent
+  },
+  {
+    path: 'TestProCommunicationComponent',
+    component: TestProCommunicationComponent
   },
   {
     path: 'inscription',

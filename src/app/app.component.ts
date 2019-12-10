@@ -13,7 +13,7 @@ export class AppComponent implements OnChanges, OnInit{
   ){}
 
     ngOnChanges(){
-      
+
     }
 
   ngOnInit(){

@@ -96,4 +96,10 @@ export class FiltresGestionComponent implements OnInit {
     console.log(this.filtres)
    }
 
+   ajouterFiltre(){
+     //console.log(this.fitresFinal.length)
+     let i = this.fitresFinal.length
+     let elementAjouter='<p>coucou</p>';
+   }
+
 }

@@ -14,6 +14,7 @@ import {ListeDonneesService} from '../../services/liste-donnees.service'
 export class PersonneDetailComponent implements OnInit {
   personne: Personne;
   roles: string[];
+  professions: string[];
   
 
   constructor(
@@ -26,8 +27,13 @@ export class PersonneDetailComponent implements OnInit {
   ngOnInit() {
     this.getPersonne();
     this.getRoles();
+    this.getProfessions();
   }
 
+  getProfessions():void{
+    this.listeDonneesService.getProfessions().subscribe(professions => this.professions = professions)
+    console.log(this.professions);
+  }
   getRoles():void{
     this.listeDonneesService.getRoles().subscribe(roles => this.roles = roles)
     console.log(this.roles);
