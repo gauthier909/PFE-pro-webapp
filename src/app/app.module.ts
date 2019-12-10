@@ -4,7 +4,6 @@ import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import {ProfessionelleModule} from './professionelle/professionelle.module';
 import {AuthRoutingModule} from './auth/auth-routing.module';
 
 import { EnfantsComponent } from './enfants/enfants.component';
@@ -21,19 +20,14 @@ import { GestionProfessionnelComponent } from './gestion-professionnel/gestion-p
 import { PersonneAjoutComponent } from './personne-ajout/personne-ajout.component';
 import { JeuSelectEnfantComponent } from './jeu-select-enfant/jeu-select-enfant.component';
 import { PersonneDetailComponent } from './personne-detail/personne-detail.component';
-import { ResponsableComponent } from './responsable/responsable/responsable.component';
 
-import { ParentComponent } from './parent/parent/parent.component';
-import {ParentRoutingModule} from './parent/parent-routing.module';
-import {ResponsableRoutingModule} from './responsable/responsable-routing.module';
-import {ParentModule} from './parent/parent.module';
-import {ResponsableModule} from './responsable/responsable.module';
-import { AdminComponent } from './admin/admin/admin.component';
-import {AdminModule} from './admin/admin.module';
+
+
 import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
 import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
 import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.component';
 import { TestProCommunicationComponent } from './test-pro-communication/test-pro-communication.component';
+import { EnfantParentRechercheComponent } from './enfant-parent-recherche/enfant-parent-recherche.component';
 
 
 
@@ -51,19 +45,17 @@ import { TestProCommunicationComponent } from './test-pro-communication/test-pro
     PersonneAjoutComponent,
     JeuSelectEnfantComponent,
     PersonneDetailComponent,
-    ParentComponent,
     EnfantRechercheComponent,
     PersonneRechercheComponent,
     FiltresGestionComponent,
-    TestProCommunicationComponent
+    TestProCommunicationComponent,
+    EnfantParentRechercheComponent
+
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    ResponsableModule,
-    ParentRoutingModule,
-    AdminModule,
-    ProfessionelleModule,
     AuthRoutingModule,
     AppRoutingModule,
     FormsModule,
