@@ -19,6 +19,7 @@ export class PersonneDetailComponent implements OnInit {
   professions: string[];
   enfant: Enfant;
   idEnfant: string;
+  isParent: boolean;
  
   
 
@@ -34,6 +35,7 @@ export class PersonneDetailComponent implements OnInit {
     this.getPersonne();
     this.getRoles();
     this.getProfessions();
+   
     
    // this.getEnfants();
     /*
@@ -56,6 +58,8 @@ export class PersonneDetailComponent implements OnInit {
 
   getEnfant(id: string):void{
     this.enfantService.getEnfant(id).subscribe(enfant => this.enfant = enfant);
+    this.isParent=true;
+
   }
   getProfessions():void{
     this.listeDonneesService.getProfessions().subscribe(professions => this.professions = professions)

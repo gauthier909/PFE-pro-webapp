@@ -9,18 +9,19 @@ import {
   CanLoad, Route
 } from '@angular/router';
 import { AuthService} from "../../services/auth.service";
-
+import {AuthGuard} from "./auth.guard";
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuardA implements CanActivate,CanActivateChild,CanLoad {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router,private auth: AuthGuard) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
     let url: string = state.url;
+    this.auth.canActivate(next,state);
     return this.checkLogin(url);
   }
   canActivateChild(
@@ -33,7 +34,11 @@ export class AuthGuardA implements CanActivate,CanActivateChild,CanLoad {
     return this.checkLogin(url);
   }
   checkLogin(url: string): boolean{
-    if (this.authService.isAdmin) { return true; }
+    if (this.authService.isAdmin||(localStorage.getItem('user-token')&&localStorage.getItem('role')=='Administrateur')) {
+      this.authService.loginAdmin();
+
+      return true;
+    }
 
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
@@ -43,7 +48,7 @@ export class AuthGuardA implements CanActivate,CanActivateChild,CanLoad {
       fragment: 'anchor'
     }
     // Navigate to the login page with extras
-    this.router.navigate(['/auth/login'],navigationExtra);
+    this.router.navigate(['/login'],navigationExtra);
     return false;
   }
 }

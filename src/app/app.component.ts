@@ -10,11 +10,13 @@ import { SocketService } from 'src/services/socket.service';
 })
 export class AppComponent implements OnChanges, OnInit{
   title = 'ng2auth';
-  checkToken = (localStorage.getItem('user-token')==null);
-  checkRoleAdmin = (localStorage.getItem('role')=='Administrateur');
-  checkRoleProf = (localStorage.getItem('role')=='Professionnel');
-  checkRoleParent = (localStorage.getItem('role')=='Parent');
-  checkRoleResp = (localStorage.getItem('role')=='Responsable');
+  checkToken(){ console.log(this.authServ.loginProfesionel()+'est tu vrais');return (
+
+    localStorage.getItem('user-token')!=undefined)};
+  checkRoleAdmin() {(localStorage.getItem('role')=='Administrateur')};
+  checkRoleProf(){(localStorage.getItem('role')=='Professionnel')};
+  checkRoleParent(){(localStorage.getItem('role')=='Parent')};
+  checkRoleResp(){(localStorage.getItem('role')=='Responsable')};
 
   constructor(
     private swUpdate:SwUpdate,
@@ -31,11 +33,21 @@ export class AppComponent implements OnChanges, OnInit{
 
   }
   getUser(){
-    if(localStorage.getItem('user')!=null) {
-      console.log(JSON.parse(localStorage.getItem('user')).nom)
+    if(localStorage.getItem('user')!=undefined) {
       return JSON.parse(localStorage.getItem('user')).nom;
     }
   }
+  getUserID(){
+    if(localStorage.getItem('user')!=undefined) {
+      return JSON.parse(localStorage.getItem('user'))._id;
+    }
+  }
+  getEnfantID(){
+    if(localStorage.getItem('user')!=undefined) {
+      return JSON.parse(localStorage.getItem('user')).idEnfant;
+    }
+  }
+
 
   //update l'appli des qu'il y a un changment (pwa)
   reloadCache(){

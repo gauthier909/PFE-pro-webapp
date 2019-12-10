@@ -12,6 +12,7 @@ import { SocketService } from 'src/services/socket.service';
 export class FiltresGestionComponent implements OnInit {
   filtres: Filtre[];
   filtresFinal: Filtre[];
+  isLance:boolean=false;
 
   constructor(
     private listeDonneesService: ListeDonneesService,
@@ -20,6 +21,7 @@ export class FiltresGestionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.isLance=false;
     this.getFiltres();
   }
 
@@ -62,6 +64,7 @@ export class FiltresGestionComponent implements OnInit {
     console.log('Lancement de partie avec le tableau de filtres:')
     console.log(this.filtresFinal)
     this.socketService.sendMessage(this.filtresFinal)
+    this.isLance=true;
   }
 
   changeFiltre0(value) {
@@ -73,7 +76,6 @@ export class FiltresGestionComponent implements OnInit {
       filtreNegatif: splitted[1]
     }
     this.filtresFinal[0] = filtre;
-    console.log(this.filtres)
   }
 
 
@@ -85,7 +87,6 @@ export class FiltresGestionComponent implements OnInit {
       filtreNegatif: splitted[1]
     }
     this.filtresFinal[1] = filtre;
-    console.log(this.filtres)
   }
 
 
@@ -96,7 +97,6 @@ export class FiltresGestionComponent implements OnInit {
       filtreNegatif: splitted[1]
     }
     this.filtresFinal[2] = filtre;
-    console.log(this.filtres)
   }
 
 

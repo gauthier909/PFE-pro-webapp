@@ -69,6 +69,11 @@
                 </div>
             </label>
         </div>
+
+        <div *ngIf='isParent'>
+            <p>Le nom de votre enfant : {{enfant.nom}}</p>
+            <p>Le prénom de votre enfant : {{ enfant.prenom}}</p>
+        </div>
     
         <div class="form-group">
             <button class="btn btn-primary" (click)="updatePersonne()">Sauvegarder les modifications</button>

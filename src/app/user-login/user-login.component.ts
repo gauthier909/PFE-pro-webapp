@@ -25,7 +25,8 @@ export class UserLoginComponent implements OnInit {
     this.logserv.login(this.user,this.password).subscribe(data =>{
         if(data.success){
           console.log(data);
-          localStorage.getItem('role',);
+          console.log(data);
+          localStorage.setItem('role', data.user.role);
           localStorage.setItem('user',JSON.stringify(data.user));
           this.login(data.user.role);
         }
@@ -53,9 +54,7 @@ export class UserLoginComponent implements OnInit {
   }
   getDecodedAccessToken() {
 
-    let helper = new JwtHelperService();
-    let decodedToken = helper.urlBase64Decode(localStorage.getItem('user-token'));
-    console.log(decodedToken);
+
   }
 
   onSetLogin(){
@@ -124,7 +123,7 @@ export class UserLoginComponent implements OnInit {
   logout(){
     this.authservice.logout();
     this.submitted=false;
-    localStorage.removeItem('token');
+
   }
   ngOnInit() {
   }
