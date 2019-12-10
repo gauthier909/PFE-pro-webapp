@@ -2,7 +2,7 @@
   "name": "front-pro",
   "version": "0.0.0",
   "scripts": {
-    "start": "ng build && http-server dist/front-pro",
+    "start": "ng build --prod && http-server -c-1 --proxy-config proxy.conf.json dist/front-pro",
     "start2": "ng serve --proxy-config proxy.conf.json",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",

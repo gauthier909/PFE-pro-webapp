@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 
 
 import {ListeDonneesService} from '../../services/liste-donnees.service'
+import { Contact } from 'src/classes/contact';
 
 @Component({
   selector: 'app-enfant-detail',
@@ -21,6 +22,7 @@ export class EnfantDetailComponent implements OnInit {
   dominances: string[];
   scolaritees: string[];
   relations: string[];
+  contact=new Contact();
 
   dataarray=[];
 
@@ -37,17 +39,12 @@ export class EnfantDetailComponent implements OnInit {
     this.getDominances();
     this.getScolaritees();
     this.getRelations();
-
+    this.contact=new Contact();
   }
 
   ajouterContact(){
-    this.dataarray.push({
-        prenom:'',
-        nom:'',
-        telephone:'',
-        email:'',
-        relation:''
-    });
+    this.contact=new Contact();
+    this.dataarray.push(this.contact);
   }
 
   supprimerContact(index){
