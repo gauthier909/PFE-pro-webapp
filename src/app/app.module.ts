@@ -5,13 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
-
 import { EnfantsComponent } from './enfants/enfants.component';
 import { EnfantDetailComponent } from './enfant-detail/enfant-detail.component';
 import { EnfantAjoutComponent } from './enfant-ajout/enfant-ajout.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ChoixEnfantComponent } from './choix-enfant/choix-enfant.component';
-import { ChannelComponent } from './channel/channel.component';
 import { ErrorRoutingComponent } from './error-routing/error-routing.component';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -19,11 +17,13 @@ import { environment } from '../environments/environment';
 import { GestionProfessionnelComponent } from './gestion-professionnel/gestion-professionnel.component';
 import { PersonneAjoutComponent } from './personne-ajout/personne-ajout.component';
 import { PersonneDetailComponent } from './personne-detail/personne-detail.component';
+import {TestProCommunicationComponent} from './test-pro-communication/test-pro-communication.component'
 
 import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
 import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
 import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.component';
 import { ConfigurationPartieComponent } from './configuration-partie/configuration-partie.component';
+import { EnfantParentRechercheComponent } from './enfant-parent-recherche/enfant-parent-recherche.component';
 
 
 
@@ -32,7 +32,6 @@ import { ConfigurationPartieComponent } from './configuration-partie/configurati
     AppComponent,
     UserLoginComponent,
     ChoixEnfantComponent,
-    ChannelComponent,
     ErrorRoutingComponent,
     EnfantsComponent,
     EnfantDetailComponent,
@@ -43,7 +42,9 @@ import { ConfigurationPartieComponent } from './configuration-partie/configurati
     EnfantRechercheComponent,
     PersonneRechercheComponent,
     FiltresGestionComponent,
-    ConfigurationPartieComponent
+    ConfigurationPartieComponent,
+    EnfantParentRechercheComponent,
+    TestProCommunicationComponent
 
 
   ],

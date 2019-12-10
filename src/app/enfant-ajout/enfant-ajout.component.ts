@@ -25,6 +25,7 @@ export class EnfantAjoutComponent implements OnInit {
 
   autreRelation:'';
   selectedBesoins:string[]=[''];
+  selectedRelation:string;
   selectedEnseignement:string='ordinaire';
 
   constructor(private route: ActivatedRoute,

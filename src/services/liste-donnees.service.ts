@@ -29,11 +29,13 @@ export class ListeDonneesService {
     const professionsUrl = `${this.urlBase}/professions`;
     this.professions = this.http.get<string[]>(professionsUrl)
     .pipe(
-      tap(_ => console.log('fetched filtres')),
-      catchError(this.handleError<string[]>('getFiltres', []))
+      tap(_ => console.log('fetched Professions')),
+      catchError(this.handleError<string[]>('getProfessions', []))
     );
     return this.professions;
   } 
+
+
   // Return tout les filtres from DB
   getFiltres(): Observable<Filtre[]>{
     console.log("On veut demander les filtres")
@@ -94,6 +96,8 @@ export class ListeDonneesService {
 
     
   }
+
+  // Return toutes les dominances de la db
   getDominances(): Observable<string[]>{
     console.log("On veut demander les dominances")
     const dominancesUrl = `${this.urlBase}/dominances`;
