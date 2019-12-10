@@ -10,21 +10,27 @@ import { EnfantService } from '../../services/enfant.service';
 export class TestProCommunicationComponent implements OnInit {
 
   private socket: any
+  private childNotEmpty: boolean
   private childs: string[]
   private images: Object[]
-  private idProfessional: string
+  private idProfessionnal: string
   constructor(private enfantService: EnfantService) { }
 
   ngOnInit() {
     this.socket = io.connect("http://localhost:8081")
-    this.idProfessional = "BOB L EPONGE"
-
+    this.idProfessionnal = "BOB L EPONGE"
+    this.childNotEmpty = false
     this.prepareSocket()
   }
 
-  prepareSocket(){
-    this.socket.on("getRooms", (data)=> {
+  prepareSocket(){ 
+    this.socket.on("getRooms", (data) => {
+      this.childs = data
+      this.childNotEmpty = true
       console.log("Les rooms disponible dans le backend sont : ", data)
+    })
+    this.socket.on("message", (data) => {
+      console.log("[API] Message recieved:", data)
     })
   }
 
@@ -34,17 +40,11 @@ export class TestProCommunicationComponent implements OnInit {
     })
   }
 
-  // getRooms(idProfessionnal) {
-  //   this.socket.on('getRooms', idProfessionnal, (rooms) => {
-  //     console.log('Here are the available rooms', rooms)
-  //   })
-  // }
+  onSendMessage(){
+    this.socket.emit("message", {room: "roomTest", message: "Hello from PRO"})
+  }
 
-  // registerToRoom(roomId: string) {
-  //   console.log('Tried to connect to ', roomId)
-  //   this.socket.emit('connectToRoom', this.idProfessionnal, roomId)
-  //   this.socket.on('roomConnection', (data) => {
-  //     console.log('Server responded : ', data)
-  //   })
-  // }
+  onJoinRoom() {
+    this.socket.emit('joinRoom', "roomTest")
+  }
 }
