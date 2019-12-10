@@ -21,9 +21,9 @@ export class EnfantAjoutComponent implements OnInit {
   dataarray=[];
 
   typeE='';
-  autreBesoin:'';
+  autreBesoin:string;
 
-
+  autreRelation:'';
   selectedBesoins:string[]=[''];
   selectedRelation:string;
   selectedEnseignement:string='ordinaire';
@@ -40,7 +40,9 @@ export class EnfantAjoutComponent implements OnInit {
     this.getScolaritees();
     this.getRelations();
     this.getBesoins();
+  
     this.contact=new Contact();
+    this.contact.relation='père';
     this.dataarray.push(
       this.contact
     );
@@ -103,6 +105,13 @@ export class EnfantAjoutComponent implements OnInit {
     }
     let besoins=this.selectedBesoins;
     
+    for(let i=0;i<contacts.length;i++){
+      if(contacts[i].relation==="autre"){
+        contacts[i].relation=this.autreRelation;
+        //console.log(this.autreRelation);
+      }
+    }
+
     //requete au service
     this.enfantService.addEnfant({nom, prenom, date_naissance,
       langue_usuelle,dominance,scolarite,contacts,besoins,professionnel} as Enfant)
