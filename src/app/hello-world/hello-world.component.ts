@@ -35,7 +35,12 @@ export class HelloWorldComponent implements OnInit {
   }
 
   sendMsgAPI(){
-    fetch(HELLO_WORLD_ROUTE)
+    fetch(HELLO_WORLD_ROUTE, 
+      {
+        body: {
+          hello: "ok"
+        }
+      })
       .then(response => response.clone().json())
       .then(data => {
         console.log("Recieved data from Express API :", data)
