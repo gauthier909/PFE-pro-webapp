@@ -33,7 +33,10 @@ export class AuthGuard implements CanActivate,CanActivateChild,CanLoad {
     return this.checkLogin(url);
   }
   checkLogin(url: string): boolean{
-  if (this.authService.isLoggedIn||(localStorage.getItem('user-token')&&localStorage.getItem('role')=='Professionnel')) { return true; }
+  if (this.authService.isLoggedIn||(localStorage.getItem('token-user')&&localStorage.getItem('role')=='Professionnel')) {
+    this.authService.loginProfesionel();
+    return true;
+  }
 
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
@@ -43,7 +46,7 @@ export class AuthGuard implements CanActivate,CanActivateChild,CanLoad {
       fragment: 'anchor'
     }
     // Navigate to the login page with extras
-    this.router.navigate(['auth/login'],navigationExtra);
+    this.router.navigate(['login'],navigationExtra);
     return false;
   }
 }

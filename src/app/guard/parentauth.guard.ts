@@ -33,7 +33,9 @@ export class AuthGuardP implements CanActivate,CanActivateChild,CanLoad {
     return this.checkLogin(url);
   }
   checkLogin(url: string): boolean{
-    if (this.authService.isParent) { return true; }
+    if (this.authService.isParent||(localStorage.getItem('user-token')&&localStorage.getItem('role')=='Parent')) {
+      this.authService.loginParent();
+      return true; }
 
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;

@@ -36,7 +36,9 @@ export class AuthGuardR implements CanActivate,CanActivateChild,CanLoad {
     return this.checkLogin(url);
   }
   checkLogin(url: string): boolean{
-    if (this.authService.isResponssible) { return true; }
+    if (this.authService.isResponssible||(localStorage.getItem('user-token')&&localStorage.getItem('role')=='Responsable')) {
+      this.authService.loginResponsible();
+      return true; }
 
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
