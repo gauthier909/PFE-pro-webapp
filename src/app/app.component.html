@@ -3,7 +3,7 @@
         <ul class="navbar-nav"  style="text-align:center">
           <li class="nav-item"><a class="navbar-brand" routerLink="auth/login"><h1><img src="../assets/images/education_logo.png" style="width:70px;"></h1></a></li>
           <!--<li class="nav-item"><a routerLink="hello">Hello</a></li>-->
-          <li class="nav-item" *ngIf="authServ.isLoggedIn"><a class="btn btn-primary" routerLink="choix" >Choix</a></li>
+          <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="choix" >Choix</a></li>
           <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="enfants">Gérer les enfants</a></li>
           <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="inscription">Inscrire un enfant</a></li>
           <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="professionel">ressource professionelle</a></li>
