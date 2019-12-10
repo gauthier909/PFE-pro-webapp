@@ -33,7 +33,7 @@ export class AuthGuard implements CanActivate,CanActivateChild,CanLoad {
     return this.checkLogin(url);
   }
   checkLogin(url: string): boolean{
-  if (this.authService.isLoggedIn||(localStorage.getItem('user-token')&&localStorage.getItem('role')=='Professionnel')) {
+  if (this.authService.isLoggedIn||(localStorage.getItem('token-user')&&localStorage.getItem('role')=='Professionnel')) {
     this.authService.loginProfesionel();
     return true;
   }

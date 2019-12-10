@@ -35,8 +35,7 @@ export class PersonneAjoutComponent implements OnInit {
     this.isParent=false;
   }
 
-  add(password:string,nom: string, prenom: string, profession:string,telephone:string,email:string,role:string,idEnfant:string): void {
-   
+  add(nom: string, prenom: string,password:string, profession:string,telephone:string,email:string,role:string,idEnfant:string): void {
     // trim() => remove whitespace
     nom = nom.trim();
     prenom = prenom.trim();
