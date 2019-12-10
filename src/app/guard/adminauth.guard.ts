@@ -33,7 +33,10 @@ export class AuthGuardA implements CanActivate,CanActivateChild,CanLoad {
     return this.checkLogin(url);
   }
   checkLogin(url: string): boolean{
-    if (this.authService.isAdmin) { return true; }
+    if (this.authService.isAdmin||(localStorage.getItem('user-token')&&localStorage.getItem('role')=='Administrateur')) {
+      this.authService.loginAdmin();
+      return true;
+    }
 
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;

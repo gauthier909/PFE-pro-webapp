@@ -9,11 +9,13 @@ import {AuthService} from "../services/auth.service";
 })
 export class AppComponent implements OnChanges, OnInit{
   title = 'ng2auth';
-  checkToken = (localStorage.getItem('user-token')==null);
-  checkRoleAdmin = (localStorage.getItem('role')=='Administrateur');
-  checkRoleProf = (localStorage.getItem('role')=='Professionnel');
-  checkRoleParent = (localStorage.getItem('role')=='Parent');
-  checkRoleResp = (localStorage.getItem('role')=='Responsable');
+  checkToken(){ console.log(this.authServ.loginProfesionel()+'est tu vrais');return (
+
+    localStorage.getItem('user-token')!=undefined)};
+  checkRoleAdmin() {(localStorage.getItem('role')=='Administrateur')};
+  checkRoleProf(){(localStorage.getItem('role')=='Professionnel')};
+  checkRoleParent(){(localStorage.getItem('role')=='Parent')};
+  checkRoleResp(){(localStorage.getItem('role')=='Responsable')};
 
   constructor(
     private swUpdate:SwUpdate,
@@ -29,7 +31,7 @@ export class AppComponent implements OnChanges, OnInit{
 
   }
   getUser(){
-    if(localStorage.getItem('user')!=null) {
+    if(localStorage.getItem('user')!=undefined) {
       console.log(JSON.parse(localStorage.getItem('user')).nom)
       return JSON.parse(localStorage.getItem('user')).nom;
     }

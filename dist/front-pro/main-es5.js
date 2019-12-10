@@ -182,7 +182,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\" *ngIf=\"!authservice.isLoggedIn&&!authservice.isResponssible&&!authservice.isAdmin&&!authservice.isParent\" >\r\n  <h1>Entrez login</h1>\r\n\r\n  <div class=\"form-group\" ngS>\r\n    <input type=\"text\" (keyup)=\"onSetLogin()\" >\r\n  </div>\r\n  <div>\r\n     <input type=\"password\"   (keyup)=\"onSetPassword()\"   class=\"form-control\" id=\"password\" required=\"name\">\r\n  </div>\r\n  <button (click)=\"onSubmit()\"   class=\"button\">login</button>\r\n\r\n</div>\r\n<div class=\"container\" *ngIf=\"authservice.isLoggedIn||authservice.isResponssible||authservice.isParent||authservice.isAdmin\">\r\n  <button (click)=\"logout()\" >logout</button>\r\n</div>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\" *ngIf=\"!authservice.isLoggedIn&&!authservice.isResponssible&&!authservice.isAdmin&&!authservice.isParent\" >\r\n  <h1>Entrez login</h1>\r\n\r\n  <div class=\"form-group\" ngS>\r\n    <input type=\"text\" (keyup)=\"onSetLogin()\" >\r\n  </div>\r\n  <div>\r\n     <input type=\"password\"   (keyup)=\"onSetPassword()\"   class=\"form-control\" id=\"password\" required=\"name\">\r\n  </div>\r\n  <button (click)=\"onSubmit()\"   class=\"button\">login</button>\r\n\r\n</div>\r\n<div class=\"container\" >\r\n  <button (click)=\"logout()\" >logout</button>\r\n</div>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/tslib/tslib.es6.js": 
@@ -611,20 +611,30 @@
                     this.swUpdate = swUpdate;
                     this.authServ = authServ;
                     this.title = 'ng2auth';
-                    this.checkToken = (localStorage.getItem('user-token') == null);
-                    this.checkRoleAdmin = (localStorage.getItem('role') == 'Administrateur');
-                    this.checkRoleProf = (localStorage.getItem('role') == 'Professionnel');
-                    this.checkRoleParent = (localStorage.getItem('role') == 'Parent');
-                    this.checkRoleResp = (localStorage.getItem('role') == 'Responsable');
                 }
+                AppComponent.prototype.checkToken = function () {
+                    console.log(this.authServ.loginProfesionel() + 'est tu vrais');
+                    return (localStorage.getItem('user-token') != undefined);
+                };
+                ;
+                AppComponent.prototype.checkRoleAdmin = function () { (localStorage.getItem('role') == 'Administrateur'); };
+                ;
+                AppComponent.prototype.checkRoleProf = function () { (localStorage.getItem('role') == 'Professionnel'); };
+                ;
+                AppComponent.prototype.checkRoleParent = function () { (localStorage.getItem('role') == 'Parent'); };
+                ;
+                AppComponent.prototype.checkRoleResp = function () { (localStorage.getItem('role') == 'Responsable'); };
+                ;
                 AppComponent.prototype.ngOnChanges = function () {
                 };
                 AppComponent.prototype.ngOnInit = function () {
                     this.reloadCache();
                 };
                 AppComponent.prototype.getUser = function () {
-                    console.log(JSON.parse(localStorage.getItem('user')).nom);
-                    return JSON.parse(localStorage.getItem('user')).nom;
+                    if (localStorage.getItem('user') != undefined) {
+                        console.log(JSON.parse(localStorage.getItem('user')).nom);
+                        return JSON.parse(localStorage.getItem('user')).nom;
+                    }
                 };
                 //update l'appli des qu'il y a un changment (pwa)
                 AppComponent.prototype.reloadCache = function () {
@@ -1421,6 +1431,7 @@
                 };
                 AuthGuard.prototype.checkLogin = function (url) {
                     if (this.authService.isLoggedIn || (localStorage.getItem('user-token') && localStorage.getItem('role') == 'Professionnel')) {
+                        this.authService.loginProfesionel();
                         return true;
                     }
                     // Store the attempted URL for redirecting
@@ -1431,7 +1442,7 @@
                         fragment: 'anchor'
                     };
                     // Navigate to the login page with extras
-                    this.router.navigate(['auth/login'], navigationExtra);
+                    this.router.navigate(['login'], navigationExtra);
                     return false;
                 };
                 return AuthGuard;
@@ -1776,7 +1787,6 @@
             /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
             /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/auth.service */ "./src/services/auth.service.ts");
             /* harmony import */ var _services_login_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/login.service */ "./src/services/login.service.ts");
-            /* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @auth0/angular-jwt */ "./node_modules/@auth0/angular-jwt/index.js");
             var UserLoginComponent = /** @class */ (function () {
                 function UserLoginComponent(authservice, router, logserv) {
                     this.authservice = authservice;
@@ -1790,7 +1800,7 @@
                     this.logserv.login(this.user, this.password).subscribe(function (data) {
                         if (data.success) {
                             console.log(data);
-                            localStorage.getItem('role');
+                            localStorage.setItem('role', data.user.role);
                             localStorage.setItem('user', JSON.stringify(data.user));
                             _this.login(data.user.role);
                         }
@@ -1816,9 +1826,6 @@
                       });*/
                 };
                 UserLoginComponent.prototype.getDecodedAccessToken = function () {
-                    var helper = new _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_5__["JwtHelperService"]();
-                    var decodedToken = helper.urlBase64Decode(localStorage.getItem('user-token'));
-                    console.log(decodedToken);
                 };
                 UserLoginComponent.prototype.onSetLogin = function () {
                     this.user = event.target.value;
@@ -1880,7 +1887,6 @@
                 UserLoginComponent.prototype.logout = function () {
                     this.authservice.logout();
                     this.submitted = false;
-                    localStorage.removeItem('token');
                 };
                 UserLoginComponent.prototype.ngOnInit = function () {
                 };
@@ -2012,6 +2018,9 @@
                     this.isResponssible = false;
                     this.isParent = false;
                     this.isAdmin = false;
+                    localStorage.removeItem('token-user');
+                    localStorage.removeItem('role');
+                    localStorage.removeItem('user');
                 };
                 return AuthService;
             }());
