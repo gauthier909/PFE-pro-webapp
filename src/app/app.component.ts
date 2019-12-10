@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 import {AuthService} from "../services/auth.service";
+import { SocketService } from 'src/services/socket.service';
 
 @Component({
   selector: 'app-root',
@@ -19,14 +20,15 @@ export class AppComponent implements OnChanges, OnInit{
 
   constructor(
     private swUpdate:SwUpdate,
-    public authServ:AuthService
+    public authServ:AuthService,
+    private socketService: SocketService
   ){}
 
   ngOnChanges(){
 
   }
   ngOnInit(){
-
+    this.socketService.socketInit()
     this.reloadCache();
 
   }
