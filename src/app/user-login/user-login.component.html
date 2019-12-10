@@ -1,12 +1,15 @@
-<div class="container" *ngIf="">
+<div class="container" *ngIf="!authservice.isLoggedIn&&!authservice.isResponssible&&!authservice.isAdmin&&!authservice.isParent" >
   <h1>Entrez login</h1>
-  <form >
-  <div class="form-group">
-    <input type="text" class="form-control" id="login" required name="name">
+
+  <div class="form-group" ngS>
+    <input type="text" (keyup)="onSetLogin()" >
   </div>
   <div>
-    <input type="password" class="form-control" id="password">
+     <input type="password"   (keyup)="onSetPassword()"   class="form-control" id="password" required="name">
   </div>
-  <button type="submit" class="button">GG WP</button>
-  </form>
+  <button (click)="onSubmit()"   class="button">login</button>
+
+</div>
+<div class="container" *ngIf="authservice.isLoggedIn||authservice.isResponssible||authservice.isParent||authservice.isAdmin">
+  <button (click)="logout()" >logout</button>
 </div>
