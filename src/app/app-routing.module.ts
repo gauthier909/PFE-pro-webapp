@@ -18,6 +18,7 @@ import {AuthGuardP} from "./guard/parentauth.guard";
 import {AuthGuardA} from "./guard/adminauth.guard";
 import {AuthGuard} from "./guard/auth.guard";
 
+import {AuthComponent} from './auth/auth.component'
 
 const routes: Routes = [
   {
@@ -64,6 +65,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: UserLoginComponent
+  },
+  {
+    path: "auth",
+    component: AuthComponent
   },
   {
     path: '**',

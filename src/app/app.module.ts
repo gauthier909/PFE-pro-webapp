@@ -22,7 +22,8 @@ import {TestProCommunicationComponent} from './test-pro-communication/test-pro-c
 import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
 import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
 import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.component';
-import {EnfantParentRechercheComponent} from './enfant-parent-recherche/enfant-parent-recherche.component'
+import {EnfantParentRechercheComponent} from './enfant-parent-recherche/enfant-parent-recherche.component';
+import { AuthComponent } from './auth/auth.component'
 
 
 
@@ -43,7 +44,8 @@ import {EnfantParentRechercheComponent} from './enfant-parent-recherche/enfant-p
     PersonneRechercheComponent,
     FiltresGestionComponent,
     EnfantParentRechercheComponent,
-    TestProCommunicationComponent
+    TestProCommunicationComponent,
+    AuthComponent
 
 
   ],
