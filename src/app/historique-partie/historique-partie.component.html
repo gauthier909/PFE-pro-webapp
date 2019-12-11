@@ -39,28 +39,31 @@
     <div class="row">
       <div class="col-sm">Filtres utilisés dans la partie:</div>
       <div class="col-sm">
-        <ul class="list-group" *ngFor="let filtre of jeu.filtresPartie">
-          <li class="list-group-item">{{filtre.filtrePositif}} && {{filtre.filtreNegatif}}</li>
-        </ul>
+        <div class="container">
+          <span class="row" *ngFor="let filtre of jeu.filtresPartie">{{filtre.filtrePositif}} &&
+            {{filtre.filtreNegatif}}</span>
+        </div>
       </div>
     </div>
-    <div class="container">Choix fait par l'enfant:</div>
-    <div class="row" *ngFor="let choice of jeu.choix">
-      <div class="col">
-        <h6><strong>Image</strong></h6>
-        <img src="{{choice.nomImage}}" alt="" class="img-fluid">
-      </div>
-      <div class="col">
-            <h6><strong>Réponse de l'enfant</strong></h6>
-        {{choice.valeur == 0 ? "Oui" : (choice.valeur == 1 ? "Non" : "Je ne sais pas")}}
-      </div>
-      <div class="col">
-            <h6><strong>Type de filtre</strong></h6>
-        {{choice.nom}}
-      </div>
-      <div class="col">
-            <h6><strong>Commentaire</strong></h6>
-        {{choice.commentaire}}
+    <div class="container">
+      <h5><strong>Choix fait par l'enfant:</strong></h5>
+        <hr>
+      <div class="row" *ngFor="let choice of jeu.choix">
+        <div class="col">
+          <img src="{{choice.nomImage}}" alt="" class="img-fluid">
+        </div>
+        <div class="col">
+          <h6><strong>Réponse de l'enfant</strong></h6>
+          {{choice.valeur == 0 ? "Oui" : (choice.valeur == 1 ? "Non" : "Je ne sais pas")}}
+        </div>
+        <div class="col">
+          <h6><strong>Type de filtre</strong></h6>
+          {{choice.nom}}
+        </div>
+        <div class="col">
+          <h6><strong>Commentaire</strong></h6>
+          {{choice.commentaire}}
+        </div>
       </div>
     </div>
 
