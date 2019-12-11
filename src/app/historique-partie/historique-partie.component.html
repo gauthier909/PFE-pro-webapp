@@ -1,34 +1,74 @@
-
 <div class="container p-3">
-    <h1>L'ID de votre enfant ET ON EST DANS LE COMPONENT : {{getEnfantID()}} </h1>
-    <h6>Je sais pas pourquoi tu as marqué ca Gaby haha</h6>
+  <h1>L'ID de votre enfant ET ON EST DANS LE COMPONENT : {{getEnfantID()}} </h1>
+  <h6>Je sais pas pourquoi tu as marqué ca Gaby haha</h6>
 </div>
 
 
-<div class="container p-3"><app-enfant-recherche></app-enfant-recherche></div>
+<div class="container p-3">
+  <app-enfant-recherche></app-enfant-recherche>
+</div>
 
 
 <div class="container p-3">
-    <ul class="list-group" *ngIf="afficherEnfants">
-        <li class="list-group-item" *ngFor="let enfant of listeEnfants" (click)="onSelectEnfant(enfant)">
-            {{enfant.nom}} {{enfant.prenom}} {{enfant.professionnel}}
-        </li>
-    </ul>
-    <ul class="list-group" *ngIf="afficherListeJeux">
-        <li class="list-group-item" *ngFor="let jeu of jeux" (click)="onSelectJeu(jeu)">
-            {{jeu.idEnfant}} {{jeu.idProfessionnel}}
-        </li>    
-        <div class="container">
-            <button  (click)="onBackEnfants(afficherEnfants)">Retour liste enfants</button>
-        </div>
-    </ul>
+  <ul class="list-group" *ngIf="afficherEnfants">
+    Liste des enfants
+    <li class="list-group-item" *ngFor="let enfant of listeEnfants" (click)="onSelectEnfant(enfant)">
+      {{enfant.nom}} {{enfant.prenom}} {{enfant.professionnel}}
+    </li>
+  </ul>
 
-    <ul class="list-group" *ngIf="afficherJeu">
-        <li class="list-group-item">
-            {{jeu}}
-        </li>
+  <ul class="list-group" *ngIf="afficherListeJeux">
+    Liste des parties
+    <li class="list-group-item" *ngFor="let jeu of jeux" (click)="onSelectJeu(jeu)">
+      {{jeu.date}} {{jeu.demande}}
+    </li>
+    <div class="container p-3">
+      <button (click)="onBackEnfants(afficherEnfants)">Retour liste enfants</button>
+    </div>
+  </ul>
+
+  <div class="container" *ngIf="afficherJeu">
+    <div class="row">
+      <div class="col-sm">Demande:</div>
+      <div class="col-sm">{{jeu.demande}}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm">Date:</div>
+      <div class="col-sm">{{jeu.date}}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm">Filtres utilisés dans la partie:</div>
+      <div class="col-sm">
         <div class="container">
-            <button  (click)="onBackJeux(afficherListeJeux)">Retour liste jeux</button>
+          <span class="row" *ngFor="let filtre of jeu.filtresPartie">{{filtre.filtrePositif}} &&
+            {{filtre.filtreNegatif}}</span>
         </div>
-    </ul>
+      </div>
+    </div>
+    <div class="container">
+      <h5><strong>Choix fait par l'enfant:</strong></h5>
+        <hr>
+      <div class="row" *ngFor="let choice of jeu.choix">
+        <div class="col">
+          <img src="{{choice.nomImage}}" alt="" class="img-fluid">
+        </div>
+        <div class="col">
+          <h6><strong>Réponse de l'enfant</strong></h6>
+          {{choice.valeur == 0 ? "Oui" : (choice.valeur == 1 ? "Non" : "Je ne sais pas")}}
+        </div>
+        <div class="col">
+          <h6><strong>Type de filtre</strong></h6>
+          {{choice.nom}}
+        </div>
+        <div class="col">
+          <h6><strong>Commentaire</strong></h6>
+          {{choice.commentaire}}
+        </div>
+      </div>
+    </div>
+
+    <div class="container p-3">
+      <button (click)="onBackJeux(afficherListeJeux)">Retour liste jeux</button>
+    </div>
+  </div>
 </div>
