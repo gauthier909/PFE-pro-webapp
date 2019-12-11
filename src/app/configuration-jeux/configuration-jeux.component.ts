@@ -30,7 +30,6 @@ export class ConfigurationJeuxComponent implements OnInit {
   telephone: string;
   specialite: string;
   email: string;
-
   autre: string;
 
 
