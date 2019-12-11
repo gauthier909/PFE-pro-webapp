@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TransfertEnfantComponent } from './transfert-enfant.component';
+import { TransfertEnfantComponent } from '../../app/transfert-enfant/transfert-enfant.component';
 
 describe('TransfertEnfantComponent', () => {
   let component: TransfertEnfantComponent;
