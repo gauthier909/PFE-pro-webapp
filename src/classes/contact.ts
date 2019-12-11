@@ -5,4 +5,3 @@ export class Contact {
     email: string;
     relation: string;
 }
-
