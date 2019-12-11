@@ -1,3 +1,34 @@
-<p>historique-partie works!</p>
 
-<h1>L'ID de votre enfant ET ON EST DANS LE COMPONENT : {{getEnfantID()}} </h1>
+<div class="container p-3">
+    <h1>L'ID de votre enfant ET ON EST DANS LE COMPONENT : {{getEnfantID()}} </h1>
+    <h6>Je sais pas pourquoi tu as marqué ca Gaby haha</h6>
+</div>
+
+
+<div class="container p-3"><app-enfant-recherche></app-enfant-recherche></div>
+
+
+<div class="container p-3">
+    <ul class="list-group" *ngIf="afficherEnfants">
+        <li class="list-group-item" *ngFor="let enfant of listeEnfants" (click)="onSelectEnfant(enfant)">
+            {{enfant.nom}} {{enfant.prenom}} {{enfant.professionnel}}
+        </li>
+    </ul>
+    <ul class="list-group" *ngIf="afficherListeJeux">
+        <li class="list-group-item" *ngFor="let jeu of jeux" (click)="onSelectJeu(jeu)">
+            {{jeu.idEnfant}} {{jeu.idProfessionnel}}
+        </li>    
+        <div class="container">
+            <button  (click)="onBackEnfants(afficherEnfants)">Retour liste enfants</button>
+        </div>
+    </ul>
+
+    <ul class="list-group" *ngIf="afficherJeu">
+        <li class="list-group-item">
+            {{jeu}}
+        </li>
+        <div class="container">
+            <button  (click)="onBackJeux(afficherListeJeux)">Retour liste jeux</button>
+        </div>
+    </ul>
+</div>

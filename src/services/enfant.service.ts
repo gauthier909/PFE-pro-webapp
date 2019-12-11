@@ -52,7 +52,7 @@ export class EnfantService {
       tap(_ => console.log(`deleted hero id=${enfant._id}`)),
       catchError(this.handleError<Enfant>('deleteEnfant'))
     );
-  }
+  }  
   /** POST: add a new infant to the server */
   addEnfant (enfant: Enfant): Observable<Enfant> {
     console.log(enfant.nom);
