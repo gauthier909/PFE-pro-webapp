@@ -4,22 +4,32 @@ import {AuthService} from '../../services/auth.service';
 import {Input} from "@angular/core";
 import { User } from '../../classes/user';
 import {decode} from 'punycode';
-
+import {LoginService} from "../../services/login.service";
+import { JwtHelperService } from '@auth0/angular-jwt';
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.css']
+  styleUrls: ['./user-login.component.css'],
+  providers: [LoginService]
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor(public authservice: AuthService, public router: Router) { }
+  constructor(public authservice: AuthService, public router: Router, private logserv:LoginService) { }
   user;
   password;
   token;
   submitted = false;
   onSubmit() {
-    console.log("test billy")
-    this.login();
+    
+
+    this.logserv.login(this.user,this.password).subscribe(data =>{
+        if(data.success){
+          localStorage.setItem('role', data.user.role);
+          localStorage.setItem('user',JSON.stringify(data.user));
+          this.login(data.user.role);
+        }
+      }
+    );
     /*
     let jason = {email: this.user, password: this.password}
     fetch('http://localhost:8080/auth/login',{
@@ -40,6 +50,11 @@ export class UserLoginComponent implements OnInit {
 
       });*/
   }
+  getDecodedAccessToken() {
+
+
+  }
+
   onSetLogin(){
     this.user= (event.target as HTMLInputElement).value;
 
@@ -47,12 +62,12 @@ export class UserLoginComponent implements OnInit {
   onSetPassword(){
     this.password=(event.target as HTMLInputElement).value;
   }
-    login() {
-    if(this.user === 'billy' ) {
+  login(role) {
+    if(role =='Responsable' ) {
       this.authservice.loginResponsible().subscribe(() => {
         console.log('this is billy')
         if (this.authservice.isResponssible) {
-          console.log("estResponssible")
+          
           //let redirect = this.authservice.redirectUrl ? this.router.parseUrl(this.authservice.redirectUrl) : '/professionel';
 
           let navigationExras: NavigationExtras = {
@@ -63,51 +78,51 @@ export class UserLoginComponent implements OnInit {
           this.router.navigate(['responsable'], navigationExras);
         }
       });
-    }if (this.user === 'bob') {
-        this.authservice.loginParent().subscribe(() => {
-            if (this.authservice.isParent) {
-              console.log("parentredirect");
-              let navigationExras: NavigationExtras = {
-                queryParamsHandling: 'preserve',
-                preserveFragment: true
-              };
-
-              this.router.navigate(['parent'], navigationExras);
-            }
-          }
-
-        );
-      } if (this.user === 'shark') {
-        this.authservice.loginAdmin().subscribe(() => {
-            if (this.authservice.isAdmin) {
-              console.log("adminredirect");
-              let navigationExras: NavigationExtras = {
-                queryParamsHandling: 'preserve',
-                preserveFragment: true
-              };
-
-              this.router.navigate(['admin'], navigationExras);
-            }
-          }
-
-        );
-      }if(this.user === "cahuette"){
-          this.authservice.loginProfesionel().subscribe(() =>{
+    }if (role == 'Parent') {
+      this.authservice.loginParent().subscribe(() => {
+          if (this.authservice.isParent) {
+           
             let navigationExras: NavigationExtras = {
               queryParamsHandling: 'preserve',
               preserveFragment: true
             };
 
-            this.router.navigate(['professionel'], navigationExras);
-          });
-      }
-      console.log(this.authservice.isResponssible+"  est tu vrais ?");
+            this.router.navigate(['parent'], navigationExras);
+          }
+        }
+
+      );
+    } if (role == 'Administrateur') {
+      this.authservice.loginAdmin().subscribe(() => {
+          if (this.authservice.isAdmin) {
+            
+            let navigationExras: NavigationExtras = {
+              queryParamsHandling: 'preserve',
+              preserveFragment: true
+            };
+
+            this.router.navigate(['admin'], navigationExras);
+          }
+        }
+
+      );
+    }if(role == 'Professionnel'){
+      this.authservice.loginProfesionel().subscribe(() =>{
+        let navigationExras: NavigationExtras = {
+          queryParamsHandling: 'preserve',
+          preserveFragment: true
+        };
+
+        this.router.navigate(['choix'], navigationExras);
+      });
     }
-    logout(){
-       this.authservice.logout();
-       this.submitted=false;
-       localStorage.removeItem('token');
-    }
+ 
+  }
+  logout(){
+    this.authservice.logout();
+    this.submitted=false;
+
+  }
   ngOnInit() {
   }
 

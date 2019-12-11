@@ -27,6 +27,16 @@ export class GestionProfessionnelService {
     return this.personnes
   }
 
+  getProfessionnels():Observable<Personne[]>{
+    const url=`${this.personnesUrl}/professionnels`
+    this.personnes=this.http.get<Personne[]>(url)
+    .pipe(
+      tap(_ => console.log('fetched professionnels')),
+      catchError(this.handleError<Personne[]>('getProfessionnels', []))
+    );
+    return this.personnes
+  }
+
   // add personne to DB
   addPersonne (personne: Personne): Observable<Personne> {
     return this.http.post<Personne>(this.personnesUrl, personne, this.httpOptions).pipe(

@@ -6,6 +6,8 @@ import {ListeDonneesService} from '../../services/liste-donnees.service'
 import { Contact } from '../../classes/contact';
 import {EnfantService} from '../../services/enfant.service'
 import { Enfant } from '../../classes/enfant';
+import { Personne } from 'src/classes/personne';
+import { GestionProfessionnelService } from 'src/services/gestion-professionnel.service';
 
 @Component({
   selector: 'app-enfant-ajout',
@@ -18,6 +20,9 @@ export class EnfantAjoutComponent implements OnInit {
   relations:string[];
   besoins:string[];
   contact=new Contact();
+
+  professionnels:Personne[];
+
   dataarray=[];
 
   typeE='';
@@ -25,12 +30,14 @@ export class EnfantAjoutComponent implements OnInit {
 
   autreRelation:'';
   selectedBesoins:string[]=[''];
+  selectedRelation:string;
   selectedEnseignement:string='ordinaire';
 
   constructor(private route: ActivatedRoute,
     private enfantService: EnfantService,
     private listeDonneesServices:ListeDonneesService,
-    private location: Location
+    private location: Location,
+    private gestionProService:GestionProfessionnelService
     ) {
    }
 
@@ -39,7 +46,7 @@ export class EnfantAjoutComponent implements OnInit {
     this.getScolaritees();
     this.getRelations();
     this.getBesoins();
-  
+    this.getProfessionnels();
     this.contact=new Contact();
     this.contact.relation='père';
     this.dataarray.push(
@@ -60,6 +67,10 @@ export class EnfantAjoutComponent implements OnInit {
     console.log(event);
   }
 
+  getProfessionnels(){
+    this.gestionProService.getProfessionnels().subscribe(professionnels=>this.professionnels=professionnels);
+  }
+
   getRelations() {
     this.listeDonneesServices.getRelations().subscribe(relations => this.relations = relations);
   }
@@ -74,11 +85,16 @@ export class EnfantAjoutComponent implements OnInit {
   getDominances(){
     this.listeDonneesServices.getDominances().subscribe(dominances=>this.dominances=dominances);
   }
+  getPersonneId() {
+    if (localStorage.getItem('user') != undefined) {
+      return JSON.parse(localStorage.getItem('user'))._id;
+    }
+  }
 
 
   //bug avec le type,relation quand on en choisit pas +autre ==> ngIf
   add(nom: string, prenom: string, date_naissance: Date, langue_usuelle:string,
-    dominance:string,_enseignement:string,_niveau:string,professionnel:string
+    dominance:string,_enseignement:string,_niveau:string
     ): void {
     // trim() => remove whitespace
     nom = nom.trim();
@@ -110,6 +126,9 @@ export class EnfantAjoutComponent implements OnInit {
         //console.log(this.autreRelation);
       }
     }
+
+    let professionnel=this.getPersonneId();
+    console.log(professionnel);
 
     //requete au service
     this.enfantService.addEnfant({nom, prenom, date_naissance,

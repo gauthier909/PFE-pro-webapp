@@ -31,6 +31,23 @@ export class EnfantService {
     );
     return this.enfants;
   }
+  getEnfantsPro(id:string): Observable<Enfant[]>{
+
+    const url= `${this.enfantsUrl}/pro/${id}`
+    this.enfants = this.http.get<Enfant[]>(url)
+    .pipe(
+      tap(_ => console.log(`fetched enfants du pro id=${id}`)),
+      catchError(this.handleError<Enfant[]>('getEnfantsPro', []))
+    );
+    return this.enfants;
+
+
+    /**const url = `${this.enfantsUrl}/${id}`;
+    return this.http.get<Enfant>(url).pipe(
+      tap(_ => console.log(`fetched enfants id=${id}`)),
+      catchError(this.handleError<Enfant>(`getEnfant id=${id}`))
+    ); */
+  }
 
   
   // Update children with ID
@@ -52,7 +69,7 @@ export class EnfantService {
       tap(_ => console.log(`deleted hero id=${enfant._id}`)),
       catchError(this.handleError<Enfant>('deleteEnfant'))
     );
-  }
+  }  
   /** POST: add a new infant to the server */
   addEnfant (enfant: Enfant): Observable<Enfant> {
     console.log(enfant.nom);
@@ -66,9 +83,8 @@ export class EnfantService {
   getEnfant(id: string): Observable<Enfant>{
     //return of(ENFANTS.find(enfant => enfant._id === id));
     const url = `${this.enfantsUrl}/${id}`;
-    console.log(id);
     return this.http.get<Enfant>(url).pipe(
-      tap(_ => console.log(`fetched hero id=${id}`)),
+      tap(_ => console.log(`fetched enfants id=${id}`)),
       catchError(this.handleError<Enfant>(`getEnfant id=${id}`))
     );
   }

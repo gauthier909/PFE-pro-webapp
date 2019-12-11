@@ -43,6 +43,9 @@ export class AuthService {
     this.isResponssible=false;
     this.isParent=false;
     this.isAdmin=false;
+    localStorage.removeItem('token-user');
+    localStorage.removeItem('role');
+    localStorage.removeItem('user');
   }
   constructor() { }
 

@@ -10,6 +10,9 @@ import { Observable } from 'rxjs';
 
 import {ListeDonneesService} from '../../services/liste-donnees.service'
 import { Contact } from 'src/classes/contact';
+import { Personne } from 'src/classes/personne';
+import { ConfigurationPartieService } from 'src/services/configuration-partie.service';
+import { GestionProfessionnelService } from 'src/services/gestion-professionnel.service';
 
 @Component({
   selector: 'app-enfant-detail',
@@ -23,6 +26,9 @@ export class EnfantDetailComponent implements OnInit {
   scolaritees: string[];
   relations: string[];
   contact=new Contact();
+  professionnels:Personne[];
+  professionnelEnCours:Personne;
+  selectedProfessionnel:string;
 
   dataarray=[];
 
@@ -31,6 +37,7 @@ export class EnfantDetailComponent implements OnInit {
     private enfantService: EnfantService,
     private location: Location,
     private listeDonneesService : ListeDonneesService,
+    private gestionProfessionnelService: GestionProfessionnelService
   ) { }
 
   ngOnInit() {
@@ -39,7 +46,23 @@ export class EnfantDetailComponent implements OnInit {
     this.getDominances();
     this.getScolaritees();
     this.getRelations();
+    this.getProfessionnels();
+    this.getProfessionnelParId(this.getPersonneIdConnecte());
     this.contact=new Contact();
+  }
+  getPersonneIdConnecte() {
+    if (localStorage.getItem('user') != undefined) {
+      return JSON.parse(localStorage.getItem('user'))._id;
+    }
+  }
+
+  getProfessionnelParId(id:string){
+
+    this.gestionProfessionnelService.getPersonne(id).subscribe(professionnelEnCours=>this.professionnelEnCours=professionnelEnCours);
+  }
+
+  getProfessionnels(){
+    this.gestionProfessionnelService.getProfessionnels().subscribe(professionnels=>this.professionnels=professionnels);
   }
 
   ajouterContact(){
@@ -85,8 +108,10 @@ export class EnfantDetailComponent implements OnInit {
       this.enfant.contacts.push(this.dataarray[i]);
     }
 
+    //met le professionnel en charge de l'enfant à celui chosiit dans le select
+    this.enfant.professionnel=this.selectedProfessionnel;
+
     let ajoutContacts=(<HTMLInputElement[]><any>document.getElementsByName("info_contact_plus"));
-    console.log(ajoutContacts);
 
     this.enfantService.updateEnfant(this.enfant).subscribe(() => this.goBack());
   }
