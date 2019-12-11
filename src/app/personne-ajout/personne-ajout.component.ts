@@ -35,15 +35,15 @@ export class PersonneAjoutComponent implements OnInit {
     this.isParent=false;
   }
 
-  add(nom: string, prenom: string,password:string, profession:string,telephone:string,email:string,role:string,idEnfant:string): void {
+  add(nom: string, prenom: string,password:string, profession:string,telephone:string,email:string,role:string,idParentEnfant:string): void {
     // trim() => remove whitespace
     nom = nom.trim();
     prenom = prenom.trim();
     if (!nom){
       return;
     }
-    idEnfant=this.idEnfantParent
-    this.gestionProService.addPersonne({password,nom, prenom, profession,telephone,email,role,idEnfant} as Personne)
+    idParentEnfant=this.idEnfantParent
+    this.gestionProService.addPersonne({password,nom, prenom, profession,telephone,email,role,idParentEnfant} as Personne)
       .subscribe(personne => {
         this.goBack()
       })

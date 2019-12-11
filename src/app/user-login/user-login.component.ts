@@ -20,12 +20,10 @@ export class UserLoginComponent implements OnInit {
   token;
   submitted = false;
   onSubmit() {
-    console.log("test billy")
+    
 
     this.logserv.login(this.user,this.password).subscribe(data =>{
         if(data.success){
-          console.log(data);
-          console.log(data);
           localStorage.setItem('role', data.user.role);
           localStorage.setItem('user',JSON.stringify(data.user));
           this.login(data.user.role);
@@ -69,7 +67,7 @@ export class UserLoginComponent implements OnInit {
       this.authservice.loginResponsible().subscribe(() => {
         console.log('this is billy')
         if (this.authservice.isResponssible) {
-          console.log("estResponssible")
+          
           //let redirect = this.authservice.redirectUrl ? this.router.parseUrl(this.authservice.redirectUrl) : '/professionel';
 
           let navigationExtras: NavigationExtras = {
@@ -83,7 +81,7 @@ export class UserLoginComponent implements OnInit {
     }if (role == 'Parent') {
       this.authservice.loginParent().subscribe(() => {
           if (this.authservice.isParent) {
-            console.log("parentredirect");
+           
             let navigationExras: NavigationExtras = {
               queryParamsHandling: 'preserve',
               preserveFragment: true
@@ -97,7 +95,7 @@ export class UserLoginComponent implements OnInit {
     } if (role == 'Administrateur') {
       this.authservice.loginAdmin().subscribe(() => {
           if (this.authservice.isAdmin) {
-            console.log("adminredirect");
+            
             let navigationExras: NavigationExtras = {
               queryParamsHandling: 'preserve',
               preserveFragment: true
@@ -118,7 +116,7 @@ export class UserLoginComponent implements OnInit {
         this.router.navigate(['acceuil'], navigationExras);
       });
     }
-    console.log(this.authservice.isResponssible+"  est tu vrais ?");
+ 
   }
 
   ngOnInit() {
