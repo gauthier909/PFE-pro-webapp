@@ -3,6 +3,7 @@ import { Enfant } from 'src/classes/enfant';
 import { EnfantService } from 'src/services/enfant.service';
 import { ListeDonneesService } from 'src/services/liste-donnees.service';
 import { Jeu } from 'src/classes/jeu';
+import { Choix } from 'src/classes/choix';
 
 @Component({
   selector: 'app-historique-partie',
@@ -14,7 +15,8 @@ export class HistoriquePartieComponent implements OnInit {
   jeux: Jeu[]
   jeu: Jeu
   listeEnfants: Enfant[]
-  afficherEnfants : boolean
+  choixEnfants: Choix[]
+  afficherEnfants: boolean
   afficherListeJeux: boolean
   afficherJeu: boolean
   constructor(private enfantService: EnfantService,
@@ -24,41 +26,45 @@ export class HistoriquePartieComponent implements OnInit {
     this.getListeEnfants()
   }
 
-  getListeEnfants(){
-    this.enfantService.getEnfants().subscribe(enfants => this.listeEnfants = enfants)
-    this.afficherEnfants = true
-  }
-
-  onSelectEnfant(enfant: Enfant){
+  onSelectEnfant(enfant: Enfant) {
     this.getHistoriqueEnfant(enfant)
     this.afficherListeJeux = true
     this.afficherEnfants = false
   }
 
-  onSelectJeu(jeu: Jeu){
+  onSelectJeu(jeu: Jeu) {
     this.jeu = jeu
     this.afficherJeu = true
+    this.afficherListeJeux = false
   }
 
-  onBackEnfants(afficherEnfants: boolean){
+  onBackEnfants(afficherEnfants: boolean) {
     this.afficherEnfants = !afficherEnfants
     this.afficherListeJeux = false
   }
-  
-  onBackJeux(afficherListeJeux: boolean){
-    this.afficherListeJeux = ! afficherListeJeux
+
+  onBackJeux(afficherListeJeux: boolean) {
+    this.afficherListeJeux = !afficherListeJeux
     this.afficherJeu = false
   }
-  
-  getHistoriqueEnfant(enfant: Enfant){
-    this.listeDonneesService.getJeux(enfant).subscribe(jeux => this.jeux = jeux)
+
+  getListeEnfants() {
+    this.enfantService.getEnfants().subscribe(enfants => this.listeEnfants = enfants)
+    this.afficherEnfants = true
   }
 
-  getEnfantID(){
-    if(localStorage.getItem('user')!=undefined) {
+  getHistoriqueEnfant(enfant: Enfant) {
+    this.listeDonneesService.getJeux(enfant).subscribe(jeux => {
+      this.jeux = jeux
+      this.jeux.forEach(el => {
+        console.log("Jeu : ", el)
+      })
+    })
+  }
+
+  getEnfantID() {
+    if (localStorage.getItem('user') != undefined) {
       return JSON.parse(localStorage.getItem('user')).idEnfant;
     }
   }
-
-
 }

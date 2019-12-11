@@ -41,7 +41,7 @@ export class ListeDonneesService {
   }
 
   getJeux(enfant: Enfant) {
-    const jeuxUrl = `${this.urlBase}/jeux/${enfant._id}`
+    const jeuxUrl = `${this.urlBase}/jeux/enfant/${enfant._id}`
     this.jeux = this.http.get<Jeu[]>(jeuxUrl)
       .pipe(
         catchError(this.handleError<Jeu[]>('getJeux', []))
