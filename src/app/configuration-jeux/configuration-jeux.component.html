@@ -80,8 +80,10 @@
         <button (click)="supprimerFiltre2()">Supprimer ce filtre</button>
     </div>
 
-    <button>Ajouter un filtre</button> <br>
     <button (click)="lancerPartie(date.value,demande.value)">Lancer la partie</button>
+    <div *ngIf="isLance">
+        <p class="lance">La partie a été lancée ! L'enfant peut commencer à jouer</p>
+    </div>
 
 </div>
 
