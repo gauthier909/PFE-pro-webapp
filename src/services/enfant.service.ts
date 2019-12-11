@@ -31,6 +31,23 @@ export class EnfantService {
     );
     return this.enfants;
   }
+  getEnfantsPro(id:string): Observable<Enfant[]>{
+
+    const url= `${this.enfantsUrl}/pro/${id}`
+    this.enfants = this.http.get<Enfant[]>(url)
+    .pipe(
+      tap(_ => console.log(`fetched enfants du pro id=${id}`)),
+      catchError(this.handleError<Enfant[]>('getEnfantsPro', []))
+    );
+    return this.enfants;
+
+
+    /**const url = `${this.enfantsUrl}/${id}`;
+    return this.http.get<Enfant>(url).pipe(
+      tap(_ => console.log(`fetched enfants id=${id}`)),
+      catchError(this.handleError<Enfant>(`getEnfant id=${id}`))
+    ); */
+  }
 
   
   // Update children with ID

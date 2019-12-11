@@ -126,14 +126,17 @@
             </label>
         </div>
 
-        <div>
-            Professionnel : <input type="text" #professionnel class="form-control" placeholder="Dr. Jean.." />
-
-        </div>
+        <!--<div>
+            Professionnel : 
+            <select class="browser-default custom-select" #professionnel>
+                <option *ngFor="let prof of professionnels" [value]="prof._id">{{prof.prenom}} {{prof.nom}}</option>
+            </select>
+            <input type="text" #professionnel class="form-control" placeholder="Dr. Jean.." />
+        </div>-->
         <br>
 
         <button class="btn btn-primary" (click)="add(childNom.value, childPrenom.value, childBirth.value,langueUsuelle.value,dominance.value,
-                    enseignement.value,niveauScolaire.value,professionnel.value);
+                    enseignement.value,niveauScolaire.value);
                         childNom.value='';
                         childPrenom.value='';
                         childBirth.value='';
