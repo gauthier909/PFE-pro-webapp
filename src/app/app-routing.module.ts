@@ -58,6 +58,10 @@ const routes: Routes = [
     component: PersonneAjoutComponent
   },
   {
+    path: 'enfants',
+    component: EnfantsComponent
+  },
+  {
     path: 'detail/:id',
     component: EnfantDetailComponent
   },

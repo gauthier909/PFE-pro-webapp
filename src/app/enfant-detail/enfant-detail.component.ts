@@ -40,6 +40,7 @@ export class EnfantDetailComponent implements OnInit {
     this.getScolaritees();
     this.getRelations();
     this.contact=new Contact();
+    console.log("Ca fonctionne")
   }
 
   ajouterContact(){
