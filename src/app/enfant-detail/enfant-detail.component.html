@@ -126,8 +126,20 @@
                
     </div>
     <div class="container">
-        <h3>Professionnel en charge</h3>
-        <input [(ngModel)]="enfant.professionnel" placeholder="Professionnel en charge" />
+        <h4>Changer de professionnel : (en cours = {{professionnelEnCours.prenom}} {{professionnelEnCours.nom}})</h4>
+
+        <!--<input [(ngModel)]="enfant.professionnel" placeholder="Professionnel en charge" />-->
+        <label>Nouveau professionnel : </label>
+        <select [(ngModel)]="selectedProfessionnel" name="profe">
+            <option *ngFor="let pro of professionnels" [value]="pro._id">{{pro.prenom}} {{pro.nom}}</option>
+        </select>
+
+        <!--
+            <select name='relation_contact'>
+                    <option *ngFor='let relation of relations' [value]='relation'>{{relation}}</option>
+                </select>
+        -->
+
     </div>
     <div class="row m-3">
         <div class="col">

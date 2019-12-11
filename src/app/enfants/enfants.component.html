@@ -6,8 +6,18 @@
 <app-enfant-recherche></app-enfant-recherche>
 
 <h4>Cliquez sur un enfant pour en voir les détails</h4>
+<label>Tous les enfants</label>
 <ul class="enfants">
   <li *ngFor="let enfant of enfants" >
+    <a routerLink="/detail/{{enfant._id}}">
+      <span class="badge">{{enfant.nom}} </span> {{enfant.prenom}}
+    </a>
+  </li>
+</ul>
+<br>
+<label>Les enfants de la personne connectee (normalement pro)</label>
+<ul class="enfants">
+  <li *ngFor="let enfant of enfantsPro" >
     <a routerLink="/detail/{{enfant._id}}">
       <span class="badge">{{enfant.nom}} </span> {{enfant.prenom}}
     </a>
