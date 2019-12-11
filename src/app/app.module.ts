@@ -24,7 +24,8 @@ import { PersonneRechercheComponent } from './personne-recherche/personne-recher
 import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.component';
 import { EnfantParentRechercheComponent } from './enfant-parent-recherche/enfant-parent-recherche.component';
 import { AuthComponent } from './auth/auth.component'
-import { HistoriquePartieComponent } from './historique-partie/historique-partie.component'
+import { HistoriquePartieComponent } from './historique-partie/historique-partie.component';
+import { TransfertEnfantComponent } from './transfert-enfant/transfert-enfant.component'
 
 
 
@@ -48,7 +49,10 @@ import { HistoriquePartieComponent } from './historique-partie/historique-partie
     AuthComponent,
 
 
-    HistoriquePartieComponent
+    HistoriquePartieComponent,
+
+
+    TransfertEnfantComponent
   ],
   imports: [
     BrowserModule,
