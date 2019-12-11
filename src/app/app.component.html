@@ -7,28 +7,23 @@
           <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="gestionProfessionnel">Gestion professionnelle</a></li>
           <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="configuration-jeux">Configurer un jeu</a></li>
           <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-primary" routerLink="historique">Consulter l'historique d'une partie</a></li>
-          <li class="nav-item" *ngIf="!authServ.isLoggedIn&&!authServ.isResponssible&&!authServ.isAdmin&&!authServ.isParent"><a class="btn btn-primary" routerLink="login">Login</a></li>
-          <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-danger" routerLink="login" >Déconnexion</a></li>
+          <!-- <li class="nav-item" *ngIf="!authServ.isLoggedIn&&!authServ.isResponssible&&!authServ.isAdmin&&!authServ.isParent"><a class="btn btn-primary" routerLink="login">Login</a></li> -->
+          <li class="nav-item" *ngIf="authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent"><a class="btn btn-danger" (click)="logout()" routerLink="login">Déconnexion</a></li>
         </ul>
-        
       </nav>
-    <h1>Bonjour : {{getUser()}}</h1>
-    <h1>Votre id : {{getUserID()}} </h1>
-    <h1>L'ID de votre enfant : {{getEnfantID()}} </h1>
-    <h1> Bon évidemment faut supprimer tout ça c'est juste pour l'exemple hein les moches...</h1>
   </header>
 
 
 <router-outlet></router-outlet>
 
 <!-- Footer -->
-<footer class="page-footer font-small bg-dark" style="margin-top:10% 0">
+<footer class="page-footer font-small bg-dark mt-3" style="height: auto; bottom: 0;">
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3" style="color:white">© 2019 Copyright:
-      <p> Education IPL</p>
-    </div>
+  <div class="footer-copyright text-center py-3" style="color:white">© 2019 Copyright:
+    <p> Education IPL</p>
+  </div>
     <!-- Copyright -->
 
-  </footer>
+</footer>
   <!-- Footer -->

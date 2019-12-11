@@ -48,6 +48,10 @@ export class AppComponent implements OnChanges, OnInit{
     }
   }
 
+  logout(){
+    this.authServ.logout();
+  }
+
 
   //update l'appli des qu'il y a un changment (pwa)
   reloadCache(){

@@ -17,7 +17,6 @@ import { environment } from '../environments/environment';
 import { GestionProfessionnelComponent } from './gestion-professionnel/gestion-professionnel.component';
 import { PersonneAjoutComponent } from './personne-ajout/personne-ajout.component';
 import { PersonneDetailComponent } from './personne-detail/personne-detail.component';
-import { TestProCommunicationComponent } from './test-pro-communication/test-pro-communication.component'
 
 import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
 import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
@@ -28,7 +27,8 @@ import { HistoriquePartieComponent } from './historique-partie/historique-partie
 
 import { AuthComponent } from './auth/auth.component'
 
-import { TransfertEnfantComponent } from './transfert-enfant/transfert-enfant.component'
+import { TransfertEnfantComponent } from './transfert-enfant/transfert-enfant.component';
+import { AccueilComponent } from './accueil/accueil.component'
 
 
 
@@ -49,14 +49,10 @@ import { TransfertEnfantComponent } from './transfert-enfant/transfert-enfant.co
     FiltresGestionComponent,
     ConfigurationJeuxComponent,
     EnfantParentRechercheComponent,
-    TestProCommunicationComponent,
     AuthComponent,
-
-
     HistoriquePartieComponent,
-
-
-    TransfertEnfantComponent
+    TransfertEnfantComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,

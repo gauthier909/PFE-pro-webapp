@@ -18,7 +18,6 @@ import { HistoriquePartieComponent} from './historique-partie/historique-partie.
 
 import{FiltresGestionComponent} from './filtres-gestion/filtres-gestion.component'
 import { ConfigurationJeuxComponent } from './configuration-jeux/configuration-jeux.component';
-import {TestProCommunicationComponent} from './test-pro-communication/test-pro-communication.component'
 
 import {AuthGuardR} from "./guard/responssible.guard";
 import {AuthGuardP} from "./guard/parentauth.guard";
@@ -26,6 +25,7 @@ import {AuthGuardA} from "./guard/adminauth.guard";
 import {AuthGuard} from "./guard/auth.guard";
 
 import {AuthComponent} from './auth/auth.component'
+import { AccueilComponent } from './accueil/accueil.component';
 
 const routes: Routes = [
   {
@@ -40,10 +40,6 @@ const routes: Routes = [
   {
     path: 'historique',
     component: HistoriquePartieComponent
-  },
-  {
-    path: 'TestProCommunicationComponent',
-    component: TestProCommunicationComponent
   },
   {
     path: 'inscription',
@@ -80,6 +76,10 @@ const routes: Routes = [
   {
     path: "auth",
     component: AuthComponent
+  },
+  {
+    path: "acceuil",
+    component: AccueilComponent
   },
   {
     path: '**',

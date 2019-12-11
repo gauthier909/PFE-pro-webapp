@@ -72,12 +72,12 @@ export class UserLoginComponent implements OnInit {
           console.log("estResponssible")
           //let redirect = this.authservice.redirectUrl ? this.router.parseUrl(this.authservice.redirectUrl) : '/professionel';
 
-          let navigationExras: NavigationExtras = {
+          let navigationExtras: NavigationExtras = {
             queryParamsHandling: 'preserve',
             preserveFragment: true
           };
 
-          this.router.navigate(['responsable'], navigationExras);
+          this.router.navigate(['acceuil'], navigationExtras);
         }
       });
     }if (role == 'Parent') {
@@ -89,7 +89,7 @@ export class UserLoginComponent implements OnInit {
               preserveFragment: true
             };
 
-            this.router.navigate(['parent'], navigationExras);
+            this.router.navigate(['acceuil'], navigationExras);
           }
         }
 
@@ -103,7 +103,7 @@ export class UserLoginComponent implements OnInit {
               preserveFragment: true
             };
 
-            this.router.navigate(['admin'], navigationExras);
+            this.router.navigate(['acceuil'], navigationExras);
           }
         }
 
@@ -115,16 +115,12 @@ export class UserLoginComponent implements OnInit {
           preserveFragment: true
         };
 
-        this.router.navigate(['choix'], navigationExras);
+        this.router.navigate(['acceuil'], navigationExras);
       });
     }
     console.log(this.authservice.isResponssible+"  est tu vrais ?");
   }
-  logout(){
-    this.authservice.logout();
-    this.submitted=false;
 
-  }
   ngOnInit() {
   }
 
