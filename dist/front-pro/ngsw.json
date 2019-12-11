@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1576090000307,
+  "timestamp": 1576091332196,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -141,15 +141,9 @@
     "/assets/soins/toilettes.jpg": "3b5a3b2ed79d37811fa3e1264881b7d1423e4098",
     "/assets/soins/urgence.jpg": "9d5fd86154b9bfb65c885c54eb4c1e670e4eaecc",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-<<<<<<< HEAD
-    "/index.html": "7b01a31ca0c9929a35e57c764527bfa109edf63d",
-    "/main-es2015.900dca32daa6979b7e71.js": "041a2bda13d0b5a1ea04114f36e17d2534ab5b52",
-    "/main-es5.900dca32daa6979b7e71.js": "d8b56b71f0f6070e98d5d014b1392d28e7e81087",
-=======
     "/index.html": "e2f9f4cb234c51dec7937771e3d110e5051e1a31",
     "/main-es2015.1713e977ed4e7f4ba492.js": "48d8dc53f64faf0759eac0bf3673cf1017ef63b5",
     "/main-es5.1713e977ed4e7f4ba492.js": "eeb69d6088ff3af28c9748168c3208589568fcec",
->>>>>>> 0165e6b8b2be17616c6b9010d84250e29da1ff4a
     "/manifest.webmanifest": "e8803a0fbe16981150998c3ed2d128f1196e6b6c",
     "/polyfills-es2015.19aa098ef024439a4e26.js": "e3de051769988f8affb793d90a86f34754466963",
     "/polyfills-es5.ada8b9eda3a1abf94265.js": "d8b25475741c177619b5317d6a054487766054e1",
