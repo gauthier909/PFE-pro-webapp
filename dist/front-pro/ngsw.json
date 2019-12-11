@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1575976796721,
+  "timestamp": 1575977035894,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -17,7 +17,7 @@
         "/polyfills-es5.ada8b9eda3a1abf94265.js",
         "/runtime-es2015.edb2fcf2778e7bf1d426.js",
         "/runtime-es5.edb2fcf2778e7bf1d426.js",
-        "/styles.4c5d90080b8d157e54e6.css"
+        "/styles.31997052560aa87dd074.css"
       ],
       "patterns": []
     },
@@ -51,15 +51,15 @@
     "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/assets/images/education_logo.png": "1427e0ef5ce785a0663626c9a1eb337699c3488d",
     "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "429e2b40a338d15128391d52fe95c16453a96f3a",
+    "/index.html": "7b01a31ca0c9929a35e57c764527bfa109edf63d",
     "/main-es2015.900dca32daa6979b7e71.js": "041a2bda13d0b5a1ea04114f36e17d2534ab5b52",
     "/main-es5.900dca32daa6979b7e71.js": "d8b56b71f0f6070e98d5d014b1392d28e7e81087",
-    "/manifest.webmanifest": "bf51c449266d734ae1080ce9b803e580d542168c",
+    "/manifest.webmanifest": "e8803a0fbe16981150998c3ed2d128f1196e6b6c",
     "/polyfills-es2015.19aa098ef024439a4e26.js": "e3de051769988f8affb793d90a86f34754466963",
     "/polyfills-es5.ada8b9eda3a1abf94265.js": "d8b25475741c177619b5317d6a054487766054e1",
     "/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/runtime-es5.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/styles.4c5d90080b8d157e54e6.css": "3a8f7833487ac25f0ac653b3ba6518466bc31ca4"
+    "/styles.31997052560aa87dd074.css": "3a8f7833487ac25f0ac653b3ba6518466bc31ca4"
   },
   "navigationUrls": [
     {
