@@ -1,15 +1,4 @@
 <div class="container p-3">
-  <h1>L'ID de votre enfant ET ON EST DANS LE COMPONENT : {{getEnfantID()}} </h1>
-  <h6>Je sais pas pourquoi tu as marqué ca Gaby haha</h6>
-</div>
-
-
-<div class="container p-3">
-  <app-enfant-recherche></app-enfant-recherche>
-</div>
-
-
-<div class="container p-3">
   <ul class="list-group" *ngIf="afficherEnfants">
     Liste des enfants
     <li class="list-group-item" *ngFor="let enfant of listeEnfants" (click)="onSelectEnfant(enfant)">

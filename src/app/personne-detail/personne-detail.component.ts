@@ -75,7 +75,7 @@ export class PersonneDetailComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id');
     this.gestionProService.getPersonne(id).subscribe(personne =>{
       this.personne = personne,
-      this.getEnfant(personne.idEnfant)
+      this.getEnfant(personne.idParentEnfant)
     })
   }
 
