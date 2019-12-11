@@ -40,7 +40,7 @@
       <div class="col-sm">Filtres utilisés dans la partie:</div>
       <div class="col-sm">
         <div class="container">
-          <span class="row" *ngFor="let filtre of jeu.filtresPartie">{{filtre.filtrePositif}} &&
+          <span class="row" *ngFor="let filtre of filtresEnfant">{{filtre.filtrePositif}} &&
             {{filtre.filtreNegatif}}</span>
         </div>
       </div>
@@ -48,7 +48,7 @@
     <div class="container">
       <h5><strong>Choix fait par l'enfant:</strong></h5>
         <hr>
-      <div class="row" *ngFor="let choice of jeu.choix">
+      <div class="row" *ngFor="let choice of choixEnfants">
         <div class="col">
           <img src="{{choice.nomImage}}" alt="" class="img-fluid">
         </div>

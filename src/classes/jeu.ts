@@ -1,4 +1,5 @@
 import { Choix } from './choix'
+import { Filtre } from './filtre'
 
 export class Jeu {
     _id: string
@@ -6,6 +7,6 @@ export class Jeu {
     demande: string
     idEnfant: string
     idProfessionnel: string
-    filtres: string[]
-    choix: Choix
+    filtresPartie: Filtre[]
+    choix: Choix[]
 }

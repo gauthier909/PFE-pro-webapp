@@ -4,6 +4,7 @@ import { EnfantService } from 'src/services/enfant.service';
 import { ListeDonneesService } from 'src/services/liste-donnees.service';
 import { Jeu } from 'src/classes/jeu';
 import { Choix } from 'src/classes/choix';
+import { Filtre } from 'src/classes/filtre';
 
 @Component({
   selector: 'app-historique-partie',
@@ -16,6 +17,7 @@ export class HistoriquePartieComponent implements OnInit {
   jeu: Jeu
   listeEnfants: Enfant[]
   choixEnfants: Choix[]
+  filtresEnfant: Filtre[]
   afficherEnfants: boolean
   afficherListeJeux: boolean
   afficherJeu: boolean
@@ -34,6 +36,8 @@ export class HistoriquePartieComponent implements OnInit {
 
   onSelectJeu(jeu: Jeu) {
     this.jeu = jeu
+    this.choixEnfants = jeu.choix
+    this.filtresEnfant = jeu.filtresPartie
     this.afficherJeu = true
     this.afficherListeJeux = false
   }
