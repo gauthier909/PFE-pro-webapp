@@ -2,7 +2,7 @@
   "name": "front-pro",
   "version": "0.0.0",
   "scripts": {
-    "build": "ng build --prod && http-server -c-1 dist/front-pro",
+    "buildApp": "ng build --prod && http-server -c-1 dist/front-pro",
     "start": "ng serve",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
