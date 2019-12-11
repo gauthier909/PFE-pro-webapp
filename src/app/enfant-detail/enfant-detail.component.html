@@ -2,49 +2,61 @@
 
     <h2>{{enfant.nom | uppercase}} </h2>
     <div class="row">
-        <div class="col">
-            <label>Nom
-                <input [(ngModel)]="enfant.nom" placeholder="nom" />
-            </label>
+        <div class="col input-group input-group-sm p-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="nom">Nom</span>
+            </div>
+            <input [(ngModel)]="enfant.nom" placeholder="nom" />
         </div>
-        <div class="col">
-            <label>Prénom
-                <input [(ngModel)]="enfant.prenom" placeholder="prenom" />
-            </label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <label>Date de naissance
-                <input type="date" [(ngModel)]="enfant.date_naissance" placeholder="Date de naissance" />
-            </label>
-        </div>
-        <div class="col">
-            <label>Langue usuelle
-                <input [(ngModel)]="enfant.langue_usuelle" placeholder="Langue usuelle" />
-            </label>
+        <div class="col input-group input-group-sm p-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="nom">Prénom</span>
+            </div>
+            <input [(ngModel)]="enfant.prenom" placeholder="prenom" />
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <label>Dominance
-                <select [(ngModel)]='enfant.dominance'>
-                    <option *ngFor='let dom of dominances' [value]="dom">{{dom}}</option>
-                </select>
-            </label>
-        </div>
-        <div class="col">
-            <label>Scolarite
-                <select [(ngModel)]='enfant.scolarite.enseignement' name='enseignement'>
-                    <option *ngFor='let scolarite of scolaritees' [value]="scolarite">{{scolarite}}</option>
-                </select>
 
-                <p *ngIf="enfant.scolarite.enseignement == 'integration' || enfant.scolarite.enseignement == 'specialise'">
-                    Type: <input [(ngModel)]="enfant.scolarite.type" placeholder="Type" />
-                </p>
-                Niveau: <input [(ngModel)]="enfant.scolarite.niveau" placeholder="Niveau" />
-            </label>
+
+    <div class="row">
+        <div class="col input-group input-group-sm p-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="nom">Date de naissance</span>
+                </div>
+            <input type="date" [(ngModel)]="enfant.date_naissance" placeholder="Date de naissance" />
         </div>
+        <div class="col input-group input-group-sm p-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="nom">Langue usuelle</span>
+                </div>
+            <input [(ngModel)]="enfant.langue_usuelle" placeholder="Langue usuelle" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col input-group input-group-sm p-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="nom">Dominance</span>
+                </div>
+            <select [(ngModel)]='enfant.dominance'>
+                <option *ngFor='let dom of dominances' [value]="dom">{{dom}}</option>
+            </select>
+        </div>
+        <div class="col input-group input-group-sm p-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="nom">Scolarité</span>
+                </div>
+            <select [(ngModel)]='enfant.scolarite.enseignement' name='enseignement'>
+                <option *ngFor='let scolarite of scolaritees' [value]="scolarite">{{scolarite}}</option>
+            </select>
+
+            <div *ngIf="enfant.scolarite.enseignement == 'integration' || enfant.scolarite.enseignement == 'specialise'">
+                Type: <input [(ngModel)]="enfant.scolarite.type" placeholder="Type" />
+            </div>
+                Niveau: <input [(ngModel)]="enfant.scolarite.niveau" placeholder="Niveau" />
+    
+        </div>
+
+
+
     </div>
     <div class="container">
         <h3>Contacts</h3>
@@ -69,6 +81,8 @@
                     <label>Email</label>
                     <input type="email" [(ngModel)]="contact.email" name="email">
                 </div>
+            </div>
+            <div class="row">
                 <div class="col">
                     <label>Relation</label>
                     <select [(ngModel)]='contact.relation' name='relation_contact'>
@@ -76,8 +90,9 @@
                     </select>
                 </div>
             </div>
+            <span class="btn btn-danger" (click)="supprimerContact(i)">Supprimer</span>
         </div>
-        <span class="btn btn-danger" (click)="supprimerContact(i)">Supprimer</span>
+
     </div>
     <div class="container mt-3">
             <div *ngFor="let obj of dataarray; let i=index"  name="info_contact_plus">
