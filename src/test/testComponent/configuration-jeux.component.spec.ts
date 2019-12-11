@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConfigurationPartieComponent } from './configuration-partie.component';
+import { ConfigurationPartieComponent } from '../../app/configuration-jeux/configuration-jeux.component';
 
 describe('ConfigurationPartieComponent', () => {
   let component: ConfigurationPartieComponent;

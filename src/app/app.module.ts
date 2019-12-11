@@ -22,7 +22,7 @@ import {TestProCommunicationComponent} from './test-pro-communication/test-pro-c
 import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
 import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
 import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.component';
-import { ConfigurationPartieComponent } from './configuration-partie/configuration-partie.component';
+import { ConfigurationJeuxComponent } from './configuration-jeux/configuration-jeux.component';
 import {EnfantParentRechercheComponent} from './enfant-parent-recherche/enfant-parent-recherche.component';
 import { HistoriquePartieComponent } from './historique-partie/historique-partie.component'
 
@@ -43,7 +43,7 @@ import { HistoriquePartieComponent } from './historique-partie/historique-partie
     EnfantRechercheComponent,
     PersonneRechercheComponent,
     FiltresGestionComponent,
-    ConfigurationPartieComponent,
+    ConfigurationJeuxComponent,
     EnfantParentRechercheComponent,
     TestProCommunicationComponent,
     HistoriquePartieComponent

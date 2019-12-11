@@ -17,7 +17,7 @@ import {PersonneDetailComponent} from './personne-detail/personne-detail.compone
 import { HistoriquePartieComponent} from './historique-partie/historique-partie.component'
 
 import{FiltresGestionComponent} from './filtres-gestion/filtres-gestion.component'
-import { ConfigurationPartieComponent } from './configuration-partie/configuration-partie.component';
+import { ConfigurationJeuxComponent } from './configuration-jeux/configuration-jeux.component';
 import {TestProCommunicationComponent} from './test-pro-communication/test-pro-communication.component'
 
 import {AuthGuardR} from "./guard/responssible.guard";
@@ -33,8 +33,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path:'configuration-partie',
-    component: ConfigurationPartieComponent
+    path:'configuration-jeux',
+    component: ConfigurationJeuxComponent
   },
   {
     path: 'historique',
