@@ -62,10 +62,7 @@ export class ConfigurationJeuxComponent implements OnInit {
 
   //, id_enfant: Number, id_professionnel: Number
   lancerPartie(date: Date, demande: string) {
-    console.log('Lancement de partie avec le tableau de filtres:')
-    console.log(this.filtresFinal)
-
-    this.socketService.sendMessage(this.filtresFinal)
+    console.log('Lancement de partie avec le tableau de filtres:', this.filtresFinal)
     this.isLance = true;
     let demandeur = new Demandeur();
 
@@ -75,24 +72,28 @@ export class ConfigurationJeuxComponent implements OnInit {
       demandeur.specialite = this.specialite;
       demandeur.telephone = this.telephone;
     }
-    if(this.selectedRelation==='autre'){
-      demandeur.relation=this.autre;
-    }else{
+    if (this.selectedRelation === 'autre') {
+      demandeur.relation = this.autre;
+    } else {
       demandeur.relation = this.selectedRelation;
     }
 
     let termine = false;
     let filtresPartie = this.filtresFinal;
     let id_enfant = this.selectedEnfantID;
-    
-    let id_professionnel=this.getPersonneId();
 
-    this.configurationPartieSevice.addPartie({ demandeur, date, demande, id_enfant,id_professionnel,
-       filtresPartie, termine } as Partie).subscribe();
+    let id_professionnel = this.getPersonneId();
+
+    this.configurationPartieSevice.addPartie({
+      demandeur, date, demande, id_enfant, id_professionnel,
+      filtresPartie, termine
+    } as Partie).subscribe(data => {
+      this.socketService.sendMessage({ jeu_id: data._id, filtres: this.filtresFinal });
+    })
   }
 
-  getPersonneId(){
-    if(localStorage.getItem('user')!=undefined) {
+  getPersonneId() {
+    if (localStorage.getItem('user') != undefined) {
       return JSON.parse(localStorage.getItem('user'))._id;
     }
   }
