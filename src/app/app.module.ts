@@ -22,9 +22,12 @@ import { TestProCommunicationComponent } from './test-pro-communication/test-pro
 import { EnfantRechercheComponent } from './enfant-recherche/enfant-recherche.component';
 import { PersonneRechercheComponent } from './personne-recherche/personne-recherche.component';
 import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.component';
-import { EnfantParentRechercheComponent } from './enfant-parent-recherche/enfant-parent-recherche.component';
+import { ConfigurationJeuxComponent } from './configuration-jeux/configuration-jeux.component';
+import {EnfantParentRechercheComponent} from './enfant-parent-recherche/enfant-parent-recherche.component';
+import { HistoriquePartieComponent } from './historique-partie/historique-partie.component'
+
 import { AuthComponent } from './auth/auth.component'
-import { HistoriquePartieComponent } from './historique-partie/historique-partie.component';
+
 import { TransfertEnfantComponent } from './transfert-enfant/transfert-enfant.component'
 
 
@@ -44,6 +47,7 @@ import { TransfertEnfantComponent } from './transfert-enfant/transfert-enfant.co
     EnfantRechercheComponent,
     PersonneRechercheComponent,
     FiltresGestionComponent,
+    ConfigurationJeuxComponent,
     EnfantParentRechercheComponent,
     TestProCommunicationComponent,
     AuthComponent,

@@ -15,7 +15,7 @@
         </li>
     </ul>
     <ul class="list-group" *ngIf="afficherListeJeux">
-        <li class="list-group-item" *ngFor="let jeu of jeux" (click)="onSelectJeu()">
+        <li class="list-group-item" *ngFor="let jeu of jeux" (click)="onSelectJeu(jeu)">
             {{jeu.idEnfant}} {{jeu.idProfessionnel}}
         </li>    
         <div class="container">
