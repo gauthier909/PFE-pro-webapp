@@ -18,71 +18,89 @@
 
   <hr>
   <div class="container">
-      <label>Mandat : </label>
-      <select [(ngModel)]="selectedRelation" name="relationDemandeur" class="ml-3">
-        <option *ngFor=" let demandeur of demandeurs" [value]="demandeur">{{demandeur}}</option>
-      </select>
+    <label>Mandat : </label>
+    <select [(ngModel)]="selectedRelation" name="relationDemandeur" class="ml-3">
+      <option *ngFor=" let demandeur of demandeurs" [value]="demandeur">{{demandeur}}</option>
+    </select>
 
-      <div class="container" *ngIf="selectedRelation==='médecin' || selectedRelation==='autre professionnel'">
-        <input type="text" placeholder="nom" class="form-control" [(ngModel)]="nom">
-        <input type="text" placeholder="prenom" class="form-control" [(ngModel)]="prenom">
-        <input type="text" placeholder="specialite" class="form-control" [(ngModel)]="specialite">
-        <input type="text" placeholder="telephone" class="form-control" [(ngModel)]="telephone">
-        <input type="text" placeholder="email" class="form-control" [(ngModel)]="email">
-      </div>
-      <div class="container" *ngIf="selectedRelation==='autre'">
-        <input type="text" placeholder="autre demandeur" class="form-control" [(ngModel)]="autre">
-      </div>
+    <div class="container" *ngIf="selectedRelation==='médecin' || selectedRelation==='autre professionnel'">
+      <input type="text" placeholder="nom" class="form-control" [(ngModel)]="nom">
+      <input type="text" placeholder="prenom" class="form-control" [(ngModel)]="prenom">
+      <input type="text" placeholder="specialite" class="form-control" [(ngModel)]="specialite">
+      <input type="text" placeholder="telephone" class="form-control" [(ngModel)]="telephone">
+      <input type="text" placeholder="email" class="form-control" [(ngModel)]="email">
     </div>
-    <div class="container">
-      <label>Date du mandat : </label>
-      <input type="date" #date class="ml-3">
+    <div class="container" *ngIf="selectedRelation==='autre'">
+      <input type="text" placeholder="autre demandeur" class="form-control" [(ngModel)]="autre">
     </div>
-    <div class="container">
-      <label for="objetDemande">Objet de la demande initiale : </label>
-      <textarea class="form-control rounded-0" rows="3" placeholder="Objet de la demande..." #demande></textarea>
-    </div>
+  </div>
+  <div class="container">
+    <label>Date du mandat : </label>
+    <input type="date" #date class="ml-3">
+  </div>
+  <div class="container">
+    <label for="objetDemande">Objet de la demande initiale : </label>
+    <textarea class="form-control rounded-0" rows="3" placeholder="Objet de la demande..." #demande></textarea>
+  </div>
 
   <div>
 
     <h4 class="my-3">Choix des filtres</h4>
     <hr>
 
-    <div class="container">
+    <!-- <div class="container">
       <button class="btn btn-secondary" (click)="filtreParDefaut()">Configuration par défaut</button>
-      <div id='filtre0' class="py-2">
-        <label>Filtre
-          <select #filtre0 (change)="changeFiltre0(filtre0.value)">
-            <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>
-            <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>
-            <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>
-          </select>
-        </label>
-        <button class="btn btn-danger ml-2" (click)="supprimerFiltre0()">Supprimer ce filtre</button>
-      </div>
-      <div id='filtre1' class="py-2">
-        <label>Filtre
-          <select #filtre1 (change)="changeFiltre1(filtre1.value)">
-            <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>
-            <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>
-            <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>
-          </select>
-        </label>
-        <button class="btn btn-danger ml-2" (click)="supprimerFiltre1()">Supprimer ce filtre</button>
-      </div>
-      <div id='filtre2' class="py-2">
-        <label>Filtre
-          <select #filtre2 (change)="changeFiltre2(filtre2.value)">
-            <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>
-            <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>
-            <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>
-          </select>
-        </label>
-        <button class="btn btn-danger ml-2" (click)="supprimerFiltre2()">Supprimer ce filtre</button>
-      </div>
-      <button class="btn btn-primary" (click)="lancerPartie(date.value,demande.value)">Lancer la partie</button>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let filtre of filtresFinal; let i = index">
+            <label>Filtre
+                <select id="filtre{{i}}" (change)="changeFiltre(i)">
+                  <option id="{{filtres[0].filtrePositif+i}}">{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>
+                  <option id="{{filtres[1].filtrePositif+i}}">{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>
+                  <option id="{{filtres[2].filtrePositif+i}}">{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>
+                </select>
+              </label>
+              <button class="btn btn-danger ml-2" (click)="supprimerFiltre(i)">Supprimer ce filtre</button>
+        </li>
+      </ul>
+    </div> -->
 
+    <div class="container">
+      <div id="filtresHTML">
+        <div id='filtre0' class="py-2">
+          <label>Filtre
+            <select #filtre0 (change)="changeFiltre0(filtre0.value)">
+              <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>
+              <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>
+              <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>
+            </select>
+          </label>
+        </div>
+        <div id='filtre1' class="py-2">
+          <label>Filtre
+            <select #filtre1 (change)="changeFiltre1(filtre1.value)">
+              <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>
+              <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>
+              <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>
+            </select>
+          </label>
+        </div>
+        <div id='filtre2' class="py-2">
+          <label>Filtre
+            <select #filtre2 (change)="changeFiltre2(filtre2.value)">
+              <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>
+              <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>
+              <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>
+            </select>
+          </label>
+        </div>
+        <ng-container *ngIf="!unSeulFiltre">
+          <button class="btn btn-danger my-2" (click)="supprimerFiltre()">Supprimer un filtre</button>
+        </ng-container>
+      </div>
+
+      <button class="btn btn-primary" (click)="lancerPartie(date.value,demande.value)">Lancer la partie</button>
     </div>
+
     <div *ngIf="isLance">
       <p class="lance"><strong>La partie a été lancée ! L'enfant peut commencer à jouer</strong></p>
     </div>

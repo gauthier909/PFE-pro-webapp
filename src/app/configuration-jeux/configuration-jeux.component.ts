@@ -31,8 +31,7 @@ export class ConfigurationJeuxComponent implements OnInit {
   specialite: string;
   email: string;
   autre: string;
-
-
+  unSeulFiltre: boolean;
 
   demandeurs: string[];
   selectedRelation: string;
@@ -106,36 +105,23 @@ export class ConfigurationJeuxComponent implements OnInit {
       this.filtresFinal = filtres
       //console.log(filtres)
     })
+
   }
 
-  supprimerFiltre0() {
-    let element = (document.getElementById('filtre0'))
-    console.log(element)
+  supprimerFiltre(){
+    let filtreNumero = this.filtresFinal.length-1
+    this.filtresFinal.splice(this.filtresFinal.length-1, 1)
+    console.log("FILTRES RESTANT : ", this.filtresFinal)
+    let element = document.getElementById('filtre'+filtreNumero)
     element.remove()
-    this.filtresFinal.splice(0, 1)
+    if(filtreNumero === 1){
+      console.log("Changement du button")
+      this.unSeulFiltre = true
+    }
   }
-  supprimerFiltre1() {
-    let element = (document.getElementById('filtre1'))
-    console.log(element)
-    element.remove()
-    this.filtresFinal.splice(1, 1)
-  }
-  supprimerFiltre2() {
-    let element = (document.getElementById('filtre2'))
-    console.log(element)
-    element.remove()
-    this.filtresFinal.splice(2, 1)
-  }
-
-  filtreParDefaut() {
-    this.getFiltres()
-    //this.lancerPartie()
-  }
-
-
 
   changeFiltre0(value) {
-    //console.log(value)
+    console.log("VALUE 0", value)
     var splitted = value.split("-")
     // console.log(splitted)
     let filtre: Filtre = {
@@ -143,12 +129,12 @@ export class ConfigurationJeuxComponent implements OnInit {
       filtreNegatif: splitted[1]
     }
     this.filtresFinal[0] = filtre;
-    console.log(this.filtres)
+    console.log(this.filtres, this.filtresFinal)
   }
 
 
   changeFiltre1(value) {
-    console.log(this.filtresFinal)
+    console.log("VALUE 1", value)
     var splitted = value.split("-")
     let filtre: Filtre = {
       filtrePositif: splitted[0],
@@ -160,6 +146,7 @@ export class ConfigurationJeuxComponent implements OnInit {
 
 
   changeFiltre2(value) {
+    console.log("VALUE 2", value)
     var splitted = value.split("-")
     let filtre: Filtre = {
       filtrePositif: splitted[0],
