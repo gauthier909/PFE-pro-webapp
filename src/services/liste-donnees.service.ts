@@ -49,7 +49,10 @@ export class ListeDonneesService {
     return this.jeux
   }
 
-
+  updateJeu(jeu: Jeu){
+    const jeuUrl = `${this.urlBase}/jeux/${jeu._id}`
+    return this.http.put(jeuUrl, jeu).pipe(catchError(this.handleError('putJeu')))
+  }
 
   // Return tout les filtres from DB
   getFiltres(): Observable<Filtre[]> {

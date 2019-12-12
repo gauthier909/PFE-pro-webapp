@@ -1,12 +1,18 @@
-<h2>Les Personnes</h2>
-
-<app-personne-recherche></app-personne-recherche>
-<h4>Cliquer sur une personne pour en voir les détails</h4>
-<ul class="personnes">
-  <li *ngFor="let personne of personnes" >
-   <a routerLink="/detailPersonne/{{personne._id}}">
-      <span class="badge">{{personne.nom}} </span> {{personne.prenom}}
-   </a>
-  </li>
-</ul>
-<a routerLink="/inscriptionPersonne">Inscrire une personne</a>
+<div class="jumbotron">
+  <div class="container">
+    <h2>Les Personnes</h2>
+    <hr>
+    <app-personne-recherche></app-personne-recherche>
+    <hr>
+    <h4>Cliquer sur une personne pour en voir les détails</h4>
+    <ul class="list-form">
+      <li class="list-group-item" *ngFor="let personne of personnes">
+        <a routerLink="/detailPersonne/{{personne._id}}">
+          <span class="badge">{{personne.nom}} {{personne.prenom}}</span>
+        </a>
+      </li>
+    </ul>
+    <hr>
+    <button class="btn btn-primary" routerLink="/inscriptionPersonne">Inscrire une personne</button>
+  </div>
+</div>

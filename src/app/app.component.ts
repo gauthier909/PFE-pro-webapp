@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 import {AuthService} from "../services/auth.service";
 import { SocketService } from 'src/services/socket.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ export class AppComponent implements OnChanges, OnInit{
   constructor(
     private swUpdate:SwUpdate,
     public authServ:AuthService,
-    private socketService: SocketService
+    private socketService: SocketService,
+    private router: Router
   ){}
 
   ngOnChanges(){
@@ -30,7 +32,7 @@ export class AppComponent implements OnChanges, OnInit{
   ngOnInit(){
     this.socketService.socketInit()
     this.reloadCache();
-
+    this.router.navigate([''])
   }
   getUser(){
     if(localStorage.getItem('user')!=undefined) {

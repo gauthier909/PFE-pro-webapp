@@ -23,6 +23,19 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/accueil/accueil.component.html":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/accueil/accueil.component.html ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    <h4><strong>Bienvenue cher utilisateur !</strong></h4>\n    <hr>\n    <ul class=\"list-group\">\n        <li class=\"list-group-item\"><strong>Gérer un enfants: </strong>Permet de gérer les enfants</li>\n        <li class=\"list-group-item\"><strong>Inscrire un enfant: </strong>Permet d'inscrire un enfant</li>\n        <li class=\"list-group-item\"><strong>Gestion professionnelle: </strong>Onglet permettant de gérer les professionnels de l'association </li>\n        <li class=\"list-group-item\"><strong>Configurer un jeu: </strong>Onglet permettant de configurer et de démarrer une partie avec un enfant</li>\n        <li class=\"list-group-item\"><strong>Consulter l'historique d'une partie</strong>Onglet permettant de voir l'historique et d'ajouter des commentaires</li>\n    </ul>\n</div>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html":
 /*!**************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
@@ -32,7 +45,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<header class=\"page-header\" style=\"margin-bottom:20px\">\r\n    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\" style=\"padding-bottom: 0px; padding-top: 0px;\">\r\n        <ul class=\"navbar-nav\"  style=\"text-align:center\">\r\n          <li class=\"nav-item\"><h1><img src=\"../assets/images/education_logo.png\" style=\"width:70px;\"></h1></li>\r\n          <li class=\"nav-item\" *ngIf=\"authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent\"><a class=\"btn btn-primary\" routerLink=\"enfants\">Gérer les enfants</a></li>\r\n          <li class=\"nav-item\" *ngIf=\"authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent\"><a class=\"btn btn-primary\" routerLink=\"inscription\">Inscrire un enfant</a></li>\r\n          <li class=\"nav-item\" *ngIf=\"authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent\"><a class=\"btn btn-primary\" routerLink=\"gestionProfessionnel\">Gestion professionnelle</a></li>\r\n          <li class=\"nav-item\" *ngIf=\"authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent\"><a class=\"btn btn-primary\" routerLink=\"configuration-jeux\">Configurer un jeu</a></li>\r\n          <li class=\"nav-item\" *ngIf=\"authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent\"><a class=\"btn btn-primary\" routerLink=\"historique\">Consulter l'historique d'une partie</a></li>\r\n          <li class=\"nav-item\" *ngIf=\"!authServ.isLoggedIn&&!authServ.isResponssible&&!authServ.isAdmin&&!authServ.isParent\"><a class=\"btn btn-primary\" routerLink=\"login\">Login</a></li>\r\n          <li class=\"nav-item\" *ngIf=\"authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent\"><a class=\"btn btn-danger\" routerLink=\"login\" >Déconnexion</a></li>\r\n        </ul>\r\n        \r\n      </nav>\r\n    <h1>Bonjour : {{getUser()}} !</h1>\r\n  </header>\r\n\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<!-- Footer -->\r\n<footer class=\"page-footer font-small bg-dark\" style=\"margin-top:10% 0\">\r\n\r\n    <!-- Copyright -->\r\n    <div class=\"footer-copyright text-center py-3\" style=\"color:white\">© 2019 Copyright:\r\n      <p> Education IPL</p>\r\n    </div>\r\n    <!-- Copyright -->\r\n\r\n  </footer>\r\n  <!-- Footer -->\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<header class=\"page-header\" style=\"margin-bottom:20px\">\r\n    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\" style=\"padding-bottom: 0px; padding-top: 0px;\">\r\n        <ul class=\"navbar-nav\"  style=\"text-align:center\">\r\n          <li class=\"nav-item\"><h1><img src=\"../assets/images/education_logo.png\" style=\"width:70px;\"></h1></li>\r\n          <li class=\"nav-item\" *ngIf=\"authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent\"><a class=\"btn btn-primary\" routerLink=\"enfants\">Gérer les enfants</a></li>\r\n          <li class=\"nav-item\" *ngIf=\"authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent\"><a class=\"btn btn-primary\" routerLink=\"inscription\">Inscrire un enfant</a></li>\r\n          <li class=\"nav-item\" *ngIf=\"authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent\"><a class=\"btn btn-primary\" routerLink=\"gestionProfessionnel\">Gestion professionnelle</a></li>\r\n          <li class=\"nav-item\" *ngIf=\"authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent\"><a class=\"btn btn-primary\" routerLink=\"configuration-jeux\">Configurer un jeu</a></li>\r\n          <li class=\"nav-item\" *ngIf=\"authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent\"><a class=\"btn btn-primary\" routerLink=\"historique\">Consulter l'historique d'une partie</a></li>\r\n          <!-- <li class=\"nav-item\" *ngIf=\"!authServ.isLoggedIn&&!authServ.isResponssible&&!authServ.isAdmin&&!authServ.isParent\"><a class=\"btn btn-primary\" routerLink=\"login\">Login</a></li> -->\r\n          <li class=\"nav-item\" *ngIf=\"authServ.isLoggedIn||authServ.isResponssible||authServ.isAdmin||authServ.isParent\"><a class=\"btn btn-danger\" (click)=\"logout()\" routerLink=\"login\">Déconnexion</a></li>\r\n        </ul>\r\n      </nav>\r\n  </header>\r\n\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<!-- Footer -->\r\n<footer class=\"page-footer font-small bg-dark mt-3\" style=\"height: auto; bottom: 0;\">\r\n\r\n    <!-- Copyright -->\r\n  <div class=\"footer-copyright text-center py-3\" style=\"color:white\">© 2019 Copyright:\r\n    <p> Education IPL</p>\r\n  </div>\r\n    <!-- Copyright -->\r\n\r\n</footer>\r\n  <!-- Footer -->\r\n");
 
 /***/ }),
 
@@ -45,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\r\n    <div class=\"col-xs-12 col-md-6 col-md-offset-3\">\r\n        <form #authForm=\"ngForm\" (ngSubmit)=\"onSubmit(authForm)\">\r\n            <div class=\"form-group\">\r\n                <label for=\"email\">E-Mail</label>\r\n                <input type=\"email\" id=\"email\" class=\"form-control\" \r\n                    ngModel \r\n                    name=\"email\"\r\n                    required\r\n                    email>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"password\">Password</label>\r\n                <input type=\"password\" id=\"password\" class=\"form-control\" \r\n                    ngModel\r\n                    name=\"password\"\r\n                    required\r\n                    minlength=\"3\">\r\n            </div>\r\n            <div>\r\n                <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!authForm.valid\">\r\n                    {{isLoginMode ? 'Login' : 'Sign up'}}\r\n                </button>\r\n                <button class=\"btn btn-primary\" type=\"button\" (click)=\"onSwitchMode()\">\r\n                    Switch to {{isLoginMode ? 'Login' : 'Sign up'}}\r\n                </button>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\n    <div class=\"col-xs-12 col-md-6 col-md-offset-3\">\n        <form #authForm=\"ngForm\" (ngSubmit)=\"onSubmit(authForm)\">\n            <div class=\"form-group\">\n                <label for=\"email\">E-Mail</label>\n                <input type=\"email\" id=\"email\" class=\"form-control\" \n                    ngModel \n                    name=\"email\"\n                    required\n                    email>\n            </div>\n            <div class=\"form-group\">\n                <label for=\"password\">Password</label>\n                <input type=\"password\" id=\"password\" class=\"form-control\" \n                    ngModel\n                    name=\"password\"\n                    required\n                    minlength=\"3\">\n            </div>\n            <div>\n                <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!authForm.valid\">\n                    {{isLoginMode ? 'Login' : 'Sign up'}}\n                </button>\n                <button class=\"btn btn-primary\" type=\"button\" (click)=\"onSwitchMode()\">\n                    Switch to {{isLoginMode ? 'Login' : 'Sign up'}}\n                </button>\n            </div>\n        </form>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -58,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Configuration de la partie</h2>\r\n\r\n\r\n<div class=\"container-fluid\">\r\n        <label>Enfant : </label>\r\n        <div class=\"form-row\">\r\n            <div class=\"form-group\">\r\n                <select [(ngModel)]=\"selectedEnfantID\" name=\"enf\">\r\n                    <option *ngFor=\"let e of enfants\" [value]=\"e._id\">{{e.prenom}} {{e.nom}}</option>\r\n                </select>\r\n            </div>\r\n        </div>\r\n    \r\n    </div>\r\n\r\n\r\n<div class=\"container-fluid\">\r\n    <label>Mandat : </label>\r\n    <div class=\"form-row\">\r\n        <div class=\"form-group\">\r\n            <select [(ngModel)]=\"selectedRelation\" name=\"relationDemandeur\">\r\n                <option *ngFor=\" let demandeur of demandeurs\" [value]=\"demandeur\">{{demandeur}}</option>\r\n            </select>\r\n\r\n            <div class=\"form-group\" *ngIf=\"selectedRelation==='médecin' || selectedRelation==='autre professionnel'\">\r\n                <input type=\"text\" placeholder=\"nom\" class=\"form-control\" [(ngModel)]=\"nom\">\r\n                <input type=\"text\" placeholder=\"prenom\" class=\"form-control\" [(ngModel)]=\"prenom\">\r\n                <input type=\"text\" placeholder=\"specialite\" class=\"form-control\" [(ngModel)]=\"specialite\">\r\n                <input type=\"text\" placeholder=\"telephone\" class=\"form-control\" [(ngModel)]=\"telephone\">\r\n                <input type=\"text\" placeholder=\"email\" class=\"form-control\" [(ngModel)]=\"email\">\r\n            </div>\r\n            <div class=\"form-group\" *ngIf=\"selectedRelation==='autre'\">\r\n                <input type=\"text\" placeholder=\"autre demandeur\" class=\"form-control\" [(ngModel)]=\"autre\">\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label>Date du mandat : </label>\r\n            <input type=\"date\" #date>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label for=\"objetDemande\">Objet de la demande initiale : </label>\r\n            <textarea class=\"form-control rounded-0\" rows=\"3\" placeholder=\"Objet de la demande...\" #demande></textarea>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div>\r\n    \r\n    <h4>Choix des filtres</h4>\r\n    <button (click)=\"filtreParDefaut()\">Configuration par défaut</button>\r\n\r\n    <div id='filtre0'>\r\n        <label>Filtre\r\n            <select #filtre0 (change)=\"changeFiltre0(filtre0.value)\">\r\n                <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>\r\n                <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>\r\n                <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>\r\n            </select>\r\n        </label>\r\n        <button (click)=\"supprimerFiltre0()\">Supprimer ce filtre</button>\r\n    </div>\r\n    <div id='filtre1'>\r\n        <label>Filtre\r\n            <select #filtre1 (change)=\"changeFiltre1(filtre1.value)\">\r\n                <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>\r\n                <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>\r\n                <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>\r\n            </select>\r\n        </label>\r\n        <button (click)=\"supprimerFiltre1()\">Supprimer ce filtre</button>\r\n    </div>\r\n    <div id='filtre2'>\r\n        <label>Filtre\r\n            <select #filtre2 (change)=\"changeFiltre2(filtre2.value)\">\r\n                <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>\r\n                <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>\r\n                <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>\r\n            </select>\r\n        </label>\r\n        <button (click)=\"supprimerFiltre2()\">Supprimer ce filtre</button>\r\n    </div>\r\n\r\n    <button (click)=\"lancerPartie(date.value,demande.value)\">Lancer la partie</button>\r\n    <div *ngIf=\"isLance\">\r\n        <p class=\"lance\">La partie a été lancée ! L'enfant peut commencer à jouer</p>\r\n    </div>\r\n\r\n</div>\r\n\r\n<!--<form *ngFor=\"let filtre of filtres;let i = index\" [attr.data-index]=\"i\">\r\n        <div>\r\n            <label>Filtre \r\n                <select #Filtre>\r\n                    <option *ngFor='let filtre of filtres' [value]=\"filtres[i]\"  >{{filtre.filtrePositif}} - {{filtre.filtreNegatif}}</option>\r\n                </select>\r\n            </label>\r\n            <button (click)=\"supprimerFiltre()\">Supprimer ce filtre</button>\r\n        </div>\r\n        \r\n    </form>\r\n-->\r\n<!--(click)=\"ajouterFiltre()\"-->\r\n\r\n<!--\r\n<button (click)=\"sauvegarderFiltre()\">Sauvegarder les filtres</button>\r\n-->");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\">\r\n  <h2><strong>Configuration de la partie</strong></h2>\r\n  <hr>\r\n  <div class=\"container\">\r\n    <label>Enfant : </label>\r\n    <div class=\"form-row\">\r\n      <div class=\"form-group\">\r\n        <select [(ngModel)]=\"selectedEnfantID\" name=\"enf\">\r\n          <ng-container *ngFor=\"let e of enfants; let i = index\">\r\n            <option [value]=\"e._id\" [selected]=\"i==0 ? selected : null\">{{e.prenom}} {{e.nom}}</option>\r\n          </ng-container>\r\n\r\n        </select>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n\r\n  <hr>\r\n  <div class=\"container\">\r\n      <label>Mandat : </label>\r\n      <select [(ngModel)]=\"selectedRelation\" name=\"relationDemandeur\" class=\"ml-3\">\r\n        <option *ngFor=\" let demandeur of demandeurs\" [value]=\"demandeur\">{{demandeur}}</option>\r\n      </select>\r\n\r\n      <div class=\"container\" *ngIf=\"selectedRelation==='médecin' || selectedRelation==='autre professionnel'\">\r\n        <input type=\"text\" placeholder=\"nom\" class=\"form-control\" [(ngModel)]=\"nom\">\r\n        <input type=\"text\" placeholder=\"prenom\" class=\"form-control\" [(ngModel)]=\"prenom\">\r\n        <input type=\"text\" placeholder=\"specialite\" class=\"form-control\" [(ngModel)]=\"specialite\">\r\n        <input type=\"text\" placeholder=\"telephone\" class=\"form-control\" [(ngModel)]=\"telephone\">\r\n        <input type=\"text\" placeholder=\"email\" class=\"form-control\" [(ngModel)]=\"email\">\r\n      </div>\r\n      <div class=\"container\" *ngIf=\"selectedRelation==='autre'\">\r\n        <input type=\"text\" placeholder=\"autre demandeur\" class=\"form-control\" [(ngModel)]=\"autre\">\r\n      </div>\r\n    </div>\r\n    <div class=\"container\">\r\n      <label>Date du mandat : </label>\r\n      <input type=\"date\" #date class=\"ml-3\">\r\n    </div>\r\n    <div class=\"container\">\r\n      <label for=\"objetDemande\">Objet de la demande initiale : </label>\r\n      <textarea class=\"form-control rounded-0\" rows=\"3\" placeholder=\"Objet de la demande...\" #demande></textarea>\r\n    </div>\r\n\r\n  <div>\r\n\r\n    <h4 class=\"my-3\">Choix des filtres</h4>\r\n    <hr>\r\n\r\n    <div class=\"container\">\r\n      <button class=\"btn btn-secondary\" (click)=\"filtreParDefaut()\">Configuration par défaut</button>\r\n      <div id='filtre0' class=\"py-2\">\r\n        <label>Filtre\r\n          <select #filtre0 (change)=\"changeFiltre0(filtre0.value)\">\r\n            <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>\r\n            <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>\r\n            <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>\r\n          </select>\r\n        </label>\r\n        <button class=\"btn btn-danger ml-2\" (click)=\"supprimerFiltre0()\">Supprimer ce filtre</button>\r\n      </div>\r\n      <div id='filtre1' class=\"py-2\">\r\n        <label>Filtre\r\n          <select #filtre1 (change)=\"changeFiltre1(filtre1.value)\">\r\n            <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>\r\n            <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>\r\n            <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>\r\n          </select>\r\n        </label>\r\n        <button class=\"btn btn-danger ml-2\" (click)=\"supprimerFiltre1()\">Supprimer ce filtre</button>\r\n      </div>\r\n      <div id='filtre2' class=\"py-2\">\r\n        <label>Filtre\r\n          <select #filtre2 (change)=\"changeFiltre2(filtre2.value)\">\r\n            <option>{{filtres[2].filtrePositif}} - {{filtres[2].filtreNegatif}}</option>\r\n            <option>{{filtres[1].filtrePositif}} - {{filtres[1].filtreNegatif}}</option>\r\n            <option>{{filtres[0].filtrePositif}} - {{filtres[0].filtreNegatif}}</option>\r\n          </select>\r\n        </label>\r\n        <button class=\"btn btn-danger ml-2\" (click)=\"supprimerFiltre2()\">Supprimer ce filtre</button>\r\n      </div>\r\n      <button class=\"btn btn-primary\" (click)=\"lancerPartie(date.value,demande.value)\">Lancer la partie</button>\r\n\r\n    </div>\r\n    <div *ngIf=\"isLance\">\r\n      <p class=\"lance\"><strong>La partie a été lancée ! L'enfant peut commencer à jouer</strong></p>\r\n    </div>\r\n\r\n  </div>\r\n\r\n</div>\r\n\r\n<!--<form *ngFor=\"let filtre of filtres;let i = index\" [attr.data-index]=\"i\">\r\n        <div>\r\n            <label>Filtre \r\n                <select #Filtre>\r\n                    <option *ngFor='let filtre of filtres' [value]=\"filtres[i]\"  >{{filtre.filtrePositif}} - {{filtre.filtreNegatif}}</option>\r\n                </select>\r\n            </label>\r\n            <button (click)=\"supprimerFiltre()\">Supprimer ce filtre</button>\r\n        </div>\r\n        \r\n    </form>\r\n-->\r\n<!--(click)=\"ajouterFiltre()\"-->\r\n\r\n<!--\r\n<button (click)=\"sauvegarderFiltre()\">Sauvegarder les filtres</button>\r\n-->\r\n");
 
 /***/ }),
 
@@ -71,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\r\n    <form>\r\n        <div class=\"form-row\">\r\n            <div class=\"form-group\">\r\n                <label for=\"nomFamille\">Nom de famille : </label>\r\n                <div class=\"col-sm-10\">\r\n                    <input type=\"text\" #childNom class=\"form-control\">\r\n                </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>Prénom : </label>\r\n                <div class=\"col-sm-10\">\r\n                    <input type=\"text\" #childPrenom class=\"form-control\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-row\">\r\n            <div class=\"form-group\">\r\n                <label>Date de naissance : </label>\r\n                <div class=\"col-sm-10\">\r\n                    <input type=\"date\" #childBirth class=\"form-control\">\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <label>Langue usuelle : </label>\r\n                <div class=\"col-sm-10\">\r\n                    <input type=\"text\" #langueUsuelle class=\"form-control\">\r\n                </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>Dominance : </label>\r\n                <div class=\"col-sm-10\">\r\n                    <select name=\"dominance\" #dominance class=\"browser-default custom-select\">\r\n                        <option *ngFor=\"let dom of dominances\" [value]=\"dom\">{{dom}}</option>\r\n                    </select>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"form-row\">\r\n            <div class=\"form-group\">\r\n                <label>Scolarite :</label>\r\n                <select name='enseignement' class=\"browser-default custom-select\" [(ngModel)]='selectedEnseignement'\r\n                    #enseignement>\r\n                    <option *ngFor='let scolarite of scolaritees' [value]=\"scolarite\">{{scolarite}}</option>\r\n                </select>\r\n                <div class=\"form-group col-sm-10\">\r\n                    <div *ngIf=\"selectedEnseignement == 'integration' || selectedEnseignement == 'specialise'\">\r\n                        Type : <input type=\"text\" #typeEnseignement [(ngModel)]=\"typeE\" name=\"type\" placeholder=\"Type\"\r\n                            class=\"form-control\" />\r\n                    </div>\r\n                    Niveau : <input type=\"text\" #niveauScolaire placeholder=\"Niveau\" class=\"form-control\" />\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-row\">\r\n            <div *ngFor=\"let obj of dataarray; let i=index\" name=\"info_contact_plus\">\r\n                <div class=\"form-row\">\r\n                    <div class=\"form-group\">\r\n                        <label>Prenom : </label>\r\n                        <input [(ngModel)]=\"obj.prenom\" placeholder=\"Prénom du contact\" name=\"prenom{{i}}\"\r\n                            class=\"form-control\" />\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Nom : </label>\r\n                        <input [(ngModel)]=\"obj.nom\" placeholder=\"Nom du contact\" name=\"nom{{i}}\"\r\n                            class=\"form-control\" />\r\n                    </div>\r\n                </div>\r\n                <label>Telephone : </label>\r\n                <input type=\"tel\" [(ngModel)]=\"obj.telephone\" name=\"telephone{{i}}\" placeholder=\"Telephone du contact\"\r\n                    class=\"form-control\">\r\n\r\n                <label>Email : </label>\r\n                <input type=\"email\" [(ngModel)]=\"obj.email\" name=\"email{{i}}\" placeholder=\"Email du contact\"\r\n                    class=\"form-control\">\r\n\r\n                <label>Relation : </label>\r\n                <select name='relation_contact' class=\"browser-default custom-select\" [(ngModel)]=\"obj.relation\"\r\n                    #relation>\r\n                    <option *ngFor='let relation of relations' [value]='relation'>{{relation}}</option>\r\n                </select>\r\n                <div class=\"form-group col-sm-10\">\r\n                        <div *ngIf=\"obj.relation === 'autre'\">\r\n                            Autre : <input type=\"text\" #a [(ngModel)]=\"autreRelation\" name=\"aut\"\r\n                                class=\"form-control\" />\r\n                        </div>\r\n                    </div>\r\n                <!--\r\n\r\n                <select name='enseignement' class=\"browser-default custom-select\" [(ngModel)]='selectedEnseignement'\r\n                    #enseignement>\r\n                    <option *ngFor='let scolarite of scolaritees' [value]=\"scolarite\">{{scolarite}}</option>\r\n                </select>\r\n                <div class=\"form-group col-sm-10\">\r\n                    <div *ngIf=\"selectedEnseignement == 'integration' || selectedEnseignement == 'specialise'\">\r\n                        Type : <input type=\"text\" #typeEnseignement [(ngModel)]=\"typeE\" name=\"type\" placeholder=\"Type\"\r\n                            class=\"form-control\" />\r\n                    </div>\r\n                    Niveau : <input type=\"text\" #niveauScolaire placeholder=\"Niveau\" class=\"form-control\" />\r\n                </div>\r\n\r\n                -->\r\n\r\n                <div *ngIf=\"i!=0\">\r\n                    <span class=\"btn btn-danger\" (click)=\"supprimerChamp(i)\">Supprimer</span>\r\n                </div>\r\n                <span class=\"btn btn-primary\" (click)=\"ajouterContact()\">Ajouter contact</span>\r\n            </div>\r\n\r\n        </div>\r\n\r\n        <div>\r\n            <label>Besoins :\r\n                <select name=\"besoinsChoisis\" class=\"browser-default custom-select\" [(ngModel)]='selectedBesoins' #mult\r\n                    multiple>\r\n                    <option *ngFor=\"let besoin of besoins\" [value]=\"besoin\">{{besoin}}\r\n                    </option>\r\n                </select>\r\n\r\n                <div *ngIf=\"selectedBesoins.indexOf('Autre')>=0\" class=\"form-group col-sm-10\">\r\n                    Autre : <input type=\"text\" [(ngModel)]=\"autreBesoin\" name=\"a\" #autre class=\"form-control\">\r\n                </div>\r\n            </label>\r\n        </div>\r\n\r\n        <!--<div>\r\n            Professionnel : \r\n            <select class=\"browser-default custom-select\" #professionnel>\r\n                <option *ngFor=\"let prof of professionnels\" [value]=\"prof._id\">{{prof.prenom}} {{prof.nom}}</option>\r\n            </select>\r\n            <input type=\"text\" #professionnel class=\"form-control\" placeholder=\"Dr. Jean..\" />\r\n        </div>-->\r\n        <br>\r\n\r\n        <button class=\"btn btn-primary\" (click)=\"add(childNom.value, childPrenom.value, childBirth.value,langueUsuelle.value,dominance.value,\r\n                    enseignement.value,niveauScolaire.value);\r\n                        childNom.value='';\r\n                        childPrenom.value='';\r\n                        childBirth.value='';\r\n            \r\n                        \">\r\n            Inscrire</button>\r\n        <br>\r\n\r\n    </form>\r\n    <!--,dominance.value,\r\n            enseignement.value,type.value,niveauScolaire.value,\r\n            mult.value,professionnel.value,autre.value-->\r\n</div>\r\n<br>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\">\r\n  <div class=\"container-fluid\">\r\n    <form>\r\n      <div class=\"form-row\">\r\n        <div class=\"form-group\">\r\n          <label for=\"nomFamille\">Nom de famille : </label>\r\n          <div class=\"col-sm-10\">\r\n            <input type=\"text\" #childNom class=\"form-control\">\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label>Prénom : </label>\r\n          <div class=\"col-sm-10\">\r\n            <input type=\"text\" #childPrenom class=\"form-control\">\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"form-row\">\r\n        <div class=\"form-group\">\r\n          <label>Date de naissance : </label>\r\n          <div class=\"col-sm-10\">\r\n            <input type=\"date\" #childBirth class=\"form-control\">\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label>Langue usuelle : </label>\r\n          <div class=\"col-sm-10\">\r\n            <input type=\"text\" #langueUsuelle class=\"form-control\">\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label>Dominance : </label>\r\n          <div class=\"col-sm-10\">\r\n            <select name=\"dominance\" #dominance class=\"browser-default custom-select\">\r\n              <option *ngFor=\"let dom of dominances\" [value]=\"dom\">{{dom}}</option>\r\n            </select>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"form-row\">\r\n        <div class=\"form-group\">\r\n          <label>Scolarite :</label>\r\n          <select name='enseignement' class=\"browser-default custom-select\" [(ngModel)]='selectedEnseignement'\r\n            #enseignement>\r\n            <option *ngFor='let scolarite of scolaritees' [value]=\"scolarite\">{{scolarite}}</option>\r\n          </select>\r\n          <div class=\"form-group col-sm-10\">\r\n            <div *ngIf=\"selectedEnseignement == 'integration' || selectedEnseignement == 'specialise'\">\r\n              Type : <input type=\"text\" #typeEnseignement [(ngModel)]=\"typeE\" name=\"type\" placeholder=\"Type\"\r\n                class=\"form-control\" />\r\n            </div>\r\n            Niveau : <input type=\"text\" #niveauScolaire placeholder=\"Niveau\" class=\"form-control\" />\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"form-row\">\r\n        <div *ngFor=\"let obj of dataarray; let i=index\" name=\"info_contact_plus\">\r\n          <div class=\"form-row\">\r\n            <div class=\"form-group\">\r\n              <label>Prenom : </label>\r\n              <input [(ngModel)]=\"obj.prenom\" placeholder=\"Prénom du contact\" name=\"prenom{{i}}\" class=\"form-control\" />\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label>Nom : </label>\r\n              <input [(ngModel)]=\"obj.nom\" placeholder=\"Nom du contact\" name=\"nom{{i}}\" class=\"form-control\" />\r\n            </div>\r\n          </div>\r\n          <label>Telephone : </label>\r\n          <input type=\"tel\" [(ngModel)]=\"obj.telephone\" name=\"telephone{{i}}\" placeholder=\"Telephone du contact\"\r\n            class=\"form-control\">\r\n\r\n          <label>Email : </label>\r\n          <input type=\"email\" [(ngModel)]=\"obj.email\" name=\"email{{i}}\" placeholder=\"Email du contact\"\r\n            class=\"form-control\">\r\n\r\n          <label>Relation : </label>\r\n          <select name='relation_contact' class=\"browser-default custom-select\" [(ngModel)]=\"obj.relation\" #relation>\r\n            <option *ngFor='let relation of relations' [value]='relation'>{{relation}}</option>\r\n          </select>\r\n          <div class=\"form-group col-sm-10\">\r\n            <div *ngIf=\"obj.relation === 'autre'\">\r\n              Autre : <input type=\"text\" #a [(ngModel)]=\"autreRelation\" name=\"aut\" class=\"form-control\" />\r\n            </div>\r\n          </div>\r\n          <!--\r\n\r\n                <select name='enseignement' class=\"browser-default custom-select\" [(ngModel)]='selectedEnseignement'\r\n                    #enseignement>\r\n                    <option *ngFor='let scolarite of scolaritees' [value]=\"scolarite\">{{scolarite}}</option>\r\n                </select>\r\n                <div class=\"form-group col-sm-10\">\r\n                    <div *ngIf=\"selectedEnseignement == 'integration' || selectedEnseignement == 'specialise'\">\r\n                        Type : <input type=\"text\" #typeEnseignement [(ngModel)]=\"typeE\" name=\"type\" placeholder=\"Type\"\r\n                            class=\"form-control\" />\r\n                    </div>\r\n                    Niveau : <input type=\"text\" #niveauScolaire placeholder=\"Niveau\" class=\"form-control\" />\r\n                </div>\r\n\r\n                -->\r\n\r\n          <div *ngIf=\"i!=0\">\r\n            <span class=\"btn btn-danger\" (click)=\"supprimerChamp(i)\">Supprimer</span>\r\n          </div>\r\n          <span class=\"btn btn-primary\" (click)=\"ajouterContact()\">Ajouter contact</span>\r\n        </div>\r\n\r\n      </div>\r\n\r\n      <div>\r\n        <label>Besoins :\r\n          <select name=\"besoinsChoisis\" class=\"browser-default custom-select\" [(ngModel)]='selectedBesoins' #mult\r\n            multiple>\r\n            <option *ngFor=\"let besoin of besoins\" [value]=\"besoin\">{{besoin}}\r\n            </option>\r\n          </select>\r\n\r\n          <div *ngIf=\"selectedBesoins.indexOf('Autre')>=0\" class=\"form-group col-sm-10\">\r\n            Autre : <input type=\"text\" [(ngModel)]=\"autreBesoin\" name=\"a\" #autre class=\"form-control\">\r\n          </div>\r\n        </label>\r\n      </div>\r\n\r\n      <!--<div>\r\n            Professionnel : \r\n            <select class=\"browser-default custom-select\" #professionnel>\r\n                <option *ngFor=\"let prof of professionnels\" [value]=\"prof._id\">{{prof.prenom}} {{prof.nom}}</option>\r\n            </select>\r\n            <input type=\"text\" #professionnel class=\"form-control\" placeholder=\"Dr. Jean..\" />\r\n        </div>-->\r\n      <br>\r\n\r\n      <button class=\"btn btn-primary\" (click)=\"add(childNom.value, childPrenom.value, childBirth.value,langueUsuelle.value,dominance.value,\r\n                    enseignement.value,niveauScolaire.value);\r\n                        childNom.value='';\r\n                        childPrenom.value='';\r\n                        childBirth.value='';\r\n            \r\n                        \">\r\n        Inscrire</button>\r\n      <br>\r\n\r\n    </form>\r\n    <!--,dominance.value,\r\n            enseignement.value,type.value,niveauScolaire.value,\r\n            mult.value,professionnel.value,autre.value-->\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -84,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"enfant\" class=\"container\">\r\n\r\n    <h2>{{enfant.nom | uppercase}} </h2>\r\n    <div class=\"row\">\r\n        <div class=\"col input-group input-group-sm p-3\">\r\n            <div class=\"input-group-prepend\">\r\n                <span class=\"input-group-text\" id=\"nom\">Nom</span>\r\n            </div>\r\n            <input [(ngModel)]=\"enfant.nom\" placeholder=\"nom\" />\r\n        </div>\r\n        <div class=\"col input-group input-group-sm p-3\">\r\n            <div class=\"input-group-prepend\">\r\n                <span class=\"input-group-text\" id=\"nom\">Prénom</span>\r\n            </div>\r\n            <input [(ngModel)]=\"enfant.prenom\" placeholder=\"prenom\" />\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col input-group input-group-sm p-3\">\r\n                <div class=\"input-group-prepend\">\r\n                    <span class=\"input-group-text\" id=\"nom\">Date de naissance</span>\r\n                </div>\r\n            <input type=\"date\" [(ngModel)]=\"enfant.date_naissance\" placeholder=\"Date de naissance\" />\r\n        </div>\r\n        <div class=\"col input-group input-group-sm p-3\">\r\n                <div class=\"input-group-prepend\">\r\n                    <span class=\"input-group-text\" id=\"nom\">Langue usuelle</span>\r\n                </div>\r\n            <input [(ngModel)]=\"enfant.langue_usuelle\" placeholder=\"Langue usuelle\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col input-group input-group-sm p-3\">\r\n                <div class=\"input-group-prepend\">\r\n                    <span class=\"input-group-text\" id=\"nom\">Dominance</span>\r\n                </div>\r\n            <select [(ngModel)]='enfant.dominance'>\r\n                <option *ngFor='let dom of dominances' [value]=\"dom\">{{dom}}</option>\r\n            </select>\r\n        </div>\r\n        <div class=\"col input-group input-group-sm p-3\">\r\n                <div class=\"input-group-prepend\">\r\n                    <span class=\"input-group-text\" id=\"nom\">Scolarité</span>\r\n                </div>\r\n            <select [(ngModel)]='enfant.scolarite.enseignement' name='enseignement'>\r\n                <option *ngFor='let scolarite of scolaritees' [value]=\"scolarite\">{{scolarite}}</option>\r\n            </select>\r\n\r\n            <div *ngIf=\"enfant.scolarite.enseignement == 'integration' || enfant.scolarite.enseignement == 'specialise'\">\r\n                Type: <input [(ngModel)]=\"enfant.scolarite.type\" placeholder=\"Type\" />\r\n            </div>\r\n                Niveau: <input [(ngModel)]=\"enfant.scolarite.niveau\" placeholder=\"Niveau\" />\r\n    \r\n        </div>\r\n\r\n\r\n\r\n    </div>\r\n    <div class=\"container\">\r\n        <h3>Contacts</h3>\r\n        <div *ngFor=\"let contact of enfant.contacts; let i=index\" name=\"info_contact\" class=\"container\">\r\n            <h4>Contact n° : {{i+1}}</h4>\r\n            <div class=\"row\">\r\n                <div class=\"col\">\r\n                    <label>Prenom</label>\r\n                    <input [(ngModel)]=\"contact.prenom\" placeholder=\"Contacts\" name=\"prenom\"/>\r\n                </div>\r\n                <div class=\"col\">\r\n                    <label>Nom</label>\r\n                    <input [(ngModel)]=\"contact.nom\" placeholder=\"Contacts\" name=\"nom\" />\r\n                </div>\r\n            </div>\r\n            <div class=\"row\">\r\n                <div class=\"col\">\r\n                    <label>Telephone</label>\r\n                    <input type=\"tel\" [(ngModel)]=\"contact.telephone\" name=\"telephone\">\r\n                </div>\r\n                <div class=\"col\">\r\n                    <label>Email</label>\r\n                    <input type=\"email\" [(ngModel)]=\"contact.email\" name=\"email\">\r\n                </div>\r\n            </div>\r\n            <div class=\"row\">\r\n                <div class=\"col\">\r\n                    <label>Relation</label>\r\n                    <select [(ngModel)]='contact.relation' name='relation_contact'>\r\n                        <option *ngFor='let relation of relations' [value]='relation'>{{relation}}</option>\r\n                    </select>\r\n                </div>\r\n            </div>\r\n            <span class=\"btn btn-danger\" (click)=\"supprimerContact(i)\">Supprimer</span>\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"container mt-3\">\r\n            <div *ngFor=\"let obj of dataarray; let i=index\"  name=\"info_contact_plus\">\r\n                <label>Prenom</label>\r\n                <input [(ngModel)]=\"obj.prenom\" placeholder=\"Contacts\" name=\"prenom{{i}}\" />\r\n\r\n                <label>Nom</label>\r\n                <input [(ngModel)]=\"obj.nom\" placeholder=\"Contacts\" name=\"nom{{i}}\" />\r\n\r\n                <label>Telephone</label>\r\n                <input type=\"tel\" [(ngModel)]=\"obj.telephone\" name=\"telephone{{i}}\">\r\n\r\n                <label>Email</label>\r\n                <input type=\"email\" [(ngModel)]=\"obj.email\" name=\"email{{i}}\">\r\n\r\n                <label>Role</label>\r\n                <select name='relation_contact'>\r\n                    <option *ngFor='let relation of relations' [value]='relation'>{{relation}}</option>\r\n                </select>\r\n                <span class=\"btn btn-danger\" (click)=\"supprimerChamp(i)\">Supprimer</span>\r\n            </div>\r\n            <span class=\"btn btn-primary\" (click)=\"ajouterContact()\">Ajouter contact</span>\r\n    </div>\r\n    <h3>Besoins</h3>\r\n    <div class=\"row\" *ngFor=\"let besoin of besoins\">\r\n        <div class=\"col-sm-auto\">\r\n            <input type='checkbox' name=\"besoins\" value=\"{{besoin}}\" [checked]=\"enfant.besoins.indexOf(besoin)>=0\"/> \r\n        </div>  \r\n        <div class=\"col-sm-auto\">{{besoin}}</div>\r\n\r\n               \r\n    </div>\r\n    <div class=\"container\">\r\n        <h4>Changer de professionnel : (en cours = {{professionnelEnCours.prenom}} {{professionnelEnCours.nom}})</h4>\r\n\r\n        <!--<input [(ngModel)]=\"enfant.professionnel\" placeholder=\"Professionnel en charge\" />-->\r\n        <label>Nouveau professionnel : </label>\r\n        <select [(ngModel)]=\"selectedProfessionnel\" name=\"profe\">\r\n            <option *ngFor=\"let pro of professionnels\" [value]=\"pro._id\">{{pro.prenom}} {{pro.nom}}</option>\r\n        </select>\r\n\r\n        <!--\r\n            <select name='relation_contact'>\r\n                    <option *ngFor='let relation of relations' [value]='relation'>{{relation}}</option>\r\n                </select>\r\n        -->\r\n\r\n    </div>\r\n    <div class=\"row m-3\">\r\n        <div class=\"col\">\r\n            <button (click)=\"modifEnfant()\">Sauvegarder les modifications</button>\r\n        </div>\r\n        <div class=\"col\">\r\n            <button (click)=\"deleteEnfant()\">Supprimer l'enfant</button>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row m-3\">\r\n        <div class=\"col\">\r\n            <button (click)=\"goBack()\">Revenir en arrière</button>\r\n        </div>\r\n    </div>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n  <div *ngIf=\"enfant\" class=\"container\">\r\n\r\n    <h2>{{enfant.nom | uppercase}} </h2>\r\n    <div class=\"row\">\r\n      <div class=\"col input-group input-group-sm p-3\">\r\n        <div class=\"input-group-prepend\">\r\n          <span class=\"input-group-text\" id=\"nom\">Nom</span>\r\n        </div>\r\n        <input [(ngModel)]=\"enfant.nom\" placeholder=\"nom\" />\r\n      </div>\r\n      <div class=\"col input-group input-group-sm p-3\">\r\n        <div class=\"input-group-prepend\">\r\n          <span class=\"input-group-text\" id=\"nom\">Prénom</span>\r\n        </div>\r\n        <input [(ngModel)]=\"enfant.prenom\" placeholder=\"prenom\" />\r\n      </div>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col input-group input-group-sm p-3\">\r\n        <div class=\"input-group-prepend\">\r\n          <span class=\"input-group-text\" id=\"nom\">Date de naissance</span>\r\n        </div>\r\n        <input type=\"date\" [(ngModel)]=\"enfant.date_naissance\" placeholder=\"Date de naissance\" />\r\n      </div>\r\n      <div class=\"col input-group input-group-sm p-3\">\r\n        <div class=\"input-group-prepend\">\r\n          <span class=\"input-group-text\" id=\"nom\">Langue usuelle</span>\r\n        </div>\r\n        <input [(ngModel)]=\"enfant.langue_usuelle\" placeholder=\"Langue usuelle\" />\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col input-group input-group-sm p-3\">\r\n        <div class=\"input-group-prepend\">\r\n          <span class=\"input-group-text\" id=\"nom\">Dominance</span>\r\n        </div>\r\n        <select [(ngModel)]='enfant.dominance'>\r\n          <option *ngFor='let dom of dominances' [value]=\"dom\">{{dom}}</option>\r\n        </select>\r\n      </div>\r\n      <div class=\"col input-group input-group-sm p-3\">\r\n        <div class=\"input-group-prepend\">\r\n          <span class=\"input-group-text\" id=\"nom\">Scolarité</span>\r\n        </div>\r\n        <select [(ngModel)]='enfant.scolarite.enseignement' name='enseignement'>\r\n          <option *ngFor='let scolarite of scolaritees' [value]=\"scolarite\">{{scolarite}}</option>\r\n        </select>\r\n\r\n        <div *ngIf=\"enfant.scolarite.enseignement == 'integration' || enfant.scolarite.enseignement == 'specialise'\">\r\n          Type: <input [(ngModel)]=\"enfant.scolarite.type\" placeholder=\"Type\" />\r\n        </div>\r\n        Niveau: <input [(ngModel)]=\"enfant.scolarite.niveau\" placeholder=\"Niveau\" />\r\n\r\n      </div>\r\n\r\n\r\n\r\n    </div>\r\n    <div class=\"container\">\r\n      <h3>Contacts</h3>\r\n      <div *ngFor=\"let contact of enfant.contacts; let i=index\" name=\"info_contact\" class=\"container\">\r\n        <h4>Contact n° : {{i+1}}</h4>\r\n        <div class=\"row\">\r\n          <div class=\"col\">\r\n            <label>Prenom</label>\r\n            <input [(ngModel)]=\"contact.prenom\" placeholder=\"Contacts\" name=\"prenom\" />\r\n          </div>\r\n          <div class=\"col\">\r\n            <label>Nom</label>\r\n            <input [(ngModel)]=\"contact.nom\" placeholder=\"Contacts\" name=\"nom\" />\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col\">\r\n            <label>Telephone</label>\r\n            <input type=\"tel\" [(ngModel)]=\"contact.telephone\" name=\"telephone\">\r\n          </div>\r\n          <div class=\"col\">\r\n            <label>Email</label>\r\n            <input type=\"email\" [(ngModel)]=\"contact.email\" name=\"email\">\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col\">\r\n            <label>Relation</label>\r\n            <select [(ngModel)]='contact.relation' name='relation_contact'>\r\n              <option *ngFor='let relation of relations' [value]='relation'>{{relation}}</option>\r\n            </select>\r\n          </div>\r\n        </div>\r\n        <span class=\"btn btn-danger\" (click)=\"supprimerContact(i)\">Supprimer</span>\r\n      </div>\r\n\r\n    </div>\r\n    <div class=\"container mt-3\">\r\n      <div *ngFor=\"let obj of dataarray; let i=index\" name=\"info_contact_plus\">\r\n        <label>Prenom</label>\r\n        <input [(ngModel)]=\"obj.prenom\" placeholder=\"Contacts\" name=\"prenom{{i}}\" />\r\n\r\n        <label>Nom</label>\r\n        <input [(ngModel)]=\"obj.nom\" placeholder=\"Contacts\" name=\"nom{{i}}\" />\r\n\r\n        <label>Telephone</label>\r\n        <input type=\"tel\" [(ngModel)]=\"obj.telephone\" name=\"telephone{{i}}\">\r\n\r\n        <label>Email</label>\r\n        <input type=\"email\" [(ngModel)]=\"obj.email\" name=\"email{{i}}\">\r\n\r\n        <label>Role</label>\r\n        <select name='relation_contact'>\r\n          <option *ngFor='let relation of relations' [value]='relation'>{{relation}}</option>\r\n        </select>\r\n        <span class=\"btn btn-danger\" (click)=\"supprimerChamp(i)\">Supprimer</span>\r\n      </div>\r\n      <span class=\"btn btn-primary\" (click)=\"ajouterContact()\">Ajouter contact</span>\r\n    </div>\r\n    <h3>Besoins</h3>\r\n    <div class=\"row\" *ngFor=\"let besoin of besoins\">\r\n      <div class=\"col-sm-auto\">\r\n        <input type='checkbox' name=\"besoins\" value=\"{{besoin}}\" [checked]=\"enfant.besoins.indexOf(besoin)>=0\" />\r\n      </div>\r\n      <div class=\"col-sm-auto\">{{besoin}}</div>\r\n\r\n\r\n    </div>\r\n    <div class=\"container\">\r\n      <h4>Changer de professionnel : (en cours = {{professionnelEnCours.prenom}} {{professionnelEnCours.nom}})</h4>\r\n\r\n      <!--<input [(ngModel)]=\"enfant.professionnel\" placeholder=\"Professionnel en charge\" />-->\r\n      <label>Nouveau professionnel : </label>\r\n      <select [(ngModel)]=\"selectedProfessionnel\" name=\"profe\">\r\n        <option *ngFor=\"let pro of professionnels\" [value]=\"pro._id\">{{pro.prenom}} {{pro.nom}}</option>\r\n      </select>\r\n\r\n      <!--\r\n            <select name='relation_contact'>\r\n                    <option *ngFor='let relation of relations' [value]='relation'>{{relation}}</option>\r\n                </select>\r\n        -->\r\n\r\n    </div>\r\n    <div class=\"row m-3\">\r\n      <div class=\"col\">\r\n        <button (click)=\"modifEnfant()\">Sauvegarder les modifications</button>\r\n      </div>\r\n      <div class=\"col\">\r\n        <button (click)=\"deleteEnfant()\">Supprimer l'enfant</button>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row m-3\">\r\n      <div class=\"col\">\r\n        <button (click)=\"goBack()\">Revenir en arrière</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -97,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"search-component\">\r\n  <h4><label for=\"search-box\">Recherchez un enfant à partir de son nom</label></h4>\r\n\r\n  <input #searchBox id=\"search-box\" (input)=\"search(searchBox.value)\" />\r\n\r\n  <ul class=\"search-result\">\r\n    <li *ngFor=\"let enfant of enfants$ | async\" >\r\n      <a (click)=\"ajoutRelationEnfant(enfant._id)\">\r\n        {{enfant.nom}}   {{enfant.prenom}}\r\n      </a>\r\n    </li>\r\n  </ul>\r\n  <div *ngIf=\"isEnfantAjoute\">\r\n    <p class=\"ajoute\">Le parent a bien été lié à cet enfant !</p>\r\n  </div>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n  <h4><label for=\"search-box\">Recherchez un enfant à partir de son nom</label></h4>\r\n\r\n  <input #searchBox class=\"form-control\" (input)=\"search(searchBox.value)\" />\r\n\r\n  <ul class=\"search-result list-group my-2\">\r\n    <li class=\"list-group-item\" *ngFor=\"let enfant of enfants$ | async\" >\r\n      <a (click)=\"ajoutRelationEnfant(enfant._id)\">\r\n        {{enfant.nom}}   {{enfant.prenom}}\r\n      </a>\r\n    </li>\r\n  </ul>\r\n  <div class=\"container\" *ngIf=\"isEnfantAjoute\">\r\n    <p class=\"ajoute\">Le parent a bien été lié à cet enfant !</p>\r\n  </div>\r\n</div>");
 
 /***/ }),
 
@@ -110,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"search-component\">\r\n    <h4><label for=\"search-box\">Recherchez un enfant à partir de son nom</label></h4>\r\n  \r\n    <input #searchBox id=\"search-box\" (input)=\"search(searchBox.value)\" />\r\n  \r\n    <ul class=\"search-result\">\r\n      <li *ngFor=\"let enfant of enfants$ | async\" >\r\n        <a routerLink=\"/detail/{{enfant._id}}\">\r\n          {{enfant.nom}}   {{enfant.prenom}}\r\n        </a>\r\n      </li>\r\n    </ul>\r\n  </div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n    <h4><label for=\"search-box\">Recherchez un enfant à partir de son nom</label></h4>\r\n  \r\n    <input #searchBox class=\"form-control\" (input)=\"search(searchBox.value)\" />\r\n  \r\n    <ul class=\"search-result list-group my-2\">\r\n      <li class=\"list-group-item\" *ngFor=\"let enfant of enfants$ | async\" >\r\n        <a routerLink=\"/detail/{{enfant._id}}\">\r\n          {{enfant.nom}}   {{enfant.prenom}}\r\n        </a>\r\n      </li>\r\n    </ul>\r\n  </div>");
 
 /***/ }),
 
@@ -123,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Les Enfants</h2>\r\n\r\n\r\n\r\n\r\n<app-enfant-recherche></app-enfant-recherche>\r\n\r\n<h4>Cliquez sur un enfant pour en voir les détails</h4>\r\n<label>Tous les enfants</label>\r\n<ul class=\"enfants\">\r\n  <li *ngFor=\"let enfant of enfants\" >\r\n    <a routerLink=\"/detail/{{enfant._id}}\">\r\n      <span class=\"badge\">{{enfant.nom}} </span> {{enfant.prenom}}\r\n    </a>\r\n  </li>\r\n</ul>\r\n<br>\r\n<label>Les enfants de la personne connectee (normalement pro)</label>\r\n<ul class=\"enfants\">\r\n  <li *ngFor=\"let enfant of enfantsPro\" >\r\n    <a routerLink=\"/detail/{{enfant._id}}\">\r\n      <span class=\"badge\">{{enfant.nom}} </span> {{enfant.prenom}}\r\n    </a>\r\n  </li>\r\n</ul>\r\n\r\n\r\n\r\n\r\n\r\n<a routerLink=\"/inscription\">Inscrire un enfant</a>\r\n\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\">\r\n  <h2><strong>Les Enfants</strong></h2>\r\n  <hr>\r\n  <app-enfant-recherche></app-enfant-recherche>\r\n  <div class=\"container\">  \r\n    <hr>\r\n    <h4>Cliquez sur un enfant pour en voir les détails</h4>\r\n    <ul class=\"list-group\">\r\n      <li class=\"list-group-item my-1\" *ngFor=\"let enfant of enfants\">\r\n        <a routerLink=\"/detail/{{enfant._id}}\">\r\n          <span class=\"badge\">{{enfant.nom}}  {{enfant.prenom}}</span>\r\n        </a>\r\n      </li>\r\n    </ul>\r\n    <hr>\r\n    <button class=\"btn btn-primary\" routerLink=\"/inscription\">Inscrire un enfant</button>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -162,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h2>Les Personnes</h2>\r\n\r\n<app-personne-recherche></app-personne-recherche>\r\n<h4>Cliquer sur une personne pour en voir les détails</h4>\r\n<ul class=\"personnes\">\r\n  <li *ngFor=\"let personne of personnes\" >\r\n   <a routerLink=\"/detailPersonne/{{personne._id}}\">\r\n      <span class=\"badge\">{{personne.nom}} </span> {{personne.prenom}}\r\n   </a>\r\n  </li>\r\n</ul>\r\n<a routerLink=\"/inscriptionPersonne\">Inscrire une personne</a>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\">\r\n  <div class=\"container\">\r\n    <h2>Les Personnes</h2>\r\n    <hr>\r\n    <app-personne-recherche></app-personne-recherche>\r\n    <hr>\r\n    <h4>Cliquer sur une personne pour en voir les détails</h4>\r\n    <ul class=\"list-form\">\r\n      <li class=\"list-group-item\" *ngFor=\"let personne of personnes\">\r\n        <a routerLink=\"/detailPersonne/{{personne._id}}\">\r\n          <span class=\"badge\">{{personne.nom}} {{personne.prenom}}</span>\r\n        </a>\r\n      </li>\r\n    </ul>\r\n    <hr>\r\n    <button class=\"btn btn-primary\" routerLink=\"/inscriptionPersonne\">Inscrire une personne</button>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -175,7 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container p-3\">\r\n  <ul class=\"list-group\" *ngIf=\"afficherEnfants\">\r\n    Liste des enfants\r\n    <li class=\"list-group-item\" *ngFor=\"let enfant of listeEnfants\" (click)=\"onSelectEnfant(enfant)\">\r\n      {{enfant.nom}} {{enfant.prenom}} {{enfant.professionnel}}\r\n    </li>\r\n  </ul>\r\n\r\n  <ul class=\"list-group\" *ngIf=\"afficherListeJeux\">\r\n    Liste des parties\r\n    <li class=\"list-group-item\" *ngFor=\"let jeu of jeux\" (click)=\"onSelectJeu(jeu)\">\r\n      {{jeu.date}} {{jeu.demande}}\r\n    </li>\r\n    <div class=\"container p-3\">\r\n      <button (click)=\"onBackEnfants(afficherEnfants)\">Retour liste enfants</button>\r\n    </div>\r\n  </ul>\r\n\r\n  <div class=\"container\" *ngIf=\"afficherJeu\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm\">Demande:</div>\r\n      <div class=\"col-sm\">{{jeu.demande}}</div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm\">Date:</div>\r\n      <div class=\"col-sm\">{{jeu.date}}</div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm\">Filtres utilisés dans la partie:</div>\r\n      <div class=\"col-sm\">\r\n        <div class=\"container\">\r\n          <span class=\"row\" *ngFor=\"let filtre of filtresEnfant\">{{filtre.filtrePositif}} &&\r\n            {{filtre.filtreNegatif}}</span>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"container\">\r\n      <h5><strong>Choix fait par l'enfant:</strong></h5>\r\n        <hr>\r\n      <div class=\"row\" *ngFor=\"let choice of choixEnfants\">\r\n        <div class=\"col\">\r\n          <img src=\"{{choice.nomImage}}\" alt=\"\" class=\"img-fluid\">\r\n        </div>\r\n        <div class=\"col\">\r\n          <h6><strong>Réponse de l'enfant</strong></h6>\r\n          {{choice.valeur == 0 ? \"Oui\" : (choice.valeur == 1 ? \"Non\" : \"Je ne sais pas\")}}\r\n        </div>\r\n        <div class=\"col\">\r\n          <h6><strong>Type de filtre</strong></h6>\r\n          {{choice.nom}}\r\n        </div>\r\n        <div class=\"col\">\r\n          <h6><strong>Commentaire</strong></h6>\r\n          {{choice.commentaire}}\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"container p-3\">\r\n      <button (click)=\"onBackJeux(afficherListeJeux)\">Retour liste jeux</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron\">\r\n  <div class=\"container\" *ngIf=\"afficherEnfants\">\r\n    <h6><strong>Liste des enfants</strong></h6>\r\n    <hr>\r\n    <ul class=\"list-group\">\r\n\r\n      <li class=\"list-group-item\" *ngFor=\"let enfant of listeEnfants\" (click)=\"onSelectEnfant(enfant)\">\r\n        {{enfant.nom}} {{enfant.prenom}} {{enfant.professionnel}}\r\n      </li>\r\n    </ul>\r\n  </div>\r\n  <div class=\"container\" *ngIf=\"afficherListeJeux\">\r\n    <h6><strong>Liste des parties</strong></h6>\r\n    <ul class=\"list-group\">\r\n      <hr>\r\n      <li class=\"list-group-item\" *ngFor=\"let jeu of jeux\" (click)=\"onSelectJeu(jeu)\">\r\n        {{jeu.date}} {{jeu.demande}}\r\n      </li>\r\n      <div class=\"container p-3\">\r\n        <button class=\"btn btn-primary\" (click)=\"onBackEnfants(afficherEnfants)\">Retour liste enfants</button>\r\n      </div>\r\n    </ul>\r\n  </div>\r\n  <div class=\"container\" *ngIf=\"afficherJeu\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm\">Demande:</div>\r\n      <div class=\"col-sm\">{{jeu.demande}}</div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm\">Date:</div>\r\n      <div class=\"col-sm\">{{jeu.date}}</div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-sm\">Filtres utilisés dans la partie:</div>\r\n      <div class=\"col-sm\">\r\n        <div class=\"container\">\r\n          <span class=\"row\" *ngFor=\"let filtre of filtresEnfant\">{{filtre.filtrePositif}} &&\r\n            {{filtre.filtreNegatif}}</span>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <hr>\r\n    <div class=\"container\">\r\n      <h5><strong>Choix fait par l'enfant:</strong></h5>\r\n      <hr>\r\n      <div class=\"row\" *ngFor=\"let choice of jeu.choix; let i = index\">\r\n        <div class=\"col\">\r\n          <img src=\"{{choice.nomImage}}\" alt=\"\" class=\"img-fluid\">\r\n        </div>\r\n        <div class=\"col\">\r\n          <h6><strong>Réponse de l'enfant</strong></h6>\r\n          {{choice.valeur == 0 ? \"Oui\" : (choice.valeur == 1 ? \"Non\" : \"Je ne sais pas\")}}\r\n        </div>\r\n        <div class=\"col\">\r\n          <h6><strong>Type de filtre</strong></h6>\r\n          {{choice.nom}}\r\n        </div>\r\n        <div class=\"col\">\r\n          <h6><strong>Commentaire</strong></h6>\r\n          <div class=\"input-group\">\r\n            <textarea name=\"\" id=\"\" cols=\"30\" rows=\"5\" class=\"form-control\" (input)=\"onUpdateChoix($event, i)\">\r\n              {{choice.commentaire}}\r\n            </textarea>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <button class=\"btn btn-info mt-3\" (click)=\"onSaveChoix()\">Sauvegarder</button>\r\n    </div>\r\n\r\n    <div class=\"container p-3\">\r\n      <button class=\"btn btn-primary\" (click)=\"onBackJeux(afficherListeJeux)\">Retour liste jeux</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -214,20 +227,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"search-component\">\r\n    <h4><label for=\"search-box\">Recherchez une personne à partir de son nom</label></h4>\r\n  \r\n    <input #searchBox id=\"search-box\" (input)=\"search(searchBox.value)\" />\r\n  \r\n    <ul class=\"search-result\">\r\n      <li *ngFor=\"let personne of personnes$ | async\" >\r\n        <a routerLink=\"/detailPersonne/{{personne._id}}\">\r\n          {{personne.nom}}   {{personne.prenom}}\r\n        </a>\r\n      </li>\r\n    </ul>\r\n  </div>");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/test-pro-communication/test-pro-communication.component.html":
-/*!********************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/test-pro-communication/test-pro-communication.component.html ***!
-  \********************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>test-pro-communication works!</p>\r\n\r\n<button (click)=\"onGetChildList()\">Demander les rooms</button>\r\n<button (click)=\"onJoinRoom()\">Rejoindre l'enfant</button>\r\n<button (click)=\"onSendMessage()\">Send msg</button>\r\n\r\n<div class=\"container\">\r\n    <h3>Liste des enfants : </h3>\r\n    <!-- <ng-container *ngIf=\"childNotEmpty\">\r\n        <ul class=\"list-group\">\r\n            <li class=\"list-group-item\" *ngFor=\"let child of childs\">Enfant trouvé : {{child}}</li>\r\n        </ul>\r\n    </ng-container> -->\r\n</div>\r\n\r\n<div class=\"container\">\r\n    L'enfant à selectionné les images suivantes :\r\n    <!-- <ng-container *ngFor=\"let image from images\">\r\n        <div class=\"container\">{{image}}</div>\r\n    </ng-container> -->\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n    <h4><label for=\"search-box\">Recherchez une personne à partir de son nom</label></h4>\r\n  \r\n    <input #searchBox class=\"form-control\" (input)=\"search(searchBox.value)\" />\r\n  \r\n    <ul class=\"search-result list-group my-2\">\r\n      <li class=\"list-group-item\" *ngFor=\"let personne of personnes$ | async\" >\r\n        <a routerLink=\"/detailPersonne/{{personne._id}}\">\r\n          {{personne.nom}}   {{personne.prenom}}\r\n        </a>\r\n      </li>\r\n    </ul>\r\n  </div>");
 
 /***/ }),
 
@@ -240,7 +240,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>transfert-enfant works!</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>transfert-enfant works!</p>\n");
 
 /***/ }),
 
@@ -253,7 +253,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\" *ngIf=\"!authservice.isLoggedIn&&!authservice.isResponssible&&!authservice.isAdmin&&!authservice.isParent\" >\r\n  <h1>Entrez login</h1>\r\n\r\n  <div class=\"form-group\" ngS>\r\n    <input type=\"text\" (keyup)=\"onSetLogin()\" placeholder=\"Email\" >\r\n  </div>\r\n  <div>\r\n     <input type=\"password\"   (keyup)=\"onSetPassword()\"   class=\"form-control\" id=\"password\" required=\"name\" placeholder=\"Mot de passe\">\r\n  </div>\r\n  <button (click)=\"onSubmit()\"   class=\"button\">login</button>\r\n\r\n</div>\r\n<div class=\"container\" *ngIf=\"authservice.isLoggedIn||authservice.isResponssible||authservice.isAdmin||authservice.isParent\">\r\n  <button (click)=\"logout()\" >logout</button>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\" *ngIf=\"!authservice.isLoggedIn&&!authservice.isResponssible&&!authservice.isAdmin&&!authservice.isParent\" >\r\n  <h1>Connexion</h1>\r\n  <hr>\r\n  <div class=\"input-group mb-3\">\r\n    <div class=\"input-group-prepend\">\r\n      <span class=\"input-group-text\">Utilisateur :</span>\r\n    </div>\r\n    <input type=\"text\" (keyup)=\"onSetLogin()\" class=\"form-control\" required/>\r\n  </div>\r\n  <div class=\"input-group mb-3\">\r\n      <div class=\"input-group-prepend\">\r\n        <span class=\"input-group-text\">Mot de passe :</span>\r\n      </div>\r\n      <input type=\"password\" (keyup)=\"onSetPassword()\" class=\"form-control\" required/>\r\n    </div>\r\n\r\n  <button (click)=\"onSubmit()\" class=\"btn btn-primary\">Se connecter</button>\r\n</div>\r\n<div class=\"container\" *ngIf=\"authservice.isLoggedIn||authservice.isResponssible||authservice.isAdmin||authservice.isParent\">\r\n  <button (click)=\"logout()\" >logout</button>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -486,6 +486,50 @@ function __importDefault(mod) {
 
 /***/ }),
 
+/***/ "./src/app/accueil/accueil.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/accueil/accueil.component.css ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjY3VlaWwvYWNjdWVpbC5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/accueil/accueil.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/accueil/accueil.component.ts ***!
+  \**********************************************/
+/*! exports provided: AccueilComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccueilComponent", function() { return AccueilComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let AccueilComponent = class AccueilComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+AccueilComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-accueil',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./accueil.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/accueil/accueil.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./accueil.component.css */ "./src/app/accueil/accueil.component.css")).default]
+    })
+], AccueilComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -510,8 +554,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _historique_partie_historique_partie_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./historique-partie/historique-partie.component */ "./src/app/historique-partie/historique-partie.component.ts");
 /* harmony import */ var _filtres_gestion_filtres_gestion_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./filtres-gestion/filtres-gestion.component */ "./src/app/filtres-gestion/filtres-gestion.component.ts");
 /* harmony import */ var _configuration_jeux_configuration_jeux_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./configuration-jeux/configuration-jeux.component */ "./src/app/configuration-jeux/configuration-jeux.component.ts");
-/* harmony import */ var _test_pro_communication_test_pro_communication_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./test-pro-communication/test-pro-communication.component */ "./src/app/test-pro-communication/test-pro-communication.component.ts");
-/* harmony import */ var _auth_auth_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./auth/auth.component */ "./src/app/auth/auth.component.ts");
+/* harmony import */ var _auth_auth_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./auth/auth.component */ "./src/app/auth/auth.component.ts");
+/* harmony import */ var _accueil_accueil_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./accueil/accueil.component */ "./src/app/accueil/accueil.component.ts");
 
 
 
@@ -541,10 +585,6 @@ const routes = [
     {
         path: 'historique',
         component: _historique_partie_historique_partie_component__WEBPACK_IMPORTED_MODULE_11__["HistoriquePartieComponent"]
-    },
-    {
-        path: 'TestProCommunicationComponent',
-        component: _test_pro_communication_test_pro_communication_component__WEBPACK_IMPORTED_MODULE_14__["TestProCommunicationComponent"]
     },
     {
         path: 'inscription',
@@ -580,7 +620,11 @@ const routes = [
     },
     {
         path: "auth",
-        component: _auth_auth_component__WEBPACK_IMPORTED_MODULE_15__["AuthComponent"]
+        component: _auth_auth_component__WEBPACK_IMPORTED_MODULE_14__["AuthComponent"]
+    },
+    {
+        path: "acceuil",
+        component: _accueil_accueil_component__WEBPACK_IMPORTED_MODULE_15__["AccueilComponent"]
     },
     {
         path: '**',
@@ -628,16 +672,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm2015/service-worker.js");
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/auth.service */ "./src/services/auth.service.ts");
 /* harmony import */ var src_services_socket_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/services/socket.service */ "./src/services/socket.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 
 
 
 let AppComponent = class AppComponent {
-    constructor(swUpdate, authServ, socketService) {
+    constructor(swUpdate, authServ, socketService, router) {
         this.swUpdate = swUpdate;
         this.authServ = authServ;
         this.socketService = socketService;
+        this.router = router;
         this.title = 'ng2auth';
     }
     checkToken() {
@@ -658,6 +705,7 @@ let AppComponent = class AppComponent {
     ngOnInit() {
         this.socketService.socketInit();
         this.reloadCache();
+        this.router.navigate(['']);
     }
     getUser() {
         if (localStorage.getItem('user') != undefined) {
@@ -674,6 +722,9 @@ let AppComponent = class AppComponent {
             return JSON.parse(localStorage.getItem('user')).idEnfant;
         }
     }
+    logout() {
+        this.authServ.logout();
+    }
     //update l'appli des qu'il y a un changment (pwa)
     reloadCache() {
         if (this.swUpdate.isEnabled) {
@@ -688,7 +739,8 @@ let AppComponent = class AppComponent {
 AppComponent.ctorParameters = () => [
     { type: _angular_service_worker__WEBPACK_IMPORTED_MODULE_2__["SwUpdate"] },
     { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
-    { type: src_services_socket_service__WEBPACK_IMPORTED_MODULE_4__["SocketService"] }
+    { type: src_services_socket_service__WEBPACK_IMPORTED_MODULE_4__["SocketService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
 ];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -729,15 +781,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _gestion_professionnel_gestion_professionnel_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./gestion-professionnel/gestion-professionnel.component */ "./src/app/gestion-professionnel/gestion-professionnel.component.ts");
 /* harmony import */ var _personne_ajout_personne_ajout_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./personne-ajout/personne-ajout.component */ "./src/app/personne-ajout/personne-ajout.component.ts");
 /* harmony import */ var _personne_detail_personne_detail_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./personne-detail/personne-detail.component */ "./src/app/personne-detail/personne-detail.component.ts");
-/* harmony import */ var _test_pro_communication_test_pro_communication_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./test-pro-communication/test-pro-communication.component */ "./src/app/test-pro-communication/test-pro-communication.component.ts");
-/* harmony import */ var _enfant_recherche_enfant_recherche_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./enfant-recherche/enfant-recherche.component */ "./src/app/enfant-recherche/enfant-recherche.component.ts");
-/* harmony import */ var _personne_recherche_personne_recherche_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./personne-recherche/personne-recherche.component */ "./src/app/personne-recherche/personne-recherche.component.ts");
-/* harmony import */ var _filtres_gestion_filtres_gestion_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./filtres-gestion/filtres-gestion.component */ "./src/app/filtres-gestion/filtres-gestion.component.ts");
-/* harmony import */ var _configuration_jeux_configuration_jeux_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./configuration-jeux/configuration-jeux.component */ "./src/app/configuration-jeux/configuration-jeux.component.ts");
-/* harmony import */ var _enfant_parent_recherche_enfant_parent_recherche_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./enfant-parent-recherche/enfant-parent-recherche.component */ "./src/app/enfant-parent-recherche/enfant-parent-recherche.component.ts");
-/* harmony import */ var _historique_partie_historique_partie_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./historique-partie/historique-partie.component */ "./src/app/historique-partie/historique-partie.component.ts");
-/* harmony import */ var _auth_auth_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./auth/auth.component */ "./src/app/auth/auth.component.ts");
-/* harmony import */ var _transfert_enfant_transfert_enfant_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./transfert-enfant/transfert-enfant.component */ "./src/app/transfert-enfant/transfert-enfant.component.ts");
+/* harmony import */ var _enfant_recherche_enfant_recherche_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./enfant-recherche/enfant-recherche.component */ "./src/app/enfant-recherche/enfant-recherche.component.ts");
+/* harmony import */ var _personne_recherche_personne_recherche_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./personne-recherche/personne-recherche.component */ "./src/app/personne-recherche/personne-recherche.component.ts");
+/* harmony import */ var _filtres_gestion_filtres_gestion_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./filtres-gestion/filtres-gestion.component */ "./src/app/filtres-gestion/filtres-gestion.component.ts");
+/* harmony import */ var _configuration_jeux_configuration_jeux_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./configuration-jeux/configuration-jeux.component */ "./src/app/configuration-jeux/configuration-jeux.component.ts");
+/* harmony import */ var _enfant_parent_recherche_enfant_parent_recherche_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./enfant-parent-recherche/enfant-parent-recherche.component */ "./src/app/enfant-parent-recherche/enfant-parent-recherche.component.ts");
+/* harmony import */ var _historique_partie_historique_partie_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./historique-partie/historique-partie.component */ "./src/app/historique-partie/historique-partie.component.ts");
+/* harmony import */ var _auth_auth_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./auth/auth.component */ "./src/app/auth/auth.component.ts");
+/* harmony import */ var _transfert_enfant_transfert_enfant_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./transfert-enfant/transfert-enfant.component */ "./src/app/transfert-enfant/transfert-enfant.component.ts");
+/* harmony import */ var _accueil_accueil_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./accueil/accueil.component */ "./src/app/accueil/accueil.component.ts");
 
 
 
@@ -778,15 +830,15 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _gestion_professionnel_gestion_professionnel_component__WEBPACK_IMPORTED_MODULE_14__["GestionProfessionnelComponent"],
             _personne_ajout_personne_ajout_component__WEBPACK_IMPORTED_MODULE_15__["PersonneAjoutComponent"],
             _personne_detail_personne_detail_component__WEBPACK_IMPORTED_MODULE_16__["PersonneDetailComponent"],
-            _enfant_recherche_enfant_recherche_component__WEBPACK_IMPORTED_MODULE_18__["EnfantRechercheComponent"],
-            _personne_recherche_personne_recherche_component__WEBPACK_IMPORTED_MODULE_19__["PersonneRechercheComponent"],
-            _filtres_gestion_filtres_gestion_component__WEBPACK_IMPORTED_MODULE_20__["FiltresGestionComponent"],
-            _configuration_jeux_configuration_jeux_component__WEBPACK_IMPORTED_MODULE_21__["ConfigurationJeuxComponent"],
-            _enfant_parent_recherche_enfant_parent_recherche_component__WEBPACK_IMPORTED_MODULE_22__["EnfantParentRechercheComponent"],
-            _test_pro_communication_test_pro_communication_component__WEBPACK_IMPORTED_MODULE_17__["TestProCommunicationComponent"],
-            _auth_auth_component__WEBPACK_IMPORTED_MODULE_24__["AuthComponent"],
-            _historique_partie_historique_partie_component__WEBPACK_IMPORTED_MODULE_23__["HistoriquePartieComponent"],
-            _transfert_enfant_transfert_enfant_component__WEBPACK_IMPORTED_MODULE_25__["TransfertEnfantComponent"]
+            _enfant_recherche_enfant_recherche_component__WEBPACK_IMPORTED_MODULE_17__["EnfantRechercheComponent"],
+            _personne_recherche_personne_recherche_component__WEBPACK_IMPORTED_MODULE_18__["PersonneRechercheComponent"],
+            _filtres_gestion_filtres_gestion_component__WEBPACK_IMPORTED_MODULE_19__["FiltresGestionComponent"],
+            _configuration_jeux_configuration_jeux_component__WEBPACK_IMPORTED_MODULE_20__["ConfigurationJeuxComponent"],
+            _enfant_parent_recherche_enfant_parent_recherche_component__WEBPACK_IMPORTED_MODULE_21__["EnfantParentRechercheComponent"],
+            _auth_auth_component__WEBPACK_IMPORTED_MODULE_23__["AuthComponent"],
+            _historique_partie_historique_partie_component__WEBPACK_IMPORTED_MODULE_22__["HistoriquePartieComponent"],
+            _transfert_enfant_transfert_enfant_component__WEBPACK_IMPORTED_MODULE_24__["TransfertEnfantComponent"],
+            _accueil_accueil_component__WEBPACK_IMPORTED_MODULE_25__["AccueilComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1809,7 +1861,7 @@ let HistoriquePartieComponent = class HistoriquePartieComponent {
     }
     onSelectJeu(jeu) {
         this.jeu = jeu;
-        this.choixEnfants = jeu.choix;
+        // this.choixEnfant = jeu.choix
         this.filtresEnfant = jeu.filtresPartie;
         this.afficherJeu = true;
         this.afficherListeJeux = false;
@@ -1821,6 +1873,7 @@ let HistoriquePartieComponent = class HistoriquePartieComponent {
     onBackJeux(afficherListeJeux) {
         this.afficherListeJeux = !afficherListeJeux;
         this.afficherJeu = false;
+        this.jeu = undefined;
     }
     getListeEnfants() {
         this.enfantService.getEnfants().subscribe(enfants => this.listeEnfants = enfants);
@@ -1829,9 +1882,18 @@ let HistoriquePartieComponent = class HistoriquePartieComponent {
     getHistoriqueEnfant(enfant) {
         this.listeDonneesService.getJeux(enfant).subscribe(jeux => {
             this.jeux = jeux;
-            this.jeux.forEach(el => {
+            jeux.forEach(el => {
                 console.log("Jeu : ", el);
             });
+        });
+    }
+    onUpdateChoix(event, index) {
+        this.jeu.choix[index].commentaire += event.data;
+    }
+    onSaveChoix() {
+        console.log("Sauvegarde dans la DB");
+        this.listeDonneesService.updateJeu(this.jeu).subscribe(response => {
+            console.log("RESPONSE SAVE: ", response);
         });
     }
     getEnfantID() {
@@ -2136,85 +2198,6 @@ PersonneRechercheComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/test-pro-communication/test-pro-communication.component.css":
-/*!*****************************************************************************!*\
-  !*** ./src/app/test-pro-communication/test-pro-communication.component.css ***!
-  \*****************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Rlc3QtcHJvLWNvbW11bmljYXRpb24vdGVzdC1wcm8tY29tbXVuaWNhdGlvbi5jb21wb25lbnQuY3NzIn0= */");
-
-/***/ }),
-
-/***/ "./src/app/test-pro-communication/test-pro-communication.component.ts":
-/*!****************************************************************************!*\
-  !*** ./src/app/test-pro-communication/test-pro-communication.component.ts ***!
-  \****************************************************************************/
-/*! exports provided: TestProCommunicationComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestProCommunicationComponent", function() { return TestProCommunicationComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! socket.io-client */ "./node_modules/socket.io-client/lib/index.js");
-/* harmony import */ var socket_io_client__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(socket_io_client__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _services_enfant_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/enfant.service */ "./src/services/enfant.service.ts");
-
-
-
-
-let TestProCommunicationComponent = class TestProCommunicationComponent {
-    constructor(enfantService) {
-        this.enfantService = enfantService;
-    }
-    ngOnInit() {
-        this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_2__["connect"]("http://localhost:8081");
-        this.idProfessionnal = "BOB L EPONGE";
-        this.childNotEmpty = false;
-        this.prepareSocket();
-    }
-    prepareSocket() {
-        this.socket.on("getRooms", (data) => {
-            this.childs = data;
-            this.childNotEmpty = true;
-            console.log("Les rooms disponible dans le backend sont : ", data);
-        });
-        this.socket.on("message", (data) => {
-            console.log("[API] Message recieved:", data);
-        });
-    }
-    onGetChildList() {
-        this.socket.emit("getRooms", (data) => {
-            console.log("Les rooms disponible dans le backend sont : ", data);
-        });
-    }
-    onSendMessage() {
-        this.socket.emit("message", { room: "roomTest", message: "Hello from PRO" });
-    }
-    onJoinRoom() {
-        this.socket.emit('joinRoom', "roomTest");
-    }
-};
-TestProCommunicationComponent.ctorParameters = () => [
-    { type: _services_enfant_service__WEBPACK_IMPORTED_MODULE_3__["EnfantService"] }
-];
-TestProCommunicationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-test-pro-communication',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./test-pro-communication.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/test-pro-communication/test-pro-communication.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./test-pro-communication.component.css */ "./src/app/test-pro-communication/test-pro-communication.component.css")).default]
-    })
-], TestProCommunicationComponent);
-
-
-
-/***/ }),
-
 /***/ "./src/app/transfert-enfant/transfert-enfant.component.css":
 /*!*****************************************************************!*\
   !*** ./src/app/transfert-enfant/transfert-enfant.component.css ***!
@@ -2341,11 +2324,11 @@ let UserLoginComponent = class UserLoginComponent {
                 console.log('this is billy');
                 if (this.authservice.isResponssible) {
                     //let redirect = this.authservice.redirectUrl ? this.router.parseUrl(this.authservice.redirectUrl) : '/professionel';
-                    let navigationExras = {
+                    let navigationExtras = {
                         queryParamsHandling: 'preserve',
                         preserveFragment: true
                     };
-                    this.router.navigate(['responsable'], navigationExras);
+                    this.router.navigate(['acceuil'], navigationExtras);
                 }
             });
         }
@@ -2356,7 +2339,7 @@ let UserLoginComponent = class UserLoginComponent {
                         queryParamsHandling: 'preserve',
                         preserveFragment: true
                     };
-                    this.router.navigate(['parent'], navigationExras);
+                    this.router.navigate(['acceuil'], navigationExras);
                 }
             });
         }
@@ -2367,7 +2350,7 @@ let UserLoginComponent = class UserLoginComponent {
                         queryParamsHandling: 'preserve',
                         preserveFragment: true
                     };
-                    this.router.navigate(['admin'], navigationExras);
+                    this.router.navigate(['acceuil'], navigationExras);
                 }
             });
         }
@@ -2377,13 +2360,9 @@ let UserLoginComponent = class UserLoginComponent {
                     queryParamsHandling: 'preserve',
                     preserveFragment: true
                 };
-                this.router.navigate(['choix'], navigationExras);
+                this.router.navigate(['acceuil'], navigationExras);
             });
         }
-    }
-    logout() {
-        this.authservice.logout();
-        this.submitted = false;
     }
     ngOnInit() {
     }
@@ -2883,6 +2862,10 @@ let ListeDonneesService = class ListeDonneesService {
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError('getJeux', [])));
         return this.jeux;
     }
+    updateJeu(jeu) {
+        const jeuUrl = `${this.urlBase}/jeux/${jeu._id}`;
+        return this.http.put(jeuUrl, jeu).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError('putJeu')));
+    }
     // Return tout les filtres from DB
     getFiltres() {
         console.log("On veut demander les filtres");
@@ -3059,7 +3042,7 @@ SocketService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Niklas\Documents\Bloc3\PFE\pfe-webapp-pro\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! F:\Project\pfe\pfe-webapp-pro\src\main.ts */"./src/main.ts");
 
 
 /***/ }),

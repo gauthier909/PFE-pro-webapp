@@ -16,8 +16,9 @@ export class HistoriquePartieComponent implements OnInit {
   jeux: Jeu[]
   jeu: Jeu
   listeEnfants: Enfant[]
-  choixEnfants: Choix[]
+  // choixEnfant: Choix[] 
   filtresEnfant: Filtre[]
+  commentaire: string
   afficherEnfants: boolean
   afficherListeJeux: boolean
   afficherJeu: boolean
@@ -36,7 +37,7 @@ export class HistoriquePartieComponent implements OnInit {
 
   onSelectJeu(jeu: Jeu) {
     this.jeu = jeu
-    this.choixEnfants = jeu.choix
+    // this.choixEnfant = jeu.choix
     this.filtresEnfant = jeu.filtresPartie
     this.afficherJeu = true
     this.afficherListeJeux = false
@@ -50,6 +51,7 @@ export class HistoriquePartieComponent implements OnInit {
   onBackJeux(afficherListeJeux: boolean) {
     this.afficherListeJeux = !afficherListeJeux
     this.afficherJeu = false
+    this.jeu = undefined
   }
 
   getListeEnfants() {
@@ -60,9 +62,21 @@ export class HistoriquePartieComponent implements OnInit {
   getHistoriqueEnfant(enfant: Enfant) {
     this.listeDonneesService.getJeux(enfant).subscribe(jeux => {
       this.jeux = jeux
-      this.jeux.forEach(el => {
+      jeux.forEach(el => {
         console.log("Jeu : ", el)
       })
+    })
+  }
+
+  onUpdateChoix(event: any, index: number) {
+    this.jeu.choix[index].commentaire += event.data
+
+  }
+
+  onSaveChoix() {
+    console.log("Sauvegarde dans la DB")
+    this.listeDonneesService.updateJeu(this.jeu).subscribe(response => {
+      console.log("RESPONSE SAVE: ", response)
     })
   }
 
