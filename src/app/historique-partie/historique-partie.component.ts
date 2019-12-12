@@ -22,6 +22,7 @@ export class HistoriquePartieComponent implements OnInit {
   afficherEnfants: boolean
   afficherListeJeux: boolean
   afficherJeu: boolean
+  
   constructor(private enfantService: EnfantService,
     private listeDonneesService: ListeDonneesService) { }
 
@@ -68,9 +69,16 @@ export class HistoriquePartieComponent implements OnInit {
     })
   }
 
-  onUpdateChoix(event: any, index: number) {
-    this.jeu.choix[index].commentaire += event.data
+  // onUpdateChoix(event: any, index: number) {
+  //   this.commentaire += event.data
+  // }
 
+  onBlur(event: any, index: number){
+    let text: string = event.target.value
+    console.log("EVENT VALUE :", event.target.value)
+    console.log("TEXT VALUE", text)
+    this.jeu.choix[index].commentaire = text
+    console.log("LOST FOCUS :", event, index, this.jeu.choix[index].commentaire)
   }
 
   onSaveChoix() {
