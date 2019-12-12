@@ -7,7 +7,7 @@
       <div class="form-group">
         <select [(ngModel)]="selectedEnfantID" name="enf">
           <ng-container *ngFor="let e of enfants; let i = index">
-            <option [value]="e._id" [selected]="i==0 ? selected : null">{{e.prenom}} {{e.nom}}</option>
+            <option [value]="e._id">{{e.prenom}} {{e.nom}}</option>
           </ng-container>
 
         </select>
