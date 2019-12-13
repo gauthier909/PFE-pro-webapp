@@ -1,13 +1,17 @@
-import  {Inject, Injectable} from "@angular/core";
+import  {Inject, Injectable, isDevMode} from "@angular/core";
 import {HttpClient,HttpHeaders,HttpResponse} from "@angular/common/http";
 import {Observable} from "rxjs";
 import { catchError, map, tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class LoginService{
-  constructor(private http: HttpClient) {}
+  private url
+  constructor(private http: HttpClient) {
+    this.url = environment.apiUrl + "login"
+  }
   login(email: string, password: string):Observable<any> {
-    return this.http.post<any>('http://localhost:8080/login', { email:email, password:password })
+    return this.http.post<any>(this.url, { email:email, password:password })
       .pipe(map(user => {
         console.log(user);
         // login successful if there's a jwt token in the response

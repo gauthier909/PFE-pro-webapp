@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
@@ -6,15 +6,17 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 //import { ENFANTS } from '../../mocks/mock-enfants';
 import { Enfant } from '../classes/enfant';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EnfantService {
-  private enfantsUrl = 'http://localhost:8080/enfants';  // URL to web api
-  
+  private enfantsUrl  // URL to web api
   private enfants :  Observable<Enfant[]>;
-  constructor(private http: HttpClient ) { }
+  constructor(private http: HttpClient ) {
+    this.enfantsUrl = environment.apiUrl+'enfants'
+  }
 
  
   httpOptions = {

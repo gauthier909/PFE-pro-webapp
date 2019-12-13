@@ -1,19 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { Partie } from 'src/classes/partie';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigurationPartieService {
 
-  private partieUrl = 'http://localhost:8080/jeux';  // URL to web api
- // private enfantsUrl = 'http://localhost:8080/enfants';  // URL to web api
-
-
-  constructor(private http: HttpClient ) { }
+  private partieUrl
+  constructor(private http: HttpClient ) {
+    this.partieUrl = environment.apiUrl+'jeux'
+  }
  
  
   httpOptions = {
