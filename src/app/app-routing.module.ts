@@ -23,14 +23,12 @@ import {AuthGuardR} from "./guard/responssible.guard";
 import {AuthGuardP} from "./guard/parentauth.guard";
 import {AuthGuardA} from "./guard/adminauth.guard";
 import {AuthGuard} from "./guard/auth.guard";
-
-import {AuthComponent} from './auth/auth.component'
 import { AccueilComponent } from './accueil/accueil.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -72,10 +70,6 @@ const routes: Routes = [
   {
     path: 'login',
     component: UserLoginComponent
-  },
-  {
-    path: "auth",
-    component: AuthComponent
   },
   {
     path: "acceuil",

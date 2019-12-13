@@ -24,9 +24,6 @@ import { FiltresGestionComponent } from './filtres-gestion/filtres-gestion.compo
 import { ConfigurationJeuxComponent } from './configuration-jeux/configuration-jeux.component';
 import {EnfantParentRechercheComponent} from './enfant-parent-recherche/enfant-parent-recherche.component';
 import { HistoriquePartieComponent } from './historique-partie/historique-partie.component'
-
-import { AuthComponent } from './auth/auth.component'
-
 import { TransfertEnfantComponent } from './transfert-enfant/transfert-enfant.component';
 import { AccueilComponent } from './accueil/accueil.component'
 
@@ -49,7 +46,6 @@ import { AccueilComponent } from './accueil/accueil.component'
     FiltresGestionComponent,
     ConfigurationJeuxComponent,
     EnfantParentRechercheComponent,
-    AuthComponent,
     HistoriquePartieComponent,
     TransfertEnfantComponent,
     AccueilComponent
